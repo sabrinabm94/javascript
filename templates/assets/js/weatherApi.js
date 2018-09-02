@@ -33,7 +33,7 @@ $('#submit').click(function() {
 							async: true,
 							crossDomain: true,
 							//url: 'http://api.openweathermap.org/data/2.5/forecast',
-							url: '//samples.openweathermap.org/data/2.5/forecast',
+							url: 'https://samples.openweathermap.org/data/2.5/forecast',
 							method: 'GET',					
 							data: {id: id, appid: key},
 						}
@@ -127,6 +127,7 @@ function results(day, data) {
 	"<p>Humidity: " + humidity + " %" + "</p>";
 
 	$("#results").html(dataShow);
+	$('html,body').animate({scrollTop: ($("#results").offset().top) -100}, 'slow');
 	$("#error").html("");
 	clearVariables();
 }
