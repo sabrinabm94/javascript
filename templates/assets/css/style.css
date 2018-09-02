@@ -1,4 +1,3 @@
-/* main style */
 input {
   height: 40px;
   margin-bottom: 10px;
@@ -26,7 +25,6 @@ input {
     height: 80px;
   }
 }
-/* style*/
 body, .text {
   font-size: 16px;
   line-height: 18px;
@@ -50,24 +48,29 @@ a, a:hover {
 .row {
   margin-bottom: 20px;
 }
+.button, .input {
+  margin-top: 20px;
+}
 .button {
   height: 30px;
   padding: 5px 20px 5px 20px;
   display: block;
-  margin-top: 10px;
   margin-bottom: 30px;
   border-radius: 10px;
 }
 .button:hover {
   opacity: 0.85;
 }
-
-/* applicant app */
-.applicant-container {
+.container {
   max-width: 500px;
   margin: 0 auto;
   display: block;
 }
+ul {
+  padding-left: 0;
+}
+
+/* applicant app */
 .applicant-container .input {
   border-radius: 10px;
   border: 1px solid grey;
@@ -81,5 +84,36 @@ a, a:hover {
 }
 .applicant-list-item:hover {
   opacity: 0.8;
+}
+/* end */
+
+/* music app */
+.album-list-item, .artist-name {
+  text-align: left;
+}
+.music-app .album, .music-app .price, .music-app .search-container .input, .music-app .image.bg {
+  display: block;
+}
+.music-app .search-container .input {
+  border-radius: 30px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #c9c9c9c9;
+}
+.music-app .album-list-item {
+  margin-top: 30px;
+  margin-right: 15px;
+  display: inline-block;
+  vertical-align: top;
+  width: 40%;
+  margin-left: 15px;
+}
+.music-app .album-list-item, .music-app .image.bg {
+  margin-bottom: 30px;
+}
+.music-app .image.bg {
+  width: 100%;
+  height: 170px;
 }
 /* end */

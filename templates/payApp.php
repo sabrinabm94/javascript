@@ -27,7 +27,7 @@
         <navbar class="navbar">
         </navbar>
     </footer>
-    <script src="../templates/assets/js/pay-app.js"></script>
+    <script src="../templates/assets/js/payApp.js"></script>
 </body>
 </html>
 

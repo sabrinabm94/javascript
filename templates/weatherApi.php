@@ -1,5 +1,5 @@
 		<?php include_once 'header.php'; ?>
-		<div class="applicant-container">
+		<div class="container">
 			<section id="form" class="form">
 				<h1 class="title">Check your weather</h1>
 				<h2 class="subtitle">Enter with your city name and your personal access key.</h2>

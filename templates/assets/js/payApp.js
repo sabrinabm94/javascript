@@ -19,7 +19,7 @@
 		parent.innerHTML = '';
 		parent.insertAdjacentHTML('afterbegin', template);
 		deleteOne();
-	}
+	};
 
 	this.addAplicants = function() {
 		function generateList(input) {
@@ -34,14 +34,14 @@
 			}
 
 			showList();
-		}
+		};
 
 		var addBtn = document.querySelector("#applicant-add");
 		addBtn.addEventListener('click', function() {
 			var input = document.querySelector("#applicant_value");
 			generateList(input);
 		});
-	}
+	};
 
 	this.checkValid = function(value) {
 		if(applicants.indexOf(value) < 0 && value != '') {
@@ -84,8 +84,8 @@
 			resultsContainer.className = 'results-container'; 
 
 			showRandomUser();
-		}
-	}
+		};
+	};
 
 	this.showRandomUser = function() {
 		var resultContainer = document.querySelector('.result');
