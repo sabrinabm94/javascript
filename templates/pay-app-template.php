@@ -5,16 +5,14 @@
 				<h2 class="title">Who pays the bill?</h2>
 				<input type="text" class="input" id="applicant_value" placeholder="Enter applicant">
 				<button class="button applicant-id" id="applicant-add">add</button>
-				<div class="applicant-list">
+				<div class="applicants">
 					<h3 class="title">Who's participanting</h3>
 					<ul class="list-inline applicant-list">
-						<li class="applicant-list-item">John</li>
-						<li class="applicant-list-item">Erick</li>
 					</ul>
 				</div>
 				<button class="button show-results">Get the loser</button>
 			</div>
-			<div class="results">
+			<div class="results hide">
 				<h2 class="title">The looser is:</h2>
 				<div class="result">
 					<h3 class="title">John</h3>
