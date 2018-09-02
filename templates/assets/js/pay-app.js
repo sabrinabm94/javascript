@@ -1,8 +1,11 @@
 (function GetLooser() {
 	this.applicants = [];
 	
-	this.init = function () {
+	this.init = function() {
 		this.addAplicants();
+		this.getRandomUser();
+		this.runAgain();
+		this.startOver();
 	};
 
 	this.showList = function showList() {
@@ -63,6 +66,59 @@
 				removeIt(this)
 			});
 		}
+	};
+
+	this.getRandomUser = function() {
+		var resultsButton = document.querySelector('.get-looser');
+		resultsButton.addEventListener('click', function(e) {
+			if(applicants.length > 1) {
+				showLooser();
+			}
+		});
+
+		function showLooser() {
+			var resultsContainer = document.querySelector('.results-container');
+			var applicantContainer = document.querySelector('.applicant-container');
+
+			applicantContainer.className += ' hide';
+			resultsContainer.className = 'results-container'; 
+
+			showRandomUser();
+		}
+	}
+
+	this.showRandomUser = function() {
+		var resultContainer = document.querySelector('.result');
+		var randomName = applicants[Math.floor(Math.random() * applicants.length)];
+
+		console.log(resultContainer);
+		resultContainer.innerHTML = '';
+		resultContainer.insertAdjacentHTML('afterbegin', "<h3 class='title'>" + randomName + "</h3>");
+	};
+
+	this.runAgain = function() {
+		var runAgainButton = document.querySelector('.run');
+
+		runAgainButton.addEventListener("click", function(e) {
+           showRandomUser();
+		});
+	};
+
+
+	this.startOver = function() {
+		var startAgainButton = document.querySelector('.start');
+
+		startAgainButton.addEventListener('click', function() {
+			applicants = [];
+			
+			var resultsContainer = document.querySelector('.results-container');
+			var applicantContainer = document.querySelector('.applicant-container');
+			var applicantWrapper = document.querySelector('.applicant-list');
+
+			applicantContainer.className = 'applicant-container';
+			resultsContainer.className += ' hide';
+			applicantWrapper.innerHTML = '';
+		}); 
 	};
 
 	this.init();

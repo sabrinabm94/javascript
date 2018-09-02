@@ -1,7 +1,7 @@
 <?php include_once 'header.php'; ?>
 	<section class="container">
 		<div class="row">
-			<div class="applicant">
+			<div class="applicant-container">
 				<h2 class="title">Who pays the bill?</h2>
 				<input type="text" class="input" id="applicant_value" placeholder="Enter applicant">
 				<button class="button applicant-id" id="applicant-add">add</button>
@@ -10,12 +10,11 @@
 					<ul class="list-inline applicant-list">
 					</ul>
 				</div>
-				<button class="button show-results">Get the loser</button>
+				<button class="button get-looser">Get the loser</button>
 			</div>
-			<div class="results hide">
+			<div class="results-container hide">
 				<h2 class="title">The looser is:</h2>
 				<div class="result">
-					<h3 class="title">John</h3>
 				</div>
 				<div class="result-action">
 					<button class="button run">Run it again</button>
