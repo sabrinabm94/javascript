@@ -1,7 +1,7 @@
 <?php include_once 'header.php'; ?>
 	<section class="container">
 		<div class="row">
-			<div class="applicant hide">
+			<div class="applicant">
 				<h2 class="title">Who pays the bill?</h2>
 				<input type="text" class="input" id="applicant_value" placeholder="Enter applicant">
 				<button class="button applicant-id" id="applicant-add">add</button>
