@@ -1,6 +1,6 @@
-# Acess Link
+# Acess the repositoy project
 
-## Use Xampp with Apach and MySQL activate
+## Initialize Xampp with Apach and MySQL activate
 For more information: noobfrontend.wordpress.com/2018/04/28/montando-ambiente-web-com-xampp
 
 ## Acess Link
