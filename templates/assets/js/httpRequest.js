@@ -1,6 +1,7 @@
 
 getData();
 sendData();
+//ajaxSendData('http://whatever.com', {name: 'Sabrina'});
 
 function getData() {
 	var http = new XMLHttpRequest();
@@ -43,4 +44,13 @@ function sendData() {
 	http.send(db);
 }
 
+/* version 1
+function ajaxSendData(url, data) {
+	$.ajax({method: 'POST', url: url, data: data});
+}
 
+/* version 2
+function ajaxSendData(url, data) => {
+	$.ajax({method: 'POST', url:url, data:data});
+}
+*/

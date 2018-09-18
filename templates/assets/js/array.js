@@ -80,6 +80,25 @@ var arrayFiltered = arrayToFilter.filter(function(item){ //anonymous function
 });
 console.log("arrayFiltered: " + arrayFiltered);
 
+//filter array
+console.log("");
+console.log("Filter array");
+
+const products = [
+	{name: 'ipad', category: 'Devices', number: 20, price: 200},
+	{name: 'Sony 3d', category: 'TV', number: 5, price: 400},
+	{name: 'E256', category: 'Blender', number: 3, price: 50},
+	{name: 'Super Vision', category: 'TV', number: 7, price: 500},
+	{name: 'Iphone 7', category: 'Phones', number: 40, price: 2}
+];
+
+const results = products.filter(function(product) {
+	return product.category == "TV"
+	&& product.number > 0
+	&& product.price > 200
+});
+console.log(results);
+
 //map helper
 console.log("");
 console.log("Map helper");
