@@ -102,3 +102,74 @@ man.hairColor = 'dark blond';
 man.name = 'Alexander';
 console.log('Object man: ');
 console.log(man);
+
+//car version 1
+var car = new Car();
+
+Car.prototype.status = 'New';
+Car.prototype.wheels = 4;
+Car.prototype.avail = function() {
+	console.log('available');
+}
+
+var ford = new Car();
+console.log(ford.__proto__);
+
+
+const car = new Car();
+const ford =  new Car();
+console.log(ford);
+
+//car version 2
+class Car {
+	constructor() {
+		this.condition = 'New';
+		this.wheels = '4';
+		this.avail = () => {
+			console.log('avail');
+		}
+	}
+
+	otherFunction() {
+		console.log('hey');
+	}
+}
+
+class Ford extends Car {
+	constructor() {
+		super();
+	}
+}
+
+const car = new Car();
+const ford =  new Car();
+
+//reduce code
+const user = {
+	name: "Sabrina",
+	lastname: "Boing",
+	age: 24
+};
+
+//version 1
+const {name} = user;
+console.log(name);
+console.log(lastname);
+console.log(age);
+
+//version 2
+const message = ({name, lastname, age}, salute) => {
+	console.log('my name is ${name} ${lastname}, age ${age}');
+}
+message(user, 'hey');
+
+
+//arguments
+const users = {
+	names:['sabrina', 'alexander', 'edson']
+}
+const {names: [name1, name2]} = users;
+console.log(name2);
+
+
+
