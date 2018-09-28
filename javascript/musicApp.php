@@ -1,4 +1,4 @@
-<?php include_once 'header.php'; ?>
+<?php include_once '../assets/header.php'; ?>
 	<section class="container music-app">
 		<div class="row">
 			<div class="search-container">
@@ -24,7 +24,7 @@
 			</div>
 		</div>
 	</section>
-    <script src="../templates/assets/js/musicApp.js"></script>
+    <script src="musicApp.js"></script>
 </body>
 </html>
 

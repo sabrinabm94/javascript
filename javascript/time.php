@@ -7,7 +7,7 @@
 	        <navbar class="navbar">
 	        </navbar>
 	    </footer>
-	    <script src="../templates/assets/js/time.js"></script>
+	    <script src="time.js"></script>
 	</body>
 </html>
 

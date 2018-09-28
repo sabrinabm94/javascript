@@ -1,4 +1,4 @@
-		<?php include_once 'header.php'; ?>
+		<?php include_once '../assets/header.php'; ?>
 		<div class="container">
 			<section id="form" class="form">
 				<h1 class="title">Check your weather</h1>
@@ -23,7 +23,7 @@
 	        </navbar>
 	    </footer>
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	    <script src="../templates/assets/js/weatherApi.js"></script>
+	    <script src="weatherApi.js"></script>
 	</body>
 </html>
 

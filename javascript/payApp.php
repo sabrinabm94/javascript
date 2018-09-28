@@ -1,4 +1,4 @@
-<?php include_once 'header.php'; ?>
+<?php include_once '../assets/header.php'; ?>
 	<section class="container">
 		<div class="row">
 			<div class="applicant-container">
@@ -27,7 +27,7 @@
         <navbar class="navbar">
         </navbar>
     </footer>
-    <script src="../templates/assets/js/payApp.js"></script>
+    <script src="payApp.js"></script>
 </body>
 </html>
 
