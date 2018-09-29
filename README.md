@@ -16,7 +16,7 @@ Scripts for testing react features and sintax. In the Apps project you can see s
 Scripts for testing angular features and sintax. In the Apps project you can see some web applications created in angular.
 
 
-# Using the Javascript and jQuery repositories project
+# Using the Javascript and jQuery repositories projects
 
 ## Initialize Xampp with Apach and MySQL activated
 noobfrontend.wordpress.com/2018/04/28/montando-ambiente-web-com-xampp
@@ -26,7 +26,7 @@ localhost/javascript
 
 
 ## Acess the projects
-Your main directory of repository needs to be in C:\xampp\htdocs\javascript.
+Your main directory of repository needs to be in C:\xampp\htdocs.
 
 Use the acess link in your browser.
 
