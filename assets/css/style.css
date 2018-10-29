@@ -1,21 +1,24 @@
+/* general */
 input {
   height: 40px;
   margin-bottom: 10px;
   padding: 5px 10px 5px 10px;
 }
+
 .bg {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
+
 @media(max-width: 1024px) {
   .hide-mobile {
-    display: none !important;
+    display: none;
   }
 }
 @media(min-width: 1025px) {
   .hide-desk {
-    display: none !important;
+    display: none;
   }
   .main {
     padding-top: 50px;
@@ -25,12 +28,20 @@ input {
     height: 80px;
   }
 }
+
+/* specify */
 body, .text {
   font-size: 16px;
   line-height: 18px;
 }
+
 a, a:hover {
   color: #212529;
+}
+
+body, .text {
+  font-size: 16px;
+  line-height: 18px;
 }
 .container {
   width: 100%;
@@ -65,9 +76,6 @@ a, a:hover {
   max-width: 500px;
   margin: 0 auto;
   display: block;
-}
-ul {
-  padding-left: 0;
 }
 
 /* applicant app */
