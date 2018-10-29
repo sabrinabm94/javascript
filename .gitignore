@@ -1,3 +1,4 @@
 node_modules
 .sass-cache
 templates/assets/css/*.map
+react/template/node_modules
