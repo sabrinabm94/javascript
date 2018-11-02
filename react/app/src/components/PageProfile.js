@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Form } from 'reactstrap';
 
 import SidebarLogged from './SidebarLogged';
-import ButtonGrey from './ButtonGrey';
+import Button from './Button';
 
 class PageProfile extends Component {
   render() {
@@ -40,7 +40,7 @@ class PageProfile extends Component {
                   </div>
                   <div className="row">
                     <div className="col-12 col-md-12 col-lg-4">
-                      <ButtonGrey text="Editar" />
+                      <Button text="Editar" />
                     </div>
                   </div>
                 </div>

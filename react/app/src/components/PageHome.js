@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import SliderFull from './SliderFull';
 import SliderLogos from './SliderLogos';
 
-import ButtonGrey from './ButtonGrey';
+import Button from './Button';
 
 class PageHome extends Component {
   render() {
@@ -16,7 +16,7 @@ class PageHome extends Component {
             </section>
             <section className="section">
               <h2 className="title">Conheça mais sobre nós</div>
-              <ButtonGrey text="Ver mais" link="/PageAboutUs" />
+              <Button text="Ver mais" link="/PageAboutUs" />
             </section>
             <section className="slider-logos">
               <div className="content">
@@ -27,7 +27,7 @@ class PageHome extends Component {
             <section className="section">
               <h2 className="title">Já é registrado?</div>
               <h2 class="title">Acesse sua conta</h2>
-              <ButtonGrey text="Entrar" link="/PageLogin" />
+              <Button text="Entrar" link="/PageLogin" />
             </section>
           </div>
         </div>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { Form, InputGroup, FormGroup, Label, Input } from 'reactstrap';
 
-import ButtonGrey from './ButtonGrey';
+import Button from './Button';
 
 class PageRegister extends Component {
   render() {
@@ -42,7 +42,7 @@ class PageRegister extends Component {
                 </div>
                 <div className="col-0 col-md-0 col-lg-7" />
                 <div className="col-md-4 col-lg-5">
-                  <ButtonGrey text="Cadastrar" />
+                  <Button text="Cadastrar" />
                 </div>
               </div>
             </Form>

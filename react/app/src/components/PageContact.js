@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import ButtonGrey from './ButtonGrey';
+import Button from './Button';
 
 import {
   InputGroup,
@@ -73,7 +73,7 @@ class PageContact extends Component {
               <div className="row">
                 <div className="col-lg-7" />
                 <div className="col-lg-5">
-                  <ButtonGrey text="Enviar" />
+                  <Button text="Enviar" />
                 </div>
               </div>
             </form>
