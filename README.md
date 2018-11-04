@@ -15,6 +15,7 @@ Scripts for testing react features and sintax. In the Apps project you can see s
 ## angular
 Scripts for testing angular features and sintax. In the Apps project you can see some web applications created in angular.
 
+---
 
 # Using the Javascript and jQuery repositories projects
 
@@ -32,6 +33,7 @@ Use the acess link in your browser.
 
 Select the projects to see in the index.html file.
 
+---
 
 # Using the React and Angular repositories project
 
@@ -48,7 +50,7 @@ Use the acess link in your browser to acess the project page.
 
 ---
 
-# contacts
+# Contacts
 sabrinabgbc
 
 sabrinabgbc@email.com
