@@ -1,5 +1,5 @@
-		<?php include_once '../assets/header.php'; ?>
-		<div class="container">
+		<?php include 'https://github.com/sabrinabgbc/front-end-environment/blob/master/default-files/template/header.php'; ?>
+		<section class="container">
 			<h1 class="title">Events</h1>
 			<h2 class="subtitle">Open the console of browser and watch the magic happen!</h2>
 			<button class="button" id="titleShowPopUp">Test pop up</button>
@@ -11,7 +11,7 @@
 				<div class="child" id="child">
 				</div>
 			</div>
-		</div>
+		</section>
 	    <footer class="footer">
 	        <navbar class="navbar">
 	        </navbar>

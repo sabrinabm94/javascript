@@ -1,4 +1,4 @@
-<?php include_once '../assets/header.php'; ?>
+	<?php include 'https://github.com/sabrinabgbc/front-end-environment/blob/master/default-files/template/header.php'; ?>
 	<section class="container music-app">
 		<div class="row">
 			<div class="search-container">

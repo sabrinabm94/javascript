@@ -1,58 +1,69 @@
-# Repository structure
+# repository structure
 
 ## assets
-The assets folder has images and other files that will be reused by the projects.
+The assets folder has images and other files that will be reused by the projects, some files come from front-end-environment repository.
 
 ## javascript
-Scripts for testing javascript features and sintax. In the Apps project you can see some web applications created in javascript.
+Scripts for testing javascript features and sintax, and apps.
 
 ## jquery
-Scripts for testing jQuery features and sintax. In the Apps project you can see some web applications created in jQuery.
+Scripts for testing jQuery features and sintax, and apps.
 
 ## react
-Scripts for testing react features and sintax. In the Apps project you can see some web applications created in react.
+Project structure for fast init and apps.
 
 ## angular
-Scripts for testing angular features and sintax. In the Apps project you can see some web applications created in angular.
+Project structure for fast init and apps.
+
 
 ---
 
-# Using the Javascript and jQuery repositories projects
 
-## Initialize Xampp with Apach and MySQL activated
+# for Javascript and jQuery projects
+
+## Xampp
+
+### initialize Xampp with Apach and MySQL activated
 noobfrontend.wordpress.com/2018/04/28/montando-ambiente-web-com-xampp
 
-## Acess link
-localhost/javascript
+### htdocs directory
+Move your project repository to C:\xampp\htdocs, become C:\xampp\htdocs\javascript.
 
+### access the project in browser
+You can access the project in your browser: localhost/javascript
 
-## Acess the projects
-Your main directory of repository needs to be in C:\xampp\htdocs.
-
-Use the acess link in your browser.
-
-Select the projects to see in the index.html file.
 
 ---
 
-# Using the React and Angular repositories project
 
-## Install npm modules
-Go to the folder main project, open one terminal in this directore and use the command npm install.
+# for React and Angular projects
 
-## Inicialize npm
-In the folder main project directore, use the command npm start.
+## install npm modules
+* go to the folder main project (ex. C:\xampp\htdocs\javascript\react\app)
+* open the terminal in this directore
+* use the command "npm install"
 
-## Acess link
-Localhost/project-name 
+PS: you just need use the command npm install one time after clone the repository
 
-Use the acess link in your browser to acess the project page.
+
+## inicialize project
+* go to the folder main project (ex. C:\xampp\htdocs\javascript\react\app)
+* open the terminal in this directore
+* use the command "npm start"
+
+PS: to cancel the project compilation, use CTRL + C in terminal
+
+
+## access the project in browser
+You can access the project in your browser: localhost:port/project-name.
 
 ---
 
 # Contacts
 sabrinabgbc
 
-sabrinabgbc@email.com
+sabrinabgbc@email.com | sabrinabmoreira@gmail.com
 
 noobfrontend.wordpress.com
+
+www.linkedin.com/in/sabrinabmoreira

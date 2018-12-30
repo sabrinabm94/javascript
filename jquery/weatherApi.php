@@ -1,4 +1,4 @@
-		<?php include_once '../assets/header.php'; ?>
+		<?php include 'https://github.com/sabrinabgbc/front-end-environment/blob/master/default-files/template/header.php'; ?>
 		<div class="container">
 			<section id="form" class="form">
 				<h1 class="title">Check your weather</h1>
@@ -22,7 +22,7 @@
 	        <navbar class="navbar">
 	        </navbar>
 	    </footer>
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	    <?php include 'https://github.com/sabrinabgbc/front-end-environment/blob/master/default-files/template/footer.php'; ?>
 	    <script src="weatherApi.js"></script>
 	</body>
 </html>
