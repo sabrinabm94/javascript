@@ -59,7 +59,7 @@ You can access the project in your browser: localhost:port/project-name.
 
 ---
 
-# Contacts
+# contacts
 sabrinabgbc
 
 sabrinabgbc@email.com | sabrinabmoreira@gmail.com
