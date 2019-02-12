@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Business Casual - Start Bootstrap Theme</title>
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav main-menu hide-mobile">
+  <div class="row">
+    <div class="col-sx-5 col-sm-5 col-md-5 col-lg-3 col-xl-3">
+      <a class="link" routerLink="/homepage">
+        <div class="logo bg"></div>
+      </a>
+    </div>
+    <div class="col-sx-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
+      <a class="link" routerLink="/about-us">Sobre nós</a>
+      <a class="link" routerLink="/contact">Contato</a>
+      <a class="link">
+        <div ngbDropdown class="d-inline-block">
+          <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Outros</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button class="dropdown-item">
+              <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/">Link</a>
+            </button>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</nav>
+<nav class="nav mobile-menu hide-desk navbar navbar-expand-lg navbar-dark hide-desk">
+  <div class="collapse navbar-collapse show">
+    <a class="link" routerLink="/homepage">
+      <div class="logo bg"></div>
+    </a>
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="link" routerLink="/about-us">Sobre nós</a>
+        </li>
+        <li class="nav-item">
+          <a class="link" routerLink="/contact">Contato</a>
+        </li>
+        <li class="nav-item">
+          <a class="link nav-item dropdown" dropdown *ngIf="">
+            <a dropdownToggle class="dropdown-toggle">
+              Usuários
+              <span class="caret"></span>
+            </a>
+            <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+              <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/">1</a>
+            </div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="link nav-item dropdown" dropdown *ngIf="">
+            <a dropdownToggle class="dropdown-toggle">
+              Administrador
+              <span class="caret"></span>
+            </a>
+            <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+              <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/">1</a>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
