@@ -14,7 +14,7 @@ Project structure for fast init and apps.
 
 ## angular
 - static website created using angular.
-- gif search api
+- search gifs app using giphy api. 
 
 ---
 
