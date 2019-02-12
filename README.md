@@ -13,8 +13,8 @@ Scripts for testing jQuery features and sintax, and apps.
 Project structure for fast init and apps.
 
 ## angular
-Project structure for fast init and apps.
-
+- static website created using angular.
+- gif search api
 
 ---
 
