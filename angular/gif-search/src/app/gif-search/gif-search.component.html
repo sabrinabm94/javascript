@@ -1,0 +1,29 @@
+<section class="search-form">
+  <div class="row">
+    <div class="col-lg-4">
+      <label class="label" for="limit">Limite</label>
+      <input type="text" class="input" placeholder="0">
+    </div>
+    <div class="col-lg-8">
+      <label class="label" for="term">Termo de busca</label>
+      <input type="text" class="input" placeholder="Termo" (keyup.enter)="search()">
+    </div>
+    <div class="col-lg-2">
+      <!-- event bind -->
+      <button class="button btn btn-primary" (click)="search()">
+        Pesquisar
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="results">
+  <div class="row">
+    <div class="col-lg-4" *ngFor="let gif of gifs">
+      <a href="gif.url" target="_blank" class="link">
+        <h3 class="title">{{gif.title}}</h3>
+        <div class="image bg" [style.backgroundImage]="'url('+ gif.images.original.url +')'"></div>
+      </a>
+    </div>
+  </div>
+</section>
