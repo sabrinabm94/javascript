@@ -1,0 +1,25 @@
+.results .col-lg-4 {
+    height: 160px;
+    margin-bottom: 40px;
+}
+
+.button .input, .bg {
+    height: 100%;
+}
+
+.results {
+    padding: 20px;
+}
+
+.bg {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.title {
+    font-size: 22px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

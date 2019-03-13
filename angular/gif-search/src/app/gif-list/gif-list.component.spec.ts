@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { GifSearchComponent } from './gif-search.component';
+import { GifListComponent } from './gif-list.component';
 
-describe('GifSearchComponent', () => {
-  let component: GifSearchComponent;
-  let fixture: ComponentFixture<GifSearchComponent>;
+describe('GifListComponent', () => {
+  let component: GifListComponent;
+  let fixture: ComponentFixture<GifListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GifSearchComponent ]
+      declarations: [ GifListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GifSearchComponent);
+    fixture = TestBed.createComponent(GifListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

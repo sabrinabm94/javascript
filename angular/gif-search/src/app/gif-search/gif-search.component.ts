@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { GifSearchService } from './git-search.service';
 
 @Component({
@@ -8,7 +8,8 @@ import { GifSearchService } from './git-search.service';
 })
 
 export class GifSearchComponent implements OnInit {
-  gifs: any = [];
+  @Output() sendToList = new EventEmitter<any[]>();
+  public gifs:any[] = [];
 
   //inclusão do service: injeção de dependencia ou inversão de controles
   constructor(private service: GifSearchService) {
@@ -24,7 +25,9 @@ export class GifSearchComponent implements OnInit {
   }
 
   async search(limit:number, term:string) {
-    let response = await this.searchGif(5, "dogs")
+    this.gifs = [];
+
+    let response = await this.searchGif(limit, term)
     .toPromise()
     .catch(error => console.log(error));
 
@@ -34,6 +37,12 @@ export class GifSearchComponent implements OnInit {
       this.gifs.push(gif);
     });
 
+    this.sendDataToPage(this.gifs);
+
     return this.gifs;
+  }
+
+  sendDataToPage(elements) {
+    this.sendToList.emit(elements);
   }
 }
