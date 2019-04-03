@@ -1,24 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { GifSearchComponent } from './gif-search.component';
+//fdescribe
+//vai só rodar todos os testes 9it) que existen dentro deste describe
 
-describe('GifSearchComponent', () => {
-  let component: GifSearchComponent;
-  let fixture: ComponentFixture<GifSearchComponent>;
+fdescribe('GifSearchService', () => {
+  it("2 deveria ser igual a 2", () => {
+    //entrada
+    let a = 0;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ GifSearchComponent ]
-    })
-    .compileComponents();
-  }));
+    //processamento
+    a = 0 + 1;
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(GifSearchComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    //saída: resultado esperado
+    expect(a).toBe(2);
   });
 });
+
+//ng test
