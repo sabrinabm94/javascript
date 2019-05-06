@@ -7,11 +7,11 @@
     </div>
     <div class="col-sm-6 col-md-6 col-lg-6">
       <label class="label" for="term">Termo de busca</label>
-      <input type="text" class="input" placeholder="Termo" #term (keyup.enter)="search(limit.value, term.value)">
+      <input type="text" class="input" placeholder="Termo" #term (keyup.enter)="search(term.value, limit.value)">
     </div>
     <div class="col-sm-2 col-md-2 col-lg-2">
       <!-- event bind -->
-      <button class="button btn btn-primary" (click)="search(limit.value, term.value)">
+      <button class="button btn btn-primary" (click)="search(term.value, limit.value)">
         Pesquisar
       </button>
     </div>
