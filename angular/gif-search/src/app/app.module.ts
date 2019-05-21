@@ -14,6 +14,10 @@ import { GifListComponent } from './gif-list/gif-list.component';
     GifSearchComponent,
     GifListComponent
   ],
+  exports: [
+    GifSearchComponent,
+    GifListComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
