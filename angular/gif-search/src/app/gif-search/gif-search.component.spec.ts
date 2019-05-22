@@ -1,25 +1,30 @@
+/* tslint:disable:no-unused-variable */
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { GifSearchComponent } from './gif-search.component';
 import { GifSearchService } from './git-search.service';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {HttpClientModule} from '@angular/common/http';
 
-describe('gif-search.service.spec.ts', () => {
-    let service: GifSearchService;
-    const httpMock = jasmine.createSpyObj('Http', ['get']);
+xdescribe('GifSearchComponent', () => {
+  let component: GifSearchComponent;
+  let fixture: ComponentFixture<GifSearchComponent>;
 
-    beforeEach(() => {
-        service = new GifSearchService(null);
-    });
-
-    let term:string = "happy";
-    let limit:number = 2;
-    let finalUrl:string = "//api.giphy.com/v1/gifs/search?q=" + term + "&api_key=" +  service.getApiKey() + "&limit=" + limit;
-
-    it('gifSearch', () => {
-        service.searchGif(term, limit);
-        expect(httpMock.get).toHaveBeenCalled();
-        expect(httpMock.get).toHaveBeenCalledWith(finalUrl);
-    });
-
-    it('getUrl', () => {
-        const url = service.getUrl(term, limit);
-        expect(url).toBe(finalUrl);
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [GifSearchComponent],
+      imports: [HttpClientTestingModule], 
+      providers: [GifSearchService]
     })
+      .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(GifSearchComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create GifSearchComponent', () => {
+    expect(component).toBeTruthy();
+  });
 });

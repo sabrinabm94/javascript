@@ -1,57 +1,37 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { GifListComponent } from './gif-list.component';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { GifSearchService } from '../gif-search/git-search.service';
+import { TestBed, fakeAsync, ComponentFixture } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from 'selenium-webdriver/http';
 
-describe('GifListComponent', () => {
-  let component: GifListComponent;
-  let fixture: ComponentFixture<GifListComponent>;
+fdescribe('GifListComponent', () => {
+  let gifList: GifListComponent;
+  let service: GifSearchService;
+  let httpMock: any
+  let limit: number = 1;
+  let term: string = "dogs";
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ 
-        GifListComponent 
-      ],
-    })
-    .compileComponents().then(() => {
-      fixture = TestBed.createComponent(GifListComponent);
-      component = fixture.componentInstance;
-      fixture.detectChanges();
-    });
-  }));
-
-  it('try create the component', () => {
-    expect(component).toBeTruthy();
-    expect(component).not.toBeNull();
+  beforeEach(() => {
+    gifList = new GifListComponent(httpMock);
+    httpMock = jasmine.createSpyObj('http', [ 'get', 'post' ]);
+    service = new GifSearchService(httpMock);
   });
 
-  it('search for html tag', () => {
-    component.gifs = [
-      {
-        id: "1",
-        url: "localhost",
-        images: {
-          fixed_height: {
-            url: "localhost/01.gif"
-          }
-        }
-      }, 
-      {
-        id: "2",
-        url: "localhost",
-        images: {
-          fixed_height: {
-            url: "localhost/02.gif"
-          }
-        }
-      },
-    ];
-
-    fixture.detectChanges();
-    fixture.whenStable().then(() => {
-      //verifica se será renderizado 2 tags a
-      let debugElement:DebugElement[] = fixture.debugElement.queryAll(By.css('a'));
-      expect(debugElement.length).toBe(2);
-    });
+  it('Should instantiate gifs list', () => {
+    expect(JSON.stringify(gifList.gifs)).toBe(JSON.stringify([]));
+    expect(gifList.gifs).not.toBeNull();
+    expect(gifList.gifs.length).toBe(0);
   });
+
+  it('Should call method get when search for gifs', () => {
+    service.searchGif(term, limit);
+    expect(httpMock.get).toHaveBeenCalled();
+  });
+
+  /* todo ajustar método
+  it('Should return value when search for gifs', () => {
+    let result = service.searchGif(term, limit);
+    expect(result.length).toBeGreaterThan(0);
+  });
+  */
 });

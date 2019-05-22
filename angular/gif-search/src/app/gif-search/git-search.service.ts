@@ -1,5 +1,7 @@
 import { Injectable, EventEmitter, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Gif } from '../model/gif';
 
 @Injectable({ providedIn: 'root' })
 
@@ -20,8 +22,8 @@ export class GifSearchService {
     }
 
     //modelo assincrono, fazemos uma requisição sem bloquear a aplicação esperando sua resposta.
-    searchGif(term:string, limit:number) {
+    searchGif(term:string, limit:number):Observable<Gif[]> {
         let url:string = this.getUrl(term, limit);
-        return this.http.get(`${url}/`);
+        return  this.http.get<Gif[]>(`${url}/`);
     }
 }

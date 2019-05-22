@@ -20,14 +20,14 @@ export class GifSearchComponent implements OnInit {
 
   }
 
-  searchGif(limit:number, term:string): any {
-    return this.service.searchGif(limit, term);
+  searchGif(term:string, limit:number): any {
+    return this.service.searchGif(term, limit);
   }
 
-  async search(limit:number, term:string) {
+  async search(term:string, limit:number) {
     this.gifs = [];
 
-    let response = await this.searchGif(limit, term)
+    let response = await this.searchGif(term, limit)
     .toPromise()
     .catch(error => console.log(error));
 
