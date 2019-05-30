@@ -22,8 +22,24 @@ export class GifSearchService {
     }
 
     //modelo assincrono, fazemos uma requisição sem bloquear a aplicação esperando sua resposta.
-    searchGif(term:string, limit:number):Observable<Gif[]> {
+    searchGif(term:string, limit:number):any {
         let url:string = this.getUrl(term, limit);
         return  this.http.get<Gif[]>(`${url}/`);
     }
+
+    async formate(term:string, limit:number) {
+        let gifs = [];
+    
+        let response = await this.searchGif(term, limit)
+        .toPromise()
+        .catch(error => console.log(error));
+    
+        response = response.data;
+    
+        response.forEach(gif => {
+          gifs.push(gif);
+        });
+
+        return gifs;
+      }
 }

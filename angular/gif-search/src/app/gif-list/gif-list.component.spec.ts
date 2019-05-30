@@ -1,11 +1,11 @@
 import { GifListComponent } from './gif-list.component';
 import { GifSearchService } from '../gif-search/git-search.service';
-import { TestBed, fakeAsync, ComponentFixture } from '@angular/core/testing';
-import { HttpClientModule } from '@angular/common/http';
-import { HttpClient } from 'selenium-webdriver/http';
+import { GifSearchComponent } from '../gif-search/gif-search.component';
+
 
 fdescribe('GifListComponent', () => {
   let gifList: GifListComponent;
+  let gifSearch: GifSearchComponent;
   let service: GifSearchService;
   let httpMock: any
   let limit: number = 1;
@@ -13,6 +13,7 @@ fdescribe('GifListComponent', () => {
 
   beforeEach(() => {
     gifList = new GifListComponent(httpMock);
+    gifSearch = new GifSearchComponent(httpMock);
     httpMock = jasmine.createSpyObj('http', [ 'get', 'post' ]);
     service = new GifSearchService(httpMock);
   });
@@ -28,10 +29,8 @@ fdescribe('GifListComponent', () => {
     expect(httpMock.get).toHaveBeenCalled();
   });
 
-  /* todo ajustar método
   it('Should return value when search for gifs', () => {
-    let result = service.searchGif(term, limit);
-    expect(result.length).toBeGreaterThan(0);
+    let results = service.formate(term, limit);
+    expect(results).toBeGreaterThan(0);
   });
-  */
 });
