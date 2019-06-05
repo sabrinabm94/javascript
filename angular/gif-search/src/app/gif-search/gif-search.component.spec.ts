@@ -3,7 +3,6 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import { GifSearchComponent } from './gif-search.component';
 import { GifSearchService } from './git-search.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import {HttpClientModule} from '@angular/common/http';
 
 xdescribe('GifSearchComponent', () => {
   let component: GifSearchComponent;

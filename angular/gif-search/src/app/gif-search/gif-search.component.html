@@ -1,19 +1,21 @@
 <section class="search-form">
   <h1 class="title">Gif search</h1>
-  <div class="row">
-    <div class="col-sm-4 col-md-4 col-lg-4">
-      <label class="label" for="limit">Limite</label>
-      <input type="text" class="input" placeholder="0" #limit>
+  <form class="form" id="form" [formGroup]="form">
+    <div class="row">
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <label class="label" for="limit">Limite</label>
+        <input type="text" placeholder="0" id="limit" class="input form-control" name="limit" formControlName="limit" required>
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-6">
+        <label class="label" for="term">Termo de busca</label>
+        <input type="text" placeholder="Termo" id="term" class="input form-control" name="term" formControlName="term" required (keyup.enter)="search(form)">
+      </div>
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <!-- event bind -->
+        <button class="button btn btn-primary" (click)="search(form)">
+          Pesquisar
+        </button>
+      </div>
     </div>
-    <div class="col-sm-6 col-md-6 col-lg-6">
-      <label class="label" for="term">Termo de busca</label>
-      <input type="text" class="input" placeholder="Termo" #term (keyup.enter)="search(term.value, limit.value)">
-    </div>
-    <div class="col-sm-2 col-md-2 col-lg-2">
-      <!-- event bind -->
-      <button class="button btn btn-primary" (click)="search(term.value, limit.value)">
-        Pesquisar
-      </button>
-    </div>
-  </div>
+  </form>
 </section>

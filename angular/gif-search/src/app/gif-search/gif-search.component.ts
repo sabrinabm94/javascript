@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { GifSearchService } from './git-search.service';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-gif-search',
@@ -10,6 +11,7 @@ import { GifSearchService } from './git-search.service';
 export class GifSearchComponent implements OnInit {
   @Output() sendToList = new EventEmitter<any[]>();
   public gifs:any[] = [];
+  public form: FormGroup;
 
   //inclusão do service: injeção de dependencia ou inversão de controles
   constructor(private service: GifSearchService) {
@@ -17,32 +19,46 @@ export class GifSearchComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.buildForm();
   }
 
-  searchGif(term:string, limit:number): any {
+  //methods
+  buildForm() {
+    this.form = new FormGroup({
+      'limit': new FormControl([
+        Validators.required,
+      ]),
+      'term': new FormControl([
+        Validators.required,
+      ]),
+    });
+
+    this.form.reset();
+  }
+
+  searchGif(term: string, limit: number): any {
     return this.service.searchGif(term, limit);
   }
 
-  async search(term:string, limit:number) {
+  sendDataToPage(elements) {
+    this.sendToList.emit(elements);
+  }
+
+  //async
+  async search(form: FormGroup) {
     this.gifs = [];
 
-    let response = await this.searchGif(term, limit)
+    let response = await this.searchGif(form.value.term, form.value.limit)
     .toPromise()
     .catch(error => console.log(error));
 
     response = response.data;
-
     response.forEach(gif => {
       this.gifs.push(gif);
     });
 
     this.sendDataToPage(this.gifs);
-
+    
     return this.gifs;
-  }
-
-  sendDataToPage(elements) {
-    this.sendToList.emit(elements);
   }
 }

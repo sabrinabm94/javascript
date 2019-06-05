@@ -11,7 +11,7 @@ export class GifListComponent implements OnInit {
   @Input()
   public gifs:any[] = []
 
-  constructor(private title:Title) {
+  constructor(private title: Title) {
 
   }
 
@@ -20,7 +20,7 @@ export class GifListComponent implements OnInit {
     
   }
 
-  changePageTitle(title:string) {
+  changePageTitle(title: string) {
     return this.title.setTitle(title);
   }
 
