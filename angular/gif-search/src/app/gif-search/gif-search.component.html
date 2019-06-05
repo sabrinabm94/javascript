@@ -4,15 +4,21 @@
     <div class="row">
       <div class="col-sm-4 col-md-4 col-lg-4">
         <label class="label" for="limit">Limite</label>
-        <input type="text" placeholder="0" id="limit" class="input form-control" name="limit" formControlName="limit" required>
+        <input type="text" placeholder="0" id="limit" class="input form-control" name="limit" formControlName="limit" required  pattern={{limitPatter}}>
+        <div *ngIf="form.get('limit').touched && form.get('limit').invalid">
+          <span>Preencha o campo corretamente.</span>
+        </div>
       </div>
       <div class="col-sm-6 col-md-6 col-lg-6">
         <label class="label" for="term">Termo de busca</label>
-        <input type="text" placeholder="Termo" id="term" class="input form-control" name="term" formControlName="term" required (keyup.enter)="search(form)">
+        <input type="text" placeholder="Termo" id="term" class="input form-control" name="term" formControlName="term" required pattern={{termPatter}} (keyup.enter)="search(form)">
+        <div *ngIf="form.get('term').touched && form.get('term').invalid">
+          <span>Preencha o campo corretamente.</span>
+        </div>
       </div>
       <div class="col-sm-2 col-md-2 col-lg-2">
         <!-- event bind -->
-        <button class="button btn btn-primary" (click)="search(form)">
+        <button class="button btn btn-primary" (click)="search(form)" [disabled]="form.invalid">
           Pesquisar
         </button>
       </div>

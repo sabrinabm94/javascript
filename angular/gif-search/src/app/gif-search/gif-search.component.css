@@ -32,6 +32,10 @@
     margin: auto;
 }
 
+.ng-touched.ng-invalid {
+    border-color: red;
+}
+
 
 @media(min-width: 575px) {
     .button {

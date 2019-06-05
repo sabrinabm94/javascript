@@ -7,6 +7,8 @@ import { Gif } from '../model/gif';
 export class GifSearchService {
     private apiKey: string = "MeGG5sG2LWbeS2S6FhMHEBByZ51gsRie";
     private shortUrl: string = "//api.giphy.com/v1/gifs/search?q=";
+    public limitPatter: string = "^-?[0-9]\\d*(\\.\\d{1,2})?$";
+    public termPatter: string = "^[a-zA-Z0-9]*$";
 
     constructor(private http: HttpClient) {
 

@@ -10,8 +10,10 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 
 export class GifSearchComponent implements OnInit {
   @Output() sendToList = new EventEmitter<any[]>();
-  public gifs:any[] = [];
+  public gifs: any[] = [];
   public form: FormGroup;
+  public limitPatter: string;
+  public termPatter: string;
 
   //inclusão do service: injeção de dependencia ou inversão de controles
   constructor(private service: GifSearchService) {
@@ -24,9 +26,11 @@ export class GifSearchComponent implements OnInit {
 
   //methods
   buildForm() {
+    this.limitPatter = this.service.limitPatter;
+    this.termPatter = this.service.termPatter;
     this.form = new FormGroup({
       'limit': new FormControl([
-        Validators.required,
+        Validators.required, 
       ]),
       'term': new FormControl([
         Validators.required,
