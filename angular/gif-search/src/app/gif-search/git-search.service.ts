@@ -1,5 +1,5 @@
 import { Injectable, EventEmitter, Output } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Gif } from '../model/gif';
 import { Observable } from 'rxjs';
 
@@ -10,6 +10,8 @@ export class GifSearchService {
     private shortUrl: string = "//api.giphy.com/v1/gifs/search?q=";
     public limitPatter: string = "^-?[0-9]\\d*(\\.\\d{1,2})?$";
     public termPatter: string = "^[a-zA-Z0-9]*$";
+    //public headers = { headers: new HttpHeaders().set("Authorization", "Bearer 123") };
+    public headers = { headers: new HttpHeaders() };;
 
     constructor(private http: HttpClient) {
 
@@ -24,12 +26,13 @@ export class GifSearchService {
     }
 
     searchGif(term: string, limit: number): any {
-        let url:string = this.getUrl(term, limit);
-        return  this.http.get<Gif[]>(`${url}`);
+        let url: string = this.getUrl(term, limit);
+        return  this.http.get<Gif[]>(`${url}`, this.headers);
     }
 
     searchGifObservable(term: string, limit: number): Observable<any> {
-        let url:string = this.getUrl(term, limit);
-        return  this.http.get<Gif[]>(`${url}`);
+        let url: string = this.getUrl(term, limit);
+
+        return  this.http.get<Gif[]>(`${url}`, this.headers);
     }
 }
