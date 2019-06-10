@@ -11,7 +11,7 @@ export class GifSearchService {
     public limitPatter: string = "^-?[0-9]\\d*(\\.\\d{1,2})?$";
     public termPatter: string = "^[a-zA-Z0-9]*$";
     //public headers = { headers: new HttpHeaders().set("Authorization", "Bearer 123") };
-    public headers = { headers: new HttpHeaders() };;
+    public headers = { headers: new HttpHeaders() };
 
     constructor(private http: HttpClient) {
 
@@ -32,7 +32,6 @@ export class GifSearchService {
 
     searchGifObservable(term: string, limit: number): Observable<any> {
         let url: string = this.getUrl(term, limit);
-
         return  this.http.get<Gif[]>(`${url}`, this.headers);
     }
 }
