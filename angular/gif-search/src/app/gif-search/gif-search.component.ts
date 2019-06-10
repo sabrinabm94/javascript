@@ -24,6 +24,15 @@ export class GifSearchComponent implements OnInit {
     this.buildForm();
   }
 
+  //async
+  async searchByAsync(form: FormGroup) {
+    let response = await this.service.searchGif(form.value.term, form.value.limit)
+    .toPromise()
+    .catch(error => error = error);
+    
+    this.verifyResponse(response.data);
+  }
+
   //methods
   buildForm() {
     this.limitPatter = this.service.limitPatter;
@@ -40,29 +49,29 @@ export class GifSearchComponent implements OnInit {
     this.form.reset();
   }
 
-  searchGif(term: string, limit: number): any {
-    return this.service.searchGif(term, limit);
-  }
-
   sendDataToPage(elements) {
     this.sendToList.emit(elements);
   }
 
-  //async
-  async search(form: FormGroup) {
+  searchBySubscribe(form: FormGroup) {
+    this.service.searchGifObservable(form.value.term, form.value.limit)
+    .subscribe(
+      response => this.verifyResponse(response.data)
+    );
+  }
+
+  verifyResponse(response: any): any {
     this.gifs = [];
 
-    let response = await this.searchGif(form.value.term, form.value.limit)
-    .toPromise()
-    .catch(error => console.log(error));
-
-    response = response.data;
-    response.forEach(gif => {
-      this.gifs.push(gif);
-    });
-
-    this.sendDataToPage(this.gifs);
-    
-    return this.gifs;
+    if(response != null && response != undefined) {
+      response.forEach(gif => {
+        this.gifs.push(gif);
+      });
+      this.sendDataToPage(this.gifs);
+      return this.gifs;
+    } else {
+      console.log(response);
+      return response;
+    }
   }
 }

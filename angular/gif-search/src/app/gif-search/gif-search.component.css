@@ -36,7 +36,6 @@
     border-color: red;
 }
 
-
 @media(min-width: 575px) {
     .button {
         margin-top: 33px;
