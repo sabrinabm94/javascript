@@ -63,5 +63,12 @@ You can access the project in your browser: localhost:port/project-name.
 Sivy
 
 sivyboing@gmail.com
+<<<<<<< Updated upstream
 
 newcoderslab.wordpress.com
+=======
+
+www.thedevblog.com.br
+
+
+>>>>>>> Stashed changes

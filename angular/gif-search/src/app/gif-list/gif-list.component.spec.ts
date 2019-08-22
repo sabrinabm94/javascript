@@ -1,7 +1,11 @@
 import { GifListComponent } from './gif-list.component';
 import { GifSearchService } from '../gif-search/git-search.service';
+<<<<<<< Updated upstream
 import { GifSearchComponent } from '../gif-search/gif-search.component';
 
+=======
+import { Observable } from 'rxjs';
+>>>>>>> Stashed changes
 
 fdescribe('GifListComponent', () => {
   let gifList: GifListComponent;
@@ -26,11 +30,14 @@ fdescribe('GifListComponent', () => {
 
   it('Should call method get when search for gifs', () => {
     service.searchGif(term, limit);
-    expect(httpMock.get).toHaveBeenCalled();
+    expect(httpMock.post).toHaveBeenCalled();
   });
+<<<<<<< Updated upstream
 
   it('Should return value when search for gifs', () => {
     let results = service.formate(term, limit);
     expect(results).toBeGreaterThan(0);
   });
+=======
+>>>>>>> Stashed changes
 });
