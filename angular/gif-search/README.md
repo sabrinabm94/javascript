@@ -17,4 +17,5 @@ Application to search gifs in giphy repository.
 Sabrina B.
 
 sabrinabmoreira@gmail.com
+
 https://www.thedevblog.com.br/
