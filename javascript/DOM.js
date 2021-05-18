@@ -30,6 +30,12 @@ console.log(document.querySelector(".title"));
 console.log("querySelector for id");
 console.log(document.querySelector("#catch"));
 
+
+// best way to select
+console.log(document.querySelectorAll(".title"));
+//*supported for the most of browsers.
+
+
 // set a new style
 console.log("");
 console.log("createElementDiv and set a new style");
