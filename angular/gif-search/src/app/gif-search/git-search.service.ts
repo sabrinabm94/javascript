@@ -25,6 +25,7 @@ export class GifSearchService {
         return this.apiKey;
     }
 
+<<<<<<< Updated upstream
     searchGif(term: string, limit: number): any {
         let url: string = this.getUrl(term, limit);
         return  this.http.get<Gif[]>(`${url}`, this.headers);
@@ -33,5 +34,11 @@ export class GifSearchService {
     searchGifObservable(term: string, limit: number): Observable<any> {
         let url: string = this.getUrl(term, limit);
         return  this.http.get<Gif[]>(`${url}`, this.headers);
+=======
+    //modelo assincrono, fazemos uma requisição sem bloquear a aplicação esperando sua resposta.
+    searchGif(term:string, limit:number):any {
+        let url:string = this.getUrl(term, limit);
+        return this.http.get(`${url}/`);
+>>>>>>> Stashed changes
     }
 }
