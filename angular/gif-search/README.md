@@ -14,8 +14,8 @@ Application to search gifs in giphy repository.
 
 
 # Contacts
-Saenyra
+Sabrina B.
 
-saenyra@gmail.com
+sabrinabmoreira@gmail.com
 
-newcoderslab.wordpress.com
+https://www.thedevblog.com.br/

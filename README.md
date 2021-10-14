@@ -1,44 +1,44 @@
-# repository structure
+# Repository structure
 
-## assets
+## Assets
 The assets folder has images and other files that will be reused by the projects, some files come from front-end-environment repository.
 
-## javascript
+## Javascript
 Scripts for testing javascript features and sintax, and apps.
 
-## jquery
+## Jquery
 Scripts for testing jQuery features and sintax, and apps.
 
-## react
+## React
 Project structure for fast init and apps.
 
-## angular
+## Angular
 - static website created using angular.
 - search gifs app using giphy api. 
 
 ---
 
 
-# for Javascript and jQuery projects
+# For Javascript and jQuery projects
 
 ## Xampp
 
-### initialize Xampp with Apach and MySQL activated
+### Initialize Xampp with Apach and MySQL activated
 noobfrontend.wordpress.com/2018/04/28/montando-ambiente-web-com-xampp
 
-### htdocs directory
+### Htdocs directory
 Move your project repository to C:\xampp\htdocs, become C:\xampp\htdocs\javascript.
 
-### access the project in browser
+### Access the project in browser
 You can access the project in your browser: localhost/javascript
 
 
 ---
 
 
-# for React and Angular projects
+# For React and Angular projects
 
-## install npm modules
+## Install npm modules
 * go to the folder main project (ex. C:\xampp\htdocs\javascript\react\app)
 * open the terminal in this directore
 * use the command "npm install"
@@ -46,7 +46,7 @@ You can access the project in your browser: localhost/javascript
 PS: you just need use the command npm install one time after clone the repository
 
 
-## inicialize project
+## Inicialize project
 * go to the folder main project (ex. C:\xampp\htdocs\javascript\react\app)
 * open the terminal in this directore
 * use the command "npm start"
@@ -54,21 +54,14 @@ PS: you just need use the command npm install one time after clone the repositor
 PS: to cancel the project compilation, use CTRL + C in terminal
 
 
-## access the project in browser
+## Access the project in browser
 You can access the project in your browser: localhost:port/project-name.
 
 ---
 
-# contacts
-Sivy
+# Contacts
+Sabrina B.
 
-sivyboing@gmail.com
-<<<<<<< Updated upstream
+sabrinabmoreira@gmail.com
 
-newcoderslab.wordpress.com
-=======
-
-www.thedevblog.com.br
-
-
->>>>>>> Stashed changes
+https://www.thedevblog.com.br/

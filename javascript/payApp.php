@@ -1,4 +1,4 @@
-	<?php include 'https://github.com/sabrinabgbc/front-end-environment/blob/master/default%20files/template/header.php'; ?>
+<?php echo file_get_contents('https://raw.githubusercontent.com/sabrinabm/front-end-environment/master/default-files/template/header.php'); ?>
 	<section class="container">
 		<div class="row">
 			<div class="applicant-container">

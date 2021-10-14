@@ -1,4 +1,4 @@
-		<?php include 'https://github.com/sabrinabgbc/front-end-environment/blob/master/default-files/template/header.php'; ?>
+<?php echo file_get_contents('https://raw.githubusercontent.com/sabrinabm/front-end-environment/master/default-files/template/header.php'); ?>
 		<section class="container">
 			<h1 class="title">Exercises</h1>
 			<h2 class="subtitle">Open the console of browser and watch the magic happen!</h2>
