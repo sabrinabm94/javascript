@@ -50,27 +50,29 @@ function showParent() {
 }
 
 function showChild(event) {
-	event.stopPropagation();
+	event.stopPropagation(); //avoid bubble effect, we want just the click event of the child, avoid the click event in parent be triggered
 	event.target.style.background = "orange";
 	console.log("show child");
 }
 
-//invoke functions
+//invoke is used to imedity invoke one function just when it was read
 console.log("");
-console.log("invoke functions");
+console.log("Invoke function");
 var name = "Sabrina";
 (function showName() {
-	console.log(name);
+	console.log("Invoke " + name); //sabrina
 })(name);
 
-//closures
+//closures prevent that variables used inside the closure function be changed by scripts outside
+var total = 0; //global scope
 console.log("");
-console.log("closures");
+console.log("Closure function");
 function multiply(value) {
-	var total = value;
+	var total = value;  //local scope
 	return function() {
 		return total * 2;
 	}
 }
 var getResult = multiply(2);
-console.log(getResult());
+console.log("Closure " + getResult()); //4
+console.log("total " + total); //0

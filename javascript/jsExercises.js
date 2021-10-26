@@ -143,13 +143,13 @@ function getNameParameter(name) {
 
 getNameLocal();
 getNameGlobal();
-getNameParameter("Rebeca");
+getNameParameter("Rebeka");
 
 //text manipulation
 console.log("");
 console.log("text manipulation");
 
-var name = "Sabrina bgbc";
+var name = "Sabrina b m";
 
 var nameUppercase = name.toUpperCase();
 console.log(name + " toUppercase: " + nameUppercase);

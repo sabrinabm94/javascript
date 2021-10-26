@@ -5,7 +5,7 @@ setTimeout(function() {
 	console.log("");
 	console.log("setTimeout");
 	console.log("for 1 secs");
-}, 1000);
+}, 1000); //ms
 
 //setInterval, run forever for 1 secs, need be stoped
 var stopInterval = 0;

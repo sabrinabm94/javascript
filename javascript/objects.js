@@ -1,85 +1,92 @@
 //objects
 
 //create a object
-var name = "Elena";
+var name = "Lys";
 
-var user = {
-	name: "Sabrina",
+var user = { //object
+	name: "Sabrina", //key
 	lastName: "B.",
 	age: 23,
-	misc: {
-		hobbies: ['walking', 'ride a bike']
+	misc: { //key object
+		hobbies: ['walking', 'reading']
 	},
-	message: function() {
-		console.log('I am ' + this.name);
+	messageInsideObject: function() {
+		console.log('I`m ' + this.name);
 	},
-	message2: function() {
-		console.log('I am ' + name);
+	messageOutsideObject: function() {
+		console.log('I`m ' + name);
 	}
 };
 
-console.log("user: " + user);
-console.log("user hobbies: "  + user.hobbies);
+console.log(user);
+console.log(user.name + "`s hobbies "  + user.hobbies);
 
 //this
-user.message();
-user.message2();
+user.messageInsideObject(); //Sabrina
+user.messageOutsideObject(); //Lys
 
 //changing the object name
 user.name = "Verônica";
 console.log(user);
 
-//one away to create a new object
-var user = new Object();
-user.name = "Stefan";
-user.lastName = "Salvatore"
-user.age = 140;
+//other away to create a new object
+var otherUser = new Object();
+otherUser.name = "Phillip";
+otherUser.lastName = "Seifer"
+otherUser.age = 25;
 
-console.log(user);
+console.log(otherUser);
 
 //the best away to create a new object
-var user = {};
-user.addUser = function() {
+var someOne = {};
+someOne.addSomeOne = function() {
 	console.log("add new user");
 };
 
-user.name = "Katherina";
-user.lastName = "Petrova"
-user.age = 500;
+someOne.name = "Katherina";
+someOne.lastName = "Petra"
+someOne.age = 500;
 
-console.log(user);
+console.log(someOne);
 
 //prototipe
 console.log("");
 console.log("prototipe");
 
-//construction function
+//construction function to complement the prototype
 function User() {
-
+	//store local prototype
 }
 
 //create a new instance of object
 var fire = {
-	name: "Bonnie",
+	name: "Sara",
 	lastName: "Bennet"
 };
 
-var user = new User();
-user.name = "Caroline";
-user.lastName = "Forbis";
+var anyOne = new User();
+anyOne.name = "Anne";
+anyOne.lastName = "Vor";
 
-//add the function to User construction prototipe
-User.prototype.scream = function() {
-	console.log("user says Fire!!");
+//add the function to anyOne construction prototipe
+Object.prototype.scream = function() { //inside global scope by prototypes
+	console.log(anyOne.name + " says Fire!");
 };
 
-user.scream();
+anyOne.prototype.scream = function() { //inside user
+	console.log(anyOne.name + " says Fire!");
+};
 
-console.log(user.__proto__);
-console.log(fire.__proto__);
+anyOne.scream();
+
+console.log("user " + anyOne);
+console.log("user proto " + anyOne.__proto__);
+console.log("global proto " + global.__proto__);
+console.log("fire proto " + fire.__proto__);
+
 
 //using objects
-function human() {
+function human() { //constructor
 	this.eyesColor;
 	this.hairColor;
 	this.name;
@@ -91,19 +98,20 @@ function human() {
 }
 var woman = new human();
 woman.eyesColor = 'brown';
-woman.hairColor = 'blond';
+woman.hairColor = 'dark blond';
 woman.name = 'Sabrina';
-console.log('Object woman: ');
+console.log('One woman: ');
 console.log(woman);
 
 var man = new human();
 man.eyesColor = 'green';
 man.hairColor = 'dark blond';
 man.name = 'Alexander';
-console.log('Object man: ');
+console.log('One man: ');
 console.log(man);
 
-//car version 1
+//car 
+//version 1
 var car = new Car();
 
 Car.prototype.status = 'New';
@@ -120,7 +128,7 @@ const car = new Car();
 const ford =  new Car();
 console.log(ford);
 
-//car version 2
+//version 2
 class Car {
 	constructor() {
 		this.condition = 'New';
@@ -166,7 +174,7 @@ message(user, 'hey');
 
 //arguments
 const users = {
-	names:['sabrina', 'alexander', 'edson']
+	names:['Sabrina', 'Alexander', 'Edson']
 }
 const {names: [name1, name2]} = users;
 console.log(name2);

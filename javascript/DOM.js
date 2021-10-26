@@ -15,23 +15,27 @@ window.document.body.children[0].style.color = "red";
 console.log("");
 console.log("getElementsByTagName");
 console.log(document.getElementsByTagName("h1"));
+console.log(document.getElementsByTagName("h2")[1]);
 
 console.log("getElementsByClassName");
 console.log(document.getElementsByClassName("title"));
+console.log(document.getElementsByTagName("title")[1]);
+//this 2 previous examples have a problem to select one very specific element in doom
 
 console.log("getElementById");
 console.log(document.getElementById("catch"));
 
 // querySelector
 console.log("");
-console.log("querySelector for class");
+console.log("querySelector by class");
 console.log(document.querySelector(".title"));
 
-console.log("querySelector for id");
+console.log("querySelector by id");
 console.log(document.querySelector("#catch"));
+//*just return the first element with this class/id name
 
-
-// best way to select
+// querySelectorAll
+console.log("querySelectorAll by class");
 console.log(document.querySelectorAll(".title"));
 //*supported for the most of browsers.
 
