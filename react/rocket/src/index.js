@@ -5,7 +5,7 @@ import App from './App';
 
 
 render(
-  <App />, document.getElementsByClassName('intro')
+  <App />, document.getElementsByClassName('app')
   //<h2 class="subtitle">Title from index.js</h2>, document.getElementById("intro")
 );
 

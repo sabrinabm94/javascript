@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
 import Title from './components/Title';
+import './App.css';
+import Panda from './assets/imagens/panda.png';
 
 function App() {
   const [projects, setProjects] = useState(['Web development', 'Software development']); //estado
@@ -18,6 +20,8 @@ function App() {
     <>
       <Header />
       <Title text="Olá mundo !"/>
+
+      <img width="300" src={Image} alt="Um panda"/>
 
       <ul> 
         {projects.map(project => <li key={project}>{project}</li>)}
