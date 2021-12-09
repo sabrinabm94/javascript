@@ -1,0 +1,8 @@
+<button class="btn btn-danger alert-component" *ngIf="success == false && showComponent == true" (click)="hide()">
+  {{message}}
+  <i class="fa fa-times"></i>
+</button>
+<button class="btn btn-success alert-component" *ngIf="success == true && showComponent == true" (click)="hide()">
+  {{message}}
+  <i class="fa fa-times"></i>
+</button>

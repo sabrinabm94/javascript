@@ -1,0 +1,42 @@
+import { User } from './user';
+import { MaritalStatus } from './maritalStatus';
+import { Orientation } from './orientation';
+import { BodyType } from './bodyType';
+import { Ethnicity } from './ethnicity';
+import { Religion } from './religion';
+import { Education } from './education';
+import { Politics } from './politics';
+import { Frequency } from './frequency';
+import { Diet } from './diet';
+import { Pets } from './pets';
+import { Kids } from './kids';
+import { Relationship } from './relationship';
+import { Wants } from './wants';
+import { TimeAgo } from './timeAgo';
+
+export class DeepUser extends User {
+    phoneNumber: number;
+    maritalStatus: MaritalStatus;
+    orientation: Orientation;
+    relationshipType: Relationship;
+    bodyType: BodyType;
+    height: number;
+    ethnicity: Ethnicity;
+    religion: Religion;
+    politics: Politics;
+    education: Education;
+    alcohol: Frequency;
+    smoking: Frequency;
+    marijuana: Frequency;
+    diet: Diet;
+    exercises: Frequency;
+    pets: Pets;
+    kids: Kids;
+    wantsPets: Wants;
+    wantsKids: Wants;
+    acceptLiveTogether: boolean;
+    acceptACivilMarriage: boolean;
+    acceptAReligionMarriage: boolean;
+    relationshipDesired: Relationship;
+    lastSeriousRelationship: TimeAgo;
+}
