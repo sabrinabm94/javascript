@@ -1,0 +1,1 @@
+//set info in local storage

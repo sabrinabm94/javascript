@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { PropertiesService } from './properties.service';
-import { Message } from '../_model/Message';
-import { AuthService } from './auth.service';
 import { timeout, map, catchError} from 'rxjs/operators';
+import { Message } from '../_model/Message';
+import { PropertiesService } from './properties.service';
+import { AuthService } from './auth.service';
 
 @Injectable({ providedIn: 'root' })
 

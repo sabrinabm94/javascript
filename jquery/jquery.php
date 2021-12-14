@@ -1,11 +1,14 @@
 		<div class="container">
-			<h1 class="title">jQuery</h1>
+			<h1 class="title" animal="horse">jQuery</h1>
 			<h2 class="subtitle">Open the console of browser and watch the magic happen!</h2>
 		</div>
+		<form class="form" action="">
+			<input type="radio" name="radio" class="radio" id="radio">
+		</form>
 	    <footer class="footer">
 	        <navbar class="navbar">
 	        </navbar>
 	    </footer>
-	    <script src="jquery.js"></script>
+	    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	</body>
 </html>

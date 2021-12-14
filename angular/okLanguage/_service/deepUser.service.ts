@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { PropertiesService } from './properties.service';
-import { DeepUser } from '../_model/deepUser';
 import { timeout, map, catchError} from 'rxjs/operators';
+import { DeepUser } from '../_model/deepUser';
+import { PropertiesService } from './properties.service';
 
 @Injectable({ providedIn: 'root' })
 
