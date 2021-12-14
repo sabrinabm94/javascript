@@ -1,4 +1,3 @@
-<?php echo file_get_contents('https://raw.githubusercontent.com/sabrinabm/front-end-environment/master/default-files/template/header.php'); ?>
 	<section class="container music-app">
 		<div class="row">
 			<div class="search-container">

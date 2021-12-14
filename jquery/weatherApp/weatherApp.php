@@ -1,4 +1,3 @@
-		<?php include 'https://github.com/sabrinabm/front-end-environment/blob/master/default-files/template/header.php'; ?>
 		<div class="container">
 			<section id="form" class="form">
 				<h1 class="title">Check your weather</h1>
@@ -22,8 +21,7 @@
 	        <navbar class="navbar">
 	        </navbar>
 	    </footer>
-	    <?php include 'https://github.com/sabrinabm/front-end-environment/blob/master/default-files/template/footer.php'; ?>
-	    <script src="weatherApi.js"></script>
+	    <script src="weatherApp.js"></script>
 	</body>
 </html>
 
