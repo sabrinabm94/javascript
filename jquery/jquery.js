@@ -73,7 +73,7 @@ if(checked) {
 
 //hide/show elements
 $('.element').hide('fast', function() {
-	console.log('transition is done');
+	console.log('Transition is done');
 });
 $('.element').show();
 
@@ -81,17 +81,67 @@ $('.element').click(function(event) {
 	$(this).toggleClass('hide');
 });
 
+//fades
+$('.fadeIn').click(function() {
+	$('.element').fadeIn('slow');
+});
+
+$('.fadeOut').click(function() {
+	$('.element').fadeOut('slow');
+});
+
+$('.fadeOut, .fadeOut').click(function() {
+	$('.element').fadeToggle('slow');
+});
+
+$('.fadeOut').click(function() {
+	$('.element').fadeTo("slow", 0.333, function() {
+		//callback function
+		console.log('FadeTo!')
+	});
+});
+
+//slides
+$('.slideUp').click(function() {
+	$('.element').slideUp('slow');
+});
+
+$('.slideDown').click(function() {
+	$('.element').slideDown('slow');
+});
+
+$('.slideUp, .slideDown').click(function() {
+	$('.element').slideToggle('slow');
+});
+
+//animation
+$('.element').click(function() {
+	$(this).delay(500).animate({
+		left: '200px',
+		top: '50px'
+	}, 2000);
+});
+
+$('.element').hover(function() {
+	$(this).stop().animate({
+		left: '0px'
+	}, 'slow');
+});
+
 //attr
-console.log('attr');
+console.log('Attr');
 console.log($('h1').attr('animal'));
 $('h1').attr('animal', 'unicorn');
 console.log($('h1').attr('animal'));
 
 //prop
 $('.radio').prop('checked', 'true');
+console.log('Is checked? ' + $('input[type="checkbox"]').is(':checked'));
 
 //sizes
 var container = $('.container');
 console.log('Container width: ' + container.width() + ' height: ' + container.height());
 container.css('width', '+=50px')
 console.log('Container width: ' + container.width());
+
+
