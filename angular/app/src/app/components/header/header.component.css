@@ -1,0 +1,20 @@
+.profile .image {
+    max-width: 100px;
+    border-radius: 50%;
+}
+
+.country-flag .image {
+    max-width: 30px;
+}
+
+.city {
+    display: inline;
+}
+
+img,  p {
+    margin: 10px;
+}
+
+.basic-info .profile {
+    display: block;
+}
