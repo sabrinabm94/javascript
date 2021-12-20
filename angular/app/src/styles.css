@@ -25,6 +25,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background-color: aliceblue;
 }
 ol, ul {
 	list-style: none;
@@ -45,3 +46,24 @@ table {
 a {
 	text-decoration: none;
 }
+
+.header, .section, .footer {
+	background-color:white;
+	padding: 10px;
+}
+
+@media only screen and (max-width: 576px) {
+	.logout {
+		text-align: center;
+	}
+}
+
+@media only screen and (min-width: 576px) {
+	.centered {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+}
+

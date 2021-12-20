@@ -1,9 +1,9 @@
-.profile .image {
-    max-width: 100px;
+.profile .picture .image {
+    max-width: 120px;
     border-radius: 50%;
 }
 
-.country-flag .image {
+.flag .image {
     max-width: 30px;
 }
 
@@ -11,10 +11,11 @@
     display: inline;
 }
 
-img,  p {
-    margin: 10px;
+.picture {
+    display: block;
+    text-align: center;
 }
 
-.basic-info .profile {
-    display: block;
+img,  p {
+    margin: 10px;
 }
