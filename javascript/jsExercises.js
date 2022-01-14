@@ -215,3 +215,26 @@ console.log("numberMax: " + numberMax);
 //return the low number
 var numberMin = Math.min((3, 2, 1));
 console.log("numberMin: " + numberMin);
+
+//Operators
+console.log("Operators");
+function args(arg1, arg2, arg3) {
+	const arguments = [arg1, arg2, arg3];
+	console.log(arguments);
+}
+args('val 1', 'val 2', 'val 3');
+
+//Rest
+console.log("Rest");
+function args(...args) {
+	console.log(arguments[2]);
+}
+args('val 1', 'val 2', 'val 3');
+
+
+//Spread
+console.log("Spread");
+const brandsOne = ['Ford', 'Nissan'];
+const brandsTwo = ['Audi', 'BMW'];
+const allBrands = [...brandsOne, ...brandsTwo, 'Land Rover'];
+console.log(allBrands);

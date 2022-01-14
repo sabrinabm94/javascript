@@ -180,4 +180,28 @@ const {names: [name1, name2]} = users;
 console.log(name2);
 
 
+//literal objects
+const request = (url, data) => {
+	$.ajax(
+		{
+			method: 'POST',
+			url,
+			data
+		}
+	)
+}
+request('https://', {name: 'James'});
+
+const createCharacter = function (name, power, friend) {
+	return {
+		name: name,
+		power: power,
+		getFriend: function() {
+			return friend;
+		}
+	}
+}
+const character = createCharacter('Batman', 'Jump', 'Random butler');
+console.log(character);
+
 

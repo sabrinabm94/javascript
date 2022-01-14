@@ -1,14 +1,14 @@
 let firstNumber = parseInt(document.querySelector(".firstNumber").textContent); 
 //pegando o conteúdo da div e convertendo para string, para assim poder realizar operações numéricas
-let secoundNumber = parseInt(document.querySelector(".secoundNumber").textContent);
+let secondNumber = parseInt(document.querySelector(".secondNumber").textContent);
 let resultsDiv = document.querySelector(".results");
 
 let firstSumMethodClassName= "firstSumMethodResult";
-let secoundSumMethodClassName= "secoundSumMethodResult";
+let secondSumMethodClassName= "secondSumMethodResult";
 let thirdSumMethodClassName= "thirdSumMethodResult";
 
 cleanResults(firstSumMethodClassName);
-cleanResults(secoundSumMethodClassName);
+cleanResults(secondSumMethodClassName);
 cleanResults(thirdSumMethodClassName);
 
 function cleanResults(divName) {
@@ -32,22 +32,33 @@ var firstSumMethodResult = function(x, y) {
     return x + y;
   };
   
-firstSumMethodResult(firstNumber, secoundNumber);
+firstSumMethodResult(firstNumber, secondNumber);
 createResults("Old sum method", firstSumMethodResult, firstSumMethodClassName);
 
 
 //ECMAscript 6
 //Com as arrow functions não tem riscos de ocorrer problemas conhecidos com o this:
-let secoundSumMethod = (x, y) => {
+let secondSumMethod = (x, y) => {
     return x + y
 }
-let secoundSumMethodResult = secoundSumMethod(firstNumber, secoundNumber);
-createResults("Sum method", secoundSumMethodResult, secoundSumMethodClassName);
+let secondSumMethodResult = secondSumMethod(firstNumber, secondNumber);
+createResults("Sum method", secondSumMethodResult, secondSumMethodClassName);
 
 //ECMAscript 6 more simplified
 let thirdSumMethod = (x, y) => x + y;
-let thirdSumMethodResult = thirdSumMethod(firstNumber, secoundNumber);
+let thirdSumMethodResult = thirdSumMethod(firstNumber, secondNumber);
 createResults("Sum method simplified", thirdSumMethodResult, thirdSumMethodClassName);
+
+const cars = {
+    brands: ['Ford', 'BMW', 'Audi'],
+    category: 'sport car',
+    message: function() {
+        return this.brands.map( brand => {
+            console.log('${brand} is a ${this.category}')
+        })
+    }
+};
+cars.message();
 
 
 
