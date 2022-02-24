@@ -1,0 +1,30 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@environments/*": ["src/environments/*"],
+      "@pages/*": ["src/app/view/pages*"],
+      "@templates/*": ["src/app/view/templates*"],
+      "@models/*": ["src/app/models*"],
+      "@guard/*": ["src/app/core/guard*"],
+      "@interceptor/*": ["src/app/core/interceptor*"],
+      "@services/*": ["src/app/core/services*"],
+    }
+  }
+}
