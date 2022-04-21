@@ -6,6 +6,9 @@ The assets folder has images and other files that will be reused by the projects
 ## Javascript
 Scripts for testing javascript features and sintax, and apps.
 
+## Node
+Scripts to test Node features.
+
 ## Jquery
 Scripts for testing jQuery features and sintax, and apps.
 
@@ -13,18 +16,15 @@ Scripts for testing jQuery features and sintax, and apps.
 Project structure for fast init and apps.
 
 ## Angular
-- static website created using angular.
-- search gifs app using giphy api. 
+Search gifs app using giphy api. 
 
 ---
-
 
 # For Javascript and jQuery projects
 
 ## Xampp
 
 ### Initialize Xampp with Apach and MySQL activated
-noobfrontend.wordpress.com/2018/04/28/montando-ambiente-web-com-xampp
 
 ### Htdocs directory
 Move your project repository to C:\xampp\htdocs, become C:\xampp\htdocs\javascript.
@@ -56,12 +56,10 @@ PS: to cancel the project compilation, use CTRL + C in terminal
 
 ## Access the project in browser
 You can access the project in your browser: localhost:port/project-name.
+Ex: http://localhost:4200/angular/gifSearch
 
 ---
 
-# Contacts
+# Contact
 Sabrina B.
-
-sabrinabmoreira@gmail.com
-
-https://www.thedevblog.com.br/
+sabrinabm94@gmail.com

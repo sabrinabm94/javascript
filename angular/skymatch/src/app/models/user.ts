@@ -1,8 +1,24 @@
+//models
 import { Language } from '@models//languages';
 import { Religion } from '@models//religion';
 import { Match } from '@models//match';
 import { Sign } from '@models//sign';
 import { PartnerIdealization } from '@models//partnerIdealization';
+
+//enums
+import { Gender } from '@models//enums/Gender';
+import { SexOrientation } from '@models//enums/SexOrientation';
+import { RelationshipType } from '@models//enums/RelationshipType';
+import { BodyType } from '@models//enums/bodyType';
+import { Ethnicity } from '@models//enums/Ethnicity';
+import { Politics } from '@models//enums/Politics';
+import { Education } from '@models//enums/Education';
+import { Employment } from '@models//enums/Employment';
+import { Diet } from '@models//enums/Diet';
+import { Possession } from '@models//enums/Possession';
+import { MusicalStyle } from '@models//enums/MusicalStyle';
+import { Interests } from '@models//enums/Interests';
+import { Frequency } from '@models//enums/Frequency';
 
 export class User {
     id: Number;
@@ -22,7 +38,7 @@ export class User {
     sexOrientation: SexOrientation;
     relationshipLooking?: RelationshipType;
     actualRelationship?: RelationshipType;
-    bodyType?: bodyType;
+    bodyType?: BodyType;
     height: Number;
     ethnicity?: Ethnicity;
     politics?: Politics;

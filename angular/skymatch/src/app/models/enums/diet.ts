@@ -1,4 +1,4 @@
-enum Diet {
+export enum Diet {
     omnivore,
     vegetarian,
     lactoVegetarian,

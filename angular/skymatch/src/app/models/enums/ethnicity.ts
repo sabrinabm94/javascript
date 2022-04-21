@@ -1,4 +1,4 @@
-enum Ethnicity {
+export enum Ethnicity {
     white,
     black,
     latin,

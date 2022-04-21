@@ -1,4 +1,4 @@
-enum SexOrientation {
+export enum SexOrientation {
     straight,
     lesbian,
     gay,

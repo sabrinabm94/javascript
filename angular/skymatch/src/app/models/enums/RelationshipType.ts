@@ -1,4 +1,4 @@
-enum RelationshipType {
+export enum RelationshipType {
     justFriendship,
     seriousRelationship,
     openedRelationship,

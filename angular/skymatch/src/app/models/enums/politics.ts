@@ -1,4 +1,4 @@
-enum Politics {
+export enum Politics {
     liberal,
     moderate,
     conservative,

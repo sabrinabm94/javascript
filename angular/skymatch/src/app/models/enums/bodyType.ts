@@ -1,4 +1,4 @@
-enum bodyType {
+export enum BodyType {
     thin,
     overweight,
     averageBuild,

@@ -1,4 +1,4 @@
-enum Education {
+export enum Education {
     highSchool,
     inTechSchool,
     graduateTechSchool,

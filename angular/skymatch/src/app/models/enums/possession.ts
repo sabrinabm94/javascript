@@ -1,4 +1,4 @@
-enum Possession {
+export enum Possession {
     doNotHaveAndDoNotWantMore,
     doNotHaveButWantMore,
     doNothaveButMightWantMore, 

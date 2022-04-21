@@ -1,4 +1,4 @@
-enum MusicalStyle {
+export enum MusicalStyle {
     blues,
     country,
     electro,

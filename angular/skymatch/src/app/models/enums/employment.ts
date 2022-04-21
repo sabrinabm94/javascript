@@ -1,4 +1,4 @@
-enum Employment {
+export enum Employment {
     fullTime,
     partTime,
     freelancer,
