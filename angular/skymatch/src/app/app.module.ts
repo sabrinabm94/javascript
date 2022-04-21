@@ -28,6 +28,10 @@ import { JwtInterceptor } from '@interceptor//jwt-interceptor/jwt-interceptor.co
 //services
 import { AccountService } from '@services//account.service';
 
+//packages
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +47,8 @@ import { AccountService } from '@services//account.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},

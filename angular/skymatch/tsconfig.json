@@ -22,7 +22,7 @@
       "@pages/*": ["src/app/view/pages*"],
       "@templates/*": ["src/app/view/templates*"],
       "@models/*": ["src/app/models*"],
-      "@enums/*": ["src/app/enums*"],
+      "@enums/*": ["src/app/models/enums*"],
       "@guard/*": ["src/app/core/guard*"],
       "@interceptor/*": ["src/app/core/interceptor*"],
       "@services/*": ["src/app/core/services*"],

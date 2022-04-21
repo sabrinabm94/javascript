@@ -6,19 +6,19 @@ import { Sign } from '@models//sign';
 import { PartnerIdealization } from '@models//partnerIdealization';
 
 //enums
-import { Gender } from '@models//enums/Gender';
-import { SexOrientation } from '@models//enums/SexOrientation';
-import { RelationshipType } from '@models//enums/RelationshipType';
-import { BodyType } from '@models//enums/bodyType';
-import { Ethnicity } from '@models//enums/Ethnicity';
-import { Politics } from '@models//enums/Politics';
-import { Education } from '@models//enums/Education';
-import { Employment } from '@models//enums/Employment';
-import { Diet } from '@models//enums/Diet';
-import { Possession } from '@models//enums/Possession';
-import { MusicalStyle } from '@models//enums/MusicalStyle';
-import { Interests } from '@models//enums/Interests';
-import { Frequency } from '@models//enums/Frequency';
+import { Gender } from '@enums//Gender';
+import { SexOrientation } from '@enums//SexOrientation';
+import { RelationshipType } from '@enums//RelationshipType';
+import { BodyType } from '@enums//bodyType';
+import { Ethnicity } from '@enums//Ethnicity';
+import { Politics } from '@enums//Politics';
+import { Education } from '@enums//Education';
+import { Employment } from '@enums//Employment';
+import { Diet } from '@enums//Diet';
+import { Possession } from '@enums//Possession';
+import { MusicalStyle } from '@enums//MusicalStyle';
+import { Interests } from '@enums//Interests';
+import { Frequency } from '@enums//Frequency';
 
 export class User {
     id: Number;
