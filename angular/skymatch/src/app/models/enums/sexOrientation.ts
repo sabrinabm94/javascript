@@ -1,4 +1,4 @@
-enum Orientation {
+enum SexOrientation {
     straight,
     lesbian,
     gay,

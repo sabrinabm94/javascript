@@ -1,5 +1,7 @@
 enum RelationshipType {
-    monogamous,
-    opened,
-    both
+    justFriendship,
+    seriousRelationship,
+    openedRelationship,
+    nothingSerious,
+    nothingSpecific,
 }

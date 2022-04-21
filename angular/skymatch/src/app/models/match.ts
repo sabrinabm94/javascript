@@ -1,11 +1,12 @@
 import { Chat } from '@models//chat';
 
 export class Match {
-    userId: number;
+    userId: Number;
     userMatchDate: Date;
-    partnerId: number;
+    partnerId: Number;
     partnerMatchDate: Date;
-    matchScore: number;
-    sinastryScore: number;
+    sinastryScore: Number;
+    compatibilityScore: Number;
+    finalScore: Number;
     chats: Chat[];
 }

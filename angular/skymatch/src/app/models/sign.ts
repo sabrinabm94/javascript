@@ -1,8 +1,8 @@
 export class Sign {
-    id: number;
-    name: string;
-    description: string;
-    element: string;
+    id: Number;
+    name: String;
+    description: String;
+    element: String;
     dateRange = {
         startDate: Date,
         endDate: Date

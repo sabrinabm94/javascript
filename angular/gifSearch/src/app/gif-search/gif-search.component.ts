@@ -12,8 +12,8 @@ export class GifSearchComponent implements OnInit {
   @Output() sendToList = new EventEmitter<any[]>();
   public gifs: any[] = [];
   public form: FormGroup;
-  public limitPatter: string;
-  public termPatter: string;
+  public limitPatter: String;
+  public termPatter: String;
   public error: any;
 
   //inclusão do service: injeção de dependencia ou inversão de controles

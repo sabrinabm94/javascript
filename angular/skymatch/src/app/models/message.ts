@@ -1,12 +1,12 @@
 import { User } from "./user";
 
 export class Message {
-    id: number;
-    chatId: number;
+    id: Number;
+    chatId: Number;
     sender: User;
     receiver: User;
     sendDate: Date;
     receiptDate: Date;
     readingDate: Date;
-    content: string;
+    content: String;
 }
