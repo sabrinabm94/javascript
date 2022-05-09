@@ -2,7 +2,7 @@
 
 ## Node
 nvm install v15
-nvm use 15.0
+nvm use 15
 
 ## Instalação das dependências
 yarn init -y
