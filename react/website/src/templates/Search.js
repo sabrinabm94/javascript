@@ -6,7 +6,7 @@ const Search = props => {
         <section id='search' className='jumbotron text-center'>
             <h1>Company</h1>
             <p>We specialize in blablabla</p>
-            <SearchForm></SearchForm>
+            <SearchForm />
         </section>
     );
 }

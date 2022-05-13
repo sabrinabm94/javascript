@@ -1,4 +1,5 @@
 import React from 'react';
+import Thumbnail from '../components/Thumbnail';
 
 const Portfolio = props => {
     return (
@@ -7,27 +8,16 @@ const Portfolio = props => {
             <h4>What we have created</h4>
             <div className='row text-center slideanim slide'>
                 <div className='col-sm-4'>
-                    <div className='thumbnail'>
-                        <img src='https://www.w3schools.com/bootstrap/paris.jpg' alt='Paris' width='400' height='300' />
-                        <p><strong>Paris</strong></p>
-                        <p>Yes, we built Paris</p>
-                    </div>
+                    <Thumbnail imgSrc='https://www.w3schools.com/bootstrap/paris.jpg' title='Paris' subtitle='Yes, we built Paris' />
                 </div>
                 <div className='col-sm-4'>
-                    <div className='thumbnail'>
-                        <img src='https://www.w3schools.com/bootstrap/newyork.jpg' alt='New York' width='400' height='300' />
-                        <p><strong>New York</strong></p>
-                        <p>We built New York</p>
-                    </div>
+                    <Thumbnail imgSrc='https://www.w3schools.com/bootstrap/newyork.jpg' title='New York' subtitle='We built New York' />
                 </div>
                 <div className='col-sm-4'>
-                    <div className='thumbnail'>
-                        <img src='https://www.w3schools.com/bootstrap/sanfran.jpg' alt='San Francisco' width='400' height='300' />
-                        <p><strong>San Francisco</strong></p>
-                        <p>Yes, San Fran is ours</p>
-                    </div>
+                    <Thumbnail imgSrc='https://www.w3schools.com/bootstrap/sanfran.jpg' title='San Francisco' subtitle='Yes, San Fran is ours' />
                 </div>
-            </div><br />
+            </div>
+            <br />
 
             <h2>What our customers say</h2>
             <div id='myCarousel' className='carousel slide text-center' data-ride='carousel'>

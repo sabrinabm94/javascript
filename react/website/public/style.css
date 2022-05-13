@@ -162,9 +162,11 @@ h4 {
 }
 
 footer .glyphicon {
-  font-size: 20px;
   margin-bottom: 20px;
   color: #f4511e;
+}
+.glyphicon h3, footer .glyphicon {
+  font-size: 20px;
 }
 
 .slideanim {

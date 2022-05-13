@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from '../components/Card';
 
 const Service = props => {
     return (
@@ -8,37 +9,26 @@ const Service = props => {
             <br />
             <div className='row slideanim slide'>
                 <div className='col-sm-4'>
-                    <span className='glyphicon glyphicon-off logo-small'></span>
-                    <h4>POWER</h4>
-                    <p>Lorem ipsum dolor sit amet..</p>
+                    <Card iconName='glyphicon-off logo-small' title='POWER' subtitle='Lorem ipsum dolor sit amet..' />
                 </div>
                 <div className='col-sm-4'>
-                    <span className='glyphicon glyphicon-heart logo-small'></span>
-                    <h4>LOVE</h4>
-                    <p>Lorem ipsum dolor sit amet..</p>
+                    <Card iconName='glyphicon-heart logo-small' title='LOVE' subtitle='Lorem ipsum dolor sit amet..'/>
                 </div>
                 <div className='col-sm-4'>
-                    <span className='glyphicon glyphicon-lock logo-small'></span>
-                    <h4>JOB DONE</h4>
-                    <p>Lorem ipsum dolor sit amet..</p>
+                    <Card iconName='glyphicon-lock logo-small' title='JOB DONE' subtitle='Lorem ipsum dolor sit amet..'/>
                 </div>
             </div>
-            <br /><br />
+            <br />
+            <br />
             <div className='row slideanim slide'>
                 <div className='col-sm-4'>
-                    <span className='glyphicon glyphicon-leaf logo-small'></span>
-                    <h4>GREEN</h4>
-                    <p>Lorem ipsum dolor sit amet..</p>
+                    <Card iconName='glyphicon-leaf logo-small' title='GREEN' subtitle='Lorem ipsum dolor sit amet..'/>
                 </div>
                 <div className='col-sm-4'>
-                    <span className='glyphicon glyphicon-certificate logo-small'></span>
-                    <h4>CERTIFIED</h4>
-                    <p>Lorem ipsum dolor sit amet..</p>
+                    <Card iconName='glyphicon-certificate logo-small' title='CERTIFIED' subtitle='Lorem ipsum dolor sit amet..'/>
                 </div>
                 <div className='col-sm-4'>
-                    <span className='glyphicon glyphicon-wrench logo-small'></span>
-                    <h4>HARD WORK</h4>
-                    <p>Lorem ipsum dolor sit amet..</p>
+                    <Card iconName='glyphicon-wrench logo-small' title='HARD WORK' subtitle='Lorem ipsum dolor sit amet..'/>
                 </div>
             </div>
         </section>

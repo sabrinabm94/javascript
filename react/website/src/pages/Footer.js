@@ -1,10 +1,11 @@
 import React from 'react';
+import Glyphicon from '../components/Glyphicon';
 
 const Footer = props => {
     return (
         <footer class="footer container-fluid text-center">
             <a href="#search" title="To Top">
-                <span class="glyphicon glyphicon-chevron-up"></span>
+                <Glyphicon name='glyphicon-chevron-up' />
             </a>
         </footer>
     );

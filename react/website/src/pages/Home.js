@@ -13,14 +13,14 @@ import Map from '../templates/Map';
 const Home = props => {
     return (
         <div className='homepage'>
-            <Search></Search>
-            <About></About>
-            <Values></Values>
-            <Service></Service>
-            <Portfolio></Portfolio>
-            <Pricing></Pricing>
-            <Contact></Contact>
-            <Map></Map>
+            <Search />
+            <About />
+            <Values />
+            <Service />
+            <Portfolio />
+            <Pricing />
+            <Contact />
+            <Map />
         </div>
     );
 }

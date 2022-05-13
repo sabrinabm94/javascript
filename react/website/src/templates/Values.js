@@ -1,11 +1,12 @@
 import React from 'react';
+import Glyphicon from '../components/Glyphicon';
 
 const Values = props => {
     return (
         <section className='container-fluid bg-grey'>
             <div className='row'>
                 <div className='col-sm-4'>
-                    <span className='glyphicon glyphicon-globe logo slideanim slide'></span>
+                    <Glyphicon name='glyphicon-globe logo slideanim slide'/>
                 </div>
                 <div className='col-sm-8'>
                     <h2>Our Values</h2><br />

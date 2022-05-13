@@ -1,4 +1,5 @@
 import React from 'react';
+import Glyphicon from '../components/Glyphicon';
 
 const About = props => {
     return (
@@ -14,7 +15,7 @@ const About = props => {
                     </a>
                 </div>
                 <div className='col-sm-4'>
-                    <span className='glyphicon glyphicon-signal logo'></span>
+                    <Glyphicon name='glyphicon-signal logo' />
                 </div>
             </div>
         </section>

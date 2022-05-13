@@ -1,4 +1,5 @@
 import React from 'react';
+import Plan from '../components/Plan';
 
 const Pricing = props => {
     return (
@@ -9,64 +10,16 @@ const Pricing = props => {
             </div>
             <div class="row slideanim slide">
                 <div class="col-sm-4 col-xs-12">
-                    <div class="panel panel-default text-center">
-                        <div class="panel-heading">
-                            <h1>Basic</h1>
-                        </div>
-                        <div class="panel-body">
-                            <p><strong>20</strong> Lorem</p>
-                            <p><strong>15</strong> Ipsum</p>
-                            <p><strong>5</strong> Dolor</p>
-                            <p><strong>2</strong> Sit</p>
-                            <p><strong>Endless</strong> Amet</p>
-                        </div>
-                        <div class="panel-footer">
-                            <h3>$19</h3>
-                            <h4>per month</h4>
-                            <button class="btn btn-lg">Sign Up</button>
-                        </div>
-                    </div>
+                    <Plan title='Basic' description='20 Lorem, 15 Ipsum, 5 Dolor, 2 Sit, Endless Amet' value='$19 per month' link='/' />
                 </div>
                 <div class="col-sm-4 col-xs-12">
-                    <div class="panel panel-default text-center">
-                        <div class="panel-heading">
-                            <h1>Pro</h1>
-                        </div>
-                        <div class="panel-body">
-                            <p><strong>50</strong> Lorem</p>
-                            <p><strong>25</strong> Ipsum</p>
-                            <p><strong>10</strong> Dolor</p>
-                            <p><strong>5</strong> Sit</p>
-                            <p><strong>Endless</strong> Amet</p>
-                        </div>
-                        <div class="panel-footer">
-                            <h3>$29</h3>
-                            <h4>per month</h4>
-                            <button class="btn btn-lg">Sign Up</button>
-                        </div>
-                    </div>
+                    <Plan title='Pro' description='50 Lorem, 25 Ipsum, 10 Dolor, 5 Sit, Endless Amet' value='$29 per month' link='/' />
                 </div>
                 <div class="col-sm-4 col-xs-12">
-                    <div class="panel panel-default text-center">
-                        <div class="panel-heading">
-                            <h1>Premium</h1>
-                        </div>
-                        <div class="panel-body">
-                            <p><strong>100</strong> Lorem</p>
-                            <p><strong>50</strong> Ipsum</p>
-                            <p><strong>25</strong> Dolor</p>
-                            <p><strong>10</strong> Sit</p>
-                            <p><strong>Endless</strong> Amet</p>
-                        </div>
-                        <div class="panel-footer">
-                            <h3>$49</h3>
-                            <h4>per month</h4>
-                            <button class="btn btn-lg">Sign Up</button>
-                        </div>
-                    </div>
+                    <Plan title='Premium' description='100 Lorem, 50 Ipsum, 25 Dolor, 10 Sit, Endless Amet' value='$49 per month' link='/' />
                 </div>
             </div>
-        </section>
+        </section >
     );
 }
 export default Pricing;
