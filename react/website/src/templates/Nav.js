@@ -1,7 +1,5 @@
-
-
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Nav = props => {
     return (
@@ -18,26 +16,26 @@ const Nav = props => {
                         <span className="icon-bar"></span>
                         <span className="icon-bar"></span>
                     </button>
-                    <a className="navbar-brand" href="#myPage">
+                    <a className="navbar-brand" href="/">
                         Logo
                     </a>
                 </div>
                 <div className="collapse navbar-collapse" id="myNavbar">
                     <ul className="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#about">ABOUT</a>
+                            <Link to="/about">ABOUT</Link>
                         </li>
                         <li>
-                            <a href="#services">SERVICES</a>
+                            <Link to="/services">SERVICES</Link>
                         </li>
                         <li>
-                            <a href="#portfolio">PORTFOLIO</a>
+                            <Link to="/portfolio">PORTFOLIO</Link>
                         </li>
                         <li>
-                            <a href="#pricing">PRICING</a>
+                            <Link to="/pricing">PRICING</Link>
                         </li>
                         <li>
-                            <a href="#contact">CONTACT</a>
+                            <Link to="/contact">CONTACT</Link>
                         </li>
                     </ul>
                 </div>

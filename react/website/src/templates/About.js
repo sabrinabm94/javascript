@@ -1,4 +1,5 @@
 import React from 'react';
+import Values from '../templates/Values';
 import Glyphicon from '../components/Glyphicon';
 
 const About = props => {
@@ -18,6 +19,8 @@ const About = props => {
                     <Glyphicon name='glyphicon-signal logo' />
                 </div>
             </div>
+            <br />
+            <Values />
         </section>
     );
 }
