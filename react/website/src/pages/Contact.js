@@ -1,4 +1,6 @@
 import React from 'react';
+
+import Location from './Location';
 import Glyphicon from '../components/Glyphicon';
 
 const Contact = props => {
@@ -29,6 +31,7 @@ const Contact = props => {
                     </div>
                 </div>
             </div>
+            <Location />
         </section>
     );
 }

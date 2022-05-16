@@ -12,8 +12,6 @@ import Service from './Service';
 import Portfolio from './Portfolio';
 import Pricing from './Pricing';
 import Contact from './Contact';
-import Map from './Map';
-
 
 const Pages = props => {
     return (
@@ -26,7 +24,6 @@ const Pages = props => {
                 <Route path='/portfolio' element={<Portfolio />} />
                 <Route path='/pricing' element={<Pricing />} />
                 <Route path='/contact' element={<Contact />} />
-                <Route path='/map' element={<Map />} />
             </Routes>
         </div>
     );
