@@ -1,5 +1,5 @@
 import React from 'react';
-import Values from '../templates/Values';
+import Values from './Values';
 import Glyphicon from '../components/Glyphicon';
 
 const About = props => {

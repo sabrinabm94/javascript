@@ -7,17 +7,17 @@ import {
 import Search from '../templates/Search';
 
 //pages
-import About from '../templates/About';
-import Service from '../templates/Service';
-import Portfolio from '../templates/Portfolio';
-import Pricing from '../templates/Pricing';
-import Contact from '../templates/Contact';
-import Map from '../templates/Map';
+import About from './About';
+import Service from './Service';
+import Portfolio from './Portfolio';
+import Pricing from './Pricing';
+import Contact from './Contact';
+import Map from './Map';
 
 
-const Home = props => {
+const Pages = props => {
     return (
-        <div className='homepage'>
+        <div className='page'>
             <Search />
             <Routes>
                 <Route path="/" element={<About />} />
@@ -31,4 +31,4 @@ const Home = props => {
         </div>
     );
 }
-export default Home;
+export default Pages;

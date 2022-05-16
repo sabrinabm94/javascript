@@ -3,18 +3,18 @@ import { BrowserRouter } from 'react-router-dom';
 
 import Header from './templates/Header';
 import Footer from './templates/Footer';
-import Home from './pages/Home';
+import Pages from './pages/Pages';
 
 class App extends React.Component {
   render() {
     return(
       <BrowserRouter>
         <div className='app'>
-            <Header></Header>
+            <Header />
             <main className='main'>
-              <Home></Home>
+              <Pages />
             </main>
-            <Footer></Footer>
+            <Footer />
         </div>
       </BrowserRouter>
     );
