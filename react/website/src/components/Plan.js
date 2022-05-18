@@ -2,17 +2,17 @@ import React from 'react';
 
 const Plan = props => {
     return (
-        <div class="panel panel-default text-center">
-            <div class="panel-heading">
+        <div className='panel panel-default text-center'>
+            <div className='panel-heading'>
                 <h1>{props.title}</h1>
             </div>
-            <div class="panel-body">
+            <div className='panel-body'>
                 <p>{props.description}</p>
             </div>
-            <div class="panel-footer">
+            <div className='panel-footer'>
                 <h3>{props.value}</h3>
                 <a href={props.link}>
-                    <button class="btn btn-lg">Sign Up</button>
+                    <button className='btn btn-lg'>Sign Up</button>
                 </a>
             </div>
         </div>

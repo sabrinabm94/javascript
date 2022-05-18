@@ -3,9 +3,9 @@ let firstNumber = parseInt(document.querySelector(".firstNumber").textContent);
 let secondNumber = parseInt(document.querySelector(".secondNumber").textContent);
 let resultsDiv = document.querySelector(".results");
 
-let firstSumMethodClassName= "firstSumMethodResult";
-let secondSumMethodClassName= "secondSumMethodResult";
-let thirdSumMethodClassName= "thirdSumMethodResult";
+let firstSumMethodclass= "firstSumMethodResult";
+let secondSumMethodclass= "secondSumMethodResult";
+let thirdSumMethodclass= "thirdSumMethodResult";
 
 cleanResults(firstSumMethodClassName);
 cleanResults(secondSumMethodClassName);
