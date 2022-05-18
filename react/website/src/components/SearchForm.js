@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../components/Button';
 
 const SearchForm = props => {
     return (
@@ -6,7 +7,7 @@ const SearchForm = props => {
             <div className='input-group'>
                 <input type='email' className='form-control' size='50' placeholder='Email Address' required />
                 <div className='input-group-btn'>
-                    <button type='button' className='btn btn-danger'>Subscribe</button>
+                    <Button text='Subscribe' className='btn-danger' type='button' disabled={false} />
                 </div>
             </div>
         </form>

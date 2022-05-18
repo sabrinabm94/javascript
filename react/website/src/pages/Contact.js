@@ -1,7 +1,7 @@
 import React from 'react';
-
 import Location from './Location';
 import Glyphicon from '../components/Glyphicon';
+import Button from '../components/Button';
 
 const Contact = props => {
     return (
@@ -26,7 +26,7 @@ const Contact = props => {
                     <textarea className='form-control' id='comments' name='comments' placeholder='Comment' rows='5'></textarea><br />
                     <div className='row'>
                         <div className='col-sm-12 form-group'>
-                            <button className='btn btn-default pull-right' type='submit'>Send</button>
+                            <Button text='Send' className='btn-default pull-right' type='submit' disabled={true} />
                         </div>
                     </div>
                 </div>

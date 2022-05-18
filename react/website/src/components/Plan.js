@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../components/Button';
 
 const Plan = props => {
     return (
@@ -12,7 +13,7 @@ const Plan = props => {
             <div className='panel-footer'>
                 <h3>{props.value}</h3>
                 <a href={props.link}>
-                    <button className='btn btn-lg'>Sign Up</button>
+                    <Button text='Sign Up' className='btn-lg' type='submit' disabled={true} />
                 </a>
             </div>
         </div>
