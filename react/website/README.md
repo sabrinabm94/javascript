@@ -1,6 +1,5 @@
-# Getting Started with Create React App
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+# About
+Website made with react
 
 # Front depends
 npm install
@@ -28,6 +27,7 @@ https://console.firebase.google.com/project/website-sabrinabm94/storage/website-
 ## Configuration
 npm install firebase
 npm install -g firebase-tools
+
 
 ## Host
 #### Authentication
