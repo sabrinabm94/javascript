@@ -1,20 +1,13 @@
-const Rebase = require('re-base');
-const Firebase = require('firebase');
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 
-const Firebaseconfig = {
-    apiKey: "",
-    authDomain: "",
-    databaseURL: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: "",
-    appId: "",
-    measurementId: 
-  };
+const firebaseConfig = {
   
-  // Initialize Firebase
-  const app = Firebase.initializeApp(Firebaseconfig);
-  const Config = Rebase.createClass(app.database());
-  const analytics = Firebase.getAnalytics(app);
+};
 
-  export default Config;
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+const database = firebaseApp.firestore();
+const auth = firebase.auth();
+
+export { auth, database };

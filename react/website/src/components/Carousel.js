@@ -2,35 +2,33 @@ import React from 'react';
 import Glyphicon from '../components/Glyphicon';
 
 const Carousel = props => {
-    const propsData = Array.from(props.elements);
-
     return (
         <div id='myCarousel' className='carousel slide text-center' data-ride='carousel'>
             <ol className='carousel-indicators'>
                 <>
-                    {propsData.map((data, id) => {
+                    {props.elements.map((data, id) => {
                         let target = null;
 
                         if (data.number === 0) {
-                            target = <li data-target='#myCarousel' data-slide-to={data.number} className='active'></li>;
+                            target = <li data-target='#myCarousel' data-slide-to={data.number} className='active' key={id}></li>;
                         } else {
-                            target = <li data-target='#myCarousel' data-slide-to={data.number}></li>;
+                            target = <li data-target='#myCarousel' data-slide-to={data.number} key={id}></li>;
                         }
                         return target;
                     })}
                 </>
             </ol>
             <div className='carousel-inner' role='listbox'>
-                {propsData.map((data, id) => {
+                {props.elements.map((data, id) => {
                     let item = null;
 
                     if (data.number === 0) {
-                        item = <div className='item active'>
+                        item = <div className='item active' key={id}>
                             <h4>{data.title}</h4>
                             <span>{data.subtitle}</span>
                         </div>;
                     } else {
-                        item = <div className='item'>
+                        item = <div className='item' key={id}>
                             <h4>{data.title}</h4>
                             <span>{data.subtitle}</span>
                         </div>;
