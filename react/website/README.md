@@ -1,7 +1,7 @@
 # About
 Website made with react
 
-# Front depends
+# Front dependencies
 npm install
 
 npm start
