@@ -6,16 +6,21 @@ const Carousel = props => {
         <div id='myCarousel' className='carousel slide text-center' data-ride='carousel'>
             <ol className='carousel-indicators'>
                 <>
-                    {props.elements.map((data, id) => {
-                        let target = null;
+                    {
+                        Object.keys(
+                            props.map((data, id) => {
+                                let target = null;
 
-                        if (data.number === 0) {
-                            target = <li data-target='#myCarousel' data-slide-to={data.number} className='active' key={id}></li>;
-                        } else {
-                            target = <li data-target='#myCarousel' data-slide-to={data.number} key={id}></li>;
-                        }
-                        return target;
-                    })}
+                                if (data.number === 0) {
+                                    target = <li data-target='#myCarousel' data-slide-to={data.number} className='active' key={id}></li>;
+                                } else {
+                                    target = <li data-target='#myCarousel' data-slide-to={data.number} key={id}></li>;
+                                }
+
+                                return target;
+                            })
+                        )
+                    }
                 </>
             </ol>
             <div className='carousel-inner' role='listbox'>
