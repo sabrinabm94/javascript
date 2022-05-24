@@ -1,23 +1,23 @@
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 
-import Header from './templates/Header';
-import Footer from './templates/Footer';
-import Pages from './pages/Pages';
+import Header from "./templates/Header";
+import Footer from "./templates/Footer";
+import Pages from "./pages/Pages";
 
 class App extends React.Component {
-  render() {
-    return(
-      <BrowserRouter>
-        <div className='app'>
-            <Header />
-            <main className='main'>
-              <Pages />
-            </main>
-            <Footer />
-        </div>
-      </BrowserRouter>
-    );
-  }
+    render() {
+        return (
+            <Router>
+                <div className="app">
+                    <Header />
+                    <main className="main">
+                        <Pages />
+                    </main>
+                    <Footer />
+                </div>
+            </Router>
+        );
+    }
 }
 export default App;

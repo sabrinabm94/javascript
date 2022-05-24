@@ -1,14 +1,15 @@
-import React, {Component} from 'react';
+import { React, Component } from "react";
+
 import {
     Routes,
     Route,
-} from 'react-router-dom';
+} from "react-router-dom";
 
 //templates
-import Header from '../../templates/admin/Header';
+import Header from "../../templates/admin/Header";
 
 //pages
-import Portfolio from './Portfolio';
+import Portfolio from "./Portfolio";
 
 class Admin extends Component {
     constructor(props) {
@@ -17,11 +18,11 @@ class Admin extends Component {
     
     render() {
         return (
-            <div className='admin'>
+            <div className="admin">
                 <h1>Admin area</h1>
                 <Header />
                 <Routes>
-                    <Route path='portfolio' element={<Portfolio />} />
+                    <Route path="portfolio" element={<Portfolio />} />
                 </Routes>
             </div>
         )

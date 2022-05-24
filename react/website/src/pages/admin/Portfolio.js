@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Portfolio extends Component {
     constructor(props) {
@@ -6,7 +6,7 @@ class Portfolio extends Component {
     }
     render() {
         return (
-            <section id='admin-portfolio' className='container-fluid text-center bg-grey'>
+            <section id="admin-portfolio" className="container-fluid text-center bg-grey">
                 <h2>Portfolio</h2>
             </section>
         )
