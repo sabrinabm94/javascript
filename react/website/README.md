@@ -29,11 +29,11 @@ https://console.firebase.google.com/project/website-sabrinabm94/storage/website-
 npm install firebase
 npm install -g firebase-tools
 
-
 ## Host
 #### Authentication
-firebase login
 firebase init
+firebase login
+firebase serve
 
 #### Deploy
 firebase deploy

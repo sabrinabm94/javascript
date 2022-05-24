@@ -1,18 +1,29 @@
 import { React, Component, useEffect, useState } from 'react';
 
-import { db } from "../init-firebase";
-import { addDoc, getDoc, collection } from "firebase/firestore"
+import { fireStore } from '../init-firebase';
+
 
 //components
 import Thumbnail from '../components/Thumbnail';
 import Carousel from '../components/Carousel';
 
 const Portfolio = props => {
+    // fireStore.collection("thumbnailElements").where("number", "==", 0)
+    // .get()
+    // .then((querySnapshot) => {
+    //     querySnapshot.forEach((doc) => {
+    //         console.log(doc.id, " => ", doc.data());
+    //     });
+    // })
+    // .catch((error) => {
+    //     console.log("Error getting documents: ", error);
+    // });
 
-    const querySnapshot = getDoc(collection(db, "thumbnailElements"));
+    const q = fireStore.query(fireStore.collection(fireStore, "thumbnailElements"), fireStore.where("number", "==", 0));
+    const querySnapshot = fireStore.getDocs(q);
     querySnapshot.forEach((doc) => {
-        console.log(doc.id, "=> ", doc.data())
-    })
+    console.log(doc.id, " => ", doc.data());
+    });
 
     return (
         <section id='portfolio' className='container-fluid text-center bg-grey'>

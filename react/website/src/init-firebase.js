@@ -1,7 +1,7 @@
-import { initializeApp, getApp } from "firebase/app";
-import { getDatabase, ref as databaseRef, onValue, child, get, setxs } from "firebase/database";
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
-import { getStorage, ref as storageRef } from 'firebase/storage';
+import { initializeApp } from 'firebase/app';
+import { getDatabase } from "firebase/database" 
+import { getFirestore, collection } from 'firebase/firestore/lite';
+import { getStorage } from 'firebase/storage';
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
@@ -15,10 +15,10 @@ const firebaseConfig = {
   measurementId: "G-97FEKHF5GF"
 };
 
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
+let app = initializeApp(firebaseConfig);
+const db = getDatabase(app)
 const fireStore = getFirestore(app);
 const storage = getStorage(app);
 const auth = getAuth(app);
 
-export { db, auth, databaseRef, storageRef, onValue, child, get, collection, getDocs };
+export { db, fireStore, storage, auth, collection };
