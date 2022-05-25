@@ -8,5 +8,5 @@ const Button = props => {
         button = <button className={`btn ${props.className}`} disabled type={props.type}>{props.text}</button>;
     }
     return button;
-}
+};
 export default Button;

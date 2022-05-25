@@ -9,7 +9,7 @@ import {
 import Header from "../../templates/admin/Header";
 
 //pages
-import Portfolio from "./Portfolio";
+import Portfolio from "../admin/Portfolio";
 
 class Admin extends Component {
     constructor(props) {
@@ -26,8 +26,7 @@ class Admin extends Component {
                 </Routes>
             </div>
         )
-    }
-    
+    };
 }
 
 export default Admin;
