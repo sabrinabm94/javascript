@@ -28,8 +28,6 @@ https://console.firebase.google.com/project/website-sabrinabm94/storage/website-
 ## Configuration
 npm install firebase
 npm install -g firebase-tools
-npm install --save react-router-dom
-npm install dotenv --save
 
 ## Host
 #### Authentication
