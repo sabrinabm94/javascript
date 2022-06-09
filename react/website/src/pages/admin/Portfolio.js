@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import { db, ref, put, storage, uploadBytes } from "../../init-firebase";
 
 class Portfolio extends Component {
     constructor(props) {
         super(props);
     }
 
-    async setData(collection, title, description, image) {
+    async sendData(collection, title, description, files) {
         event.preventDefault();
 
         if(collection) {
@@ -16,17 +17,37 @@ class Portfolio extends Component {
                 console.log("description ", description.value);
             }
 
-            if(image) {
-                console.log("image ", image.value);
+            if(files) {
+                this.storageFile(files);
             }
         }
+    }
+
+    storageFile(files) {
+        if(files) {
+            if(files.length > 0) {
+                Object.values(files).map(file => {
+                    this.sendFile(file);
+                });
+            } else {
+                this.sendFile(file);
+            }
+        }
+    }
+
+    sendFile(file) {
+        let storageRef = ref(storage, file.name);
+        
+        uploadBytes(storageRef, file).then((snapshot) => {
+            console.log('File sent!');
+        });
     }
 
     render() {
         return (
             <section id="admin-portfolio" className="container-fluid text-center bg-grey">
                 <h2>Portfolio</h2>
-                <form onSubmit={() => this.setData("thumbnailElements", this.portfolioTitle, this.portfolioDescription, this.portfolioImage)} className="form">
+                <form onSubmit={() => this.sendData("thumbnailElements", this.portfolioTitle, this.portfolioDescription, this.portfolioImage.files)} className="form">
                     <div className="row">
                         <div className="col-6 col-sm-6 col-md-6 col-lg-6">
                             <div className="form-group">
@@ -50,7 +71,7 @@ class Portfolio extends Component {
                     </div>
                 </form>
                 <h2>Costumers</h2>
-                <form onSubmit={() => this.setData("carouselElements", this.carouselTitle, this.carouselDescription)} className="form">
+                <form onSubmit={() => this.sendData("carouselElements", this.carouselTitle, this.carouselDescription)} className="form">
                     <div className="row">
                         <div className="col-6 col-sm-6 col-md-6 col-lg-6">
                             <div className="form-group">
