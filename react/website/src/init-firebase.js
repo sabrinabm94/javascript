@@ -1,8 +1,8 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase, child, get } from "firebase/database";
+import { getDatabase, child, set, push, get, ref as databaseRef } from "firebase/database";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-import { getStorage, ref, uploadBytes } from "firebase/storage";
+import { getStorage, getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
@@ -24,4 +24,4 @@ export const storage = getStorage(app);
 export const storageRef = ref(storage);
 export const auth = getAuth(app);
 export const analytics = getAnalytics(app);
-export { ref, child, get, uploadBytes };
+export { databaseRef, getDownloadURL, set, push, ref, child, get, uploadBytes };

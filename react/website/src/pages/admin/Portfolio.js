@@ -1,24 +1,37 @@
 import React, { Component } from "react";
-import { db, ref, put, storage, uploadBytes } from "../../init-firebase";
+import { db, ref, set, push, databaseRef, put, storage, uploadBytes, getDownloadURL } from "../../init-firebase";
 
 class Portfolio extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            form: {
+                title: "",
+                description: "",
+                image: "",
+            },
+        };
     }
 
     async sendData(collection, title, description, files) {
         event.preventDefault();
 
         if(collection) {
-            console.log("collection", collection);
-
             if(title && description) {
-                console.log("title ", title.value);
-                console.log("description ", description.value);
-            }
+                this.state.form.title = title.value;
+                this.state.form.description = description.value;
 
-            if(files) {
-                this.storageFile(files, collection);
+                try {
+                    //enviar formulário somente após o upload da imagem no storage
+                    await this.storageFile(files, collection).then((snapshot) => { //Cannot read properties of undefined (reading 'then')
+                        if (snapshot.exists()) {
+                            this.sendForm(this.state.form, collection);
+                        }
+                    });
+                } catch (error) {
+                    console.log(error);
+                }
             }
         }
     }
@@ -40,6 +53,28 @@ class Portfolio extends Component {
         
         uploadBytes(fileRef, file).then((snapshot) => {
             console.log('File sent!');
+            this.getFileUrl(file, collection);
+        });
+    }
+
+    getFileUrl(file, collection) {
+        getDownloadURL(ref(storage, collection + "/" + file.name))
+        .then((url) => {
+            this.state.form.url = url;
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    }
+
+    sendForm(form, collection) { //to do melhorar simplificar id gerado
+        console.log(form);
+        push(databaseRef(db, collection + "/"), {
+            title: form.title,
+            description: form.description,
+            image: form.image
+        }).then((snapshot) => {
+            console.log('Form sent!');
         });
     }
 
