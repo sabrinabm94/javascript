@@ -18,27 +18,27 @@ class Portfolio extends Component {
             }
 
             if(files) {
-                this.storageFile(files);
+                this.storageFile(files, collection);
             }
         }
     }
 
-    storageFile(files) {
+    storageFile(files, collection) {
         if(files) {
             if(files.length > 0) {
                 Object.values(files).map(file => {
-                    this.sendFile(file);
+                    this.sendFile(file, collection);
                 });
             } else {
-                this.sendFile(file);
+                this.sendFile(file, collection);
             }
         }
     }
 
-    sendFile(file) {
-        let storageRef = ref(storage, file.name);
+    sendFile(file, collection) {
+        let fileRef = ref(storage, collection + "/" + file.name);
         
-        uploadBytes(storageRef, file).then((snapshot) => {
+        uploadBytes(fileRef, file).then((snapshot) => {
             console.log('File sent!');
         });
     }
