@@ -14,7 +14,7 @@ class Portfolio extends Component {
         };
     }
 
-    async sendData(collection, title, description, files) {
+    sendData(collection, title, description, files) {
         event.preventDefault();
 
         if(collection) {
@@ -24,11 +24,17 @@ class Portfolio extends Component {
 
                 try {
                     //enviar formulário somente após o upload da imagem no storage
-                    await this.storageFile(files, collection).then((snapshot) => { //Cannot read properties of undefined (reading 'then')
-                        if (snapshot.exists()) {
-                            this.sendForm(this.state.form, collection);
-                        }
-                    });
+                    let storageFilePromise = this.storageFile(files, collection); //1
+                    storageFilePromise
+                        .then(response => {
+                            console.log(response);
+                        })
+                        .then(
+                            this.getFileUrl(files, collection) //2
+                        )
+                        .then(
+                            this.sendForm(this.state.form, collection) //3
+                        )
                 } catch (error) {
                     console.log(error);
                 }
@@ -36,14 +42,20 @@ class Portfolio extends Component {
         }
     }
 
-    storageFile(files, collection) {
-        if(files) {
-            if(files.length > 0) {
-                Object.values(files).map(file => {
-                    this.sendFile(file, collection);
-                });
+    async storageFile(file, collection) {
+        if(file) {
+            if(file.length > 0) {
+                  return new Promise(resolve => {
+                    Object.values(file).map(file => {
+                        this.sendFile(file, collection);
+                        resolve();
+                    });
+                  });
             } else {
-                this.sendFile(file, collection);
+                return new Promise(resolve => {
+                    this.sendFile(file, collection);
+                    resolve();
+                  });
             }
         }
     }
@@ -51,16 +63,29 @@ class Portfolio extends Component {
     sendFile(file, collection) {
         let fileRef = ref(storage, collection + "/" + file.name);
         
-        uploadBytes(fileRef, file).then((snapshot) => {
-            console.log('File sent!');
-            this.getFileUrl(file, collection);
+        uploadBytes(fileRef, file).then((response) => {
+            console.log('1 - File sent!');
+            return response;
         });
     }
 
     getFileUrl(file, collection) {
+        if(file) {
+            if(file.length > 0) {
+                return Object.values(file).map(file => {
+                    this.getStorageUrl(collection, file);
+                });
+            } else {
+                return this.getStorageUrl(collection, file);
+            }
+        }
+    }
+
+    getStorageUrl(collection, file) {
         getDownloadURL(ref(storage, collection + "/" + file.name))
         .then((url) => {
-            this.state.form.url = url;
+            console.log("2 - Got file url")
+            return this.state.form.image = url;
         })
         .catch((error) => {
             console.log(error);
@@ -73,8 +98,9 @@ class Portfolio extends Component {
             title: form.title,
             description: form.description,
             image: form.image
-        }).then((snapshot) => {
-            console.log('Form sent!');
+        }).then((response) => {
+            console.log('3 - Form sent');
+            return response;
         });
     }
 
