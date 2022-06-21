@@ -4,14 +4,21 @@ import { db, ref, set, push, databaseRef, put, storage, uploadBytes, getDownload
 class Portfolio extends Component {
     constructor(props) {
         super(props);
-
+     
         this.state = {
-            form: {
-                title: "",
-                description: "",
-                image: "",
-            },
+           form: {
+              title: "",
+              description: "",
+              image: "",
+           },
         };
+
+        this.sendData = this.sendData.bind(this);
+        this.storageFile = this.storageFile.bind(this);
+        this.sendFile = this.sendFile.bind(this);
+        this.getFileUrl = this.getFileUrl.bind(this);
+        this.getStorageUrl = this.getStorageUrl.bind(this);
+        this.sendForm = this.sendForm.bind(this);
     }
 
     sendData(collection, title, description, files) {
