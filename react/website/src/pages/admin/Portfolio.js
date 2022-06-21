@@ -12,13 +12,6 @@ class Portfolio extends Component {
               image: "",
            },
         };
-
-        this.sendData = this.sendData.bind(this);
-        this.storageFile = this.storageFile.bind(this);
-        this.sendFile = this.sendFile.bind(this);
-        this.getFileUrl = this.getFileUrl.bind(this);
-        this.getStorageUrl = this.getStorageUrl.bind(this);
-        this.sendForm = this.sendForm.bind(this);
     }
 
     sendData(collection, title, description, files) {
@@ -26,22 +19,27 @@ class Portfolio extends Component {
 
         if(collection) {
             if(title && description) {
-                this.state.form.title = title.value;
-                this.state.form.description = description.value;
+                this.setState({
+                    form: {
+                        ...this.state.form,
+                        title: title.value,
+                        description: description.value
+                    },
+                });
 
                 try {
                     //enviar formulário somente após o upload da imagem no storage
                     let storageFilePromise = this.storageFile(files, collection); //1
-                    storageFilePromise
-                        .then(response => {
-                            console.log(response);
-                        })
-                        .then(
-                            this.getFileUrl(files, collection) //2
-                        )
-                        .then(
-                            this.sendForm(this.state.form, collection) //3
-                        )
+                    storageFilePromise.then(response => {
+                        this.getFileUrl(files, collection) //2
+                        this.sendForm(this.state.form, collection) //3
+                    })
+                    // storageFilePromise
+                    //     .then(response => {
+                    //         console.log(response)
+                    //         this.getFileUrl(files, collection) //2
+                    //         //this.sendForm(this.state.form, collection) //3
+                    //     })
                 } catch (error) {
                     console.log(error);
                 }
@@ -55,7 +53,7 @@ class Portfolio extends Component {
                   return new Promise(resolve => {
                     Object.values(file).map(file => {
                         this.sendFile(file, collection);
-                        resolve();
+                        //resolve();
                     });
                   });
             } else {
@@ -92,14 +90,20 @@ class Portfolio extends Component {
         getDownloadURL(ref(storage, collection + "/" + file.name))
         .then((url) => {
             console.log("2 - Got file url")
-            return this.state.form.image = url;
+
+            this.setState({
+                form: {
+                    ...this.state.form,
+                    image: url
+                },
+            });
         })
         .catch((error) => {
             console.log(error);
         });
     }
 
-    sendForm(form, collection) { //to do melhorar simplificar id gerado
+    async sendForm(form, collection) { //to do melhorar simplificar id gerado
         console.log(form);
         push(databaseRef(db, collection + "/"), {
             title: form.title,
