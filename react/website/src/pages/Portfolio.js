@@ -30,7 +30,7 @@ class Portfolio extends Component {
                     let elementsArray = [];
 
                     if(typeof(elements) === "object") { //loop para objeto
-                        elementsArray = Object.keys(elements).map((k) => elements[k])
+                        elementsArray = Object.keys(elements).map((key, id) => elements[key])
 
                     } else {
                         elements.forEach((element) => { //loop para array

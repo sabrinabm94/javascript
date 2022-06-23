@@ -1,9 +1,13 @@
 import React from "react";
 
 const Thumbnail = props => {
+    let style = {
+        backgroundImage: `url(${props.imgSrc})`
+    }
+
     return (
         <div className="thumbnail">
-            <img src={props.imgSrc} alt={`Image of ${props.title}`} width="400" height="300" />
+            <picture className="image" alt={`Image of ${props.title}`} style={style}></picture>
             <h2>
                 <strong>{props.title}</strong>
             </h2>

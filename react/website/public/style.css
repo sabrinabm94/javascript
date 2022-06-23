@@ -198,6 +198,14 @@ footer .glyphicon {
   display: block;
 }
 
+.thumbnail .image {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 300px;
+    display: block;
+}
+
 @keyframes slide {
   0% {
     opacity: 0;
