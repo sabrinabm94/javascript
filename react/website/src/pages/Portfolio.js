@@ -1,6 +1,6 @@
 import { React, Component } from "react";
 
-import { db, ref, get } from "../init-firebase";
+import { db, databaseRef, get } from "../init-firebase";
 
 //components
 import Thumbnail from "../components/Thumbnail";
@@ -20,38 +20,45 @@ class Portfolio extends Component {
         this.getData("carouselElements");
     }
 
-    async getData(collection) {
-        const dbRef = ref(db);
+    getData(collection) {
+        const dbRef = databaseRef(db);
 
         try {
-            await get(dbRef, collection).then((snapshot) => {
-                if (snapshot.exists()) {
-                    let elements = snapshot.val()[collection];
+            get(dbRef, collection).then((response) => {
+                if (response.exists()) {
+                    let elements = response.val()[collection];
                     let elementsArray = [];
-                    elements.forEach((element) => {
-                        if (
-                            elementsArray.some(
-                                (item) => item.number === element.number
-                            ) == false ||
-                            elementsArray.some(
-                                (item) => item.id === element.id
-                            ) == false
-                        ) {
-                            elementsArray.push(element);
-                        }
-                    });
+
+                    if(typeof(elements) === "object") { //loop para objeto
+                        elementsArray = Object.keys(elements).map((k) => elements[k])
+
+                    } else {
+                        elements.forEach((element) => { //loop para array
+                            if (
+                                elementsArray.some(
+                                    (item) => item.number === element.number
+                                ) === false ||
+                                elementsArray.some(
+                                    (item) => item.id === element.id
+                                ) === false
+                            ) {
+                                elementsArray.push(element);
+                            }
+                        });
+                    }
+                    
                     console.log("Got data ");
 
                     //pensar em como melhorar isso
-                    if (collection == "thumbnailElements") {
+                    if(collection === "thumbnailElements") {
                         this.setState({
-                            thumbnailElements: elementsArray,
+                            thumbnailElements: elementsArray
                         });
                     }
 
-                    if (collection == "carouselElements") {
+                    if(collection === "carouselElements") {
                         this.setState({
-                            carouselElements: elementsArray,
+                            carouselElements: elementsArray
                         });
                     }
                 } else {

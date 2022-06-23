@@ -8,22 +8,22 @@ class Portfolio extends Component {
         this.state = {
            form: {
               title: "",
-              description: "",
+              subtitle: "",
               image: "",
            },
         };
     }
 
-    sendData(collection, title, description, files) {
+    sendData(collection, title, subtitle, files) {
         event.preventDefault();
 
         if(collection) {
-            if(title && description) {
+            if(title && subtitle) {
                 this.setState({
                     form: {
                         ...this.state.form,
                         title: title.value,
-                        description: description.value
+                        subtitle: subtitle.value
                     },
                 });
 
@@ -89,7 +89,7 @@ class Portfolio extends Component {
     sendForm(url, collection) { //to do melhorar simplificar id gerado
         push(databaseRef(db, collection + "/"), {
             title: this.state.form.title,
-            description: this.state.form.description,
+            subtitle: this.state.form.subtitle,
             image: url
         }).then((response) => {
             console.log('3 - Form sent', response);
@@ -101,7 +101,7 @@ class Portfolio extends Component {
         return (
             <section id="admin-portfolio" className="container-fluid text-center bg-grey">
                 <h2>Portfolio</h2>
-                <form onSubmit={() => this.sendData("thumbnailElements", this.portfolioTitle, this.portfolioDescription, this.portfolioImage.files)} className="form">
+                <form onSubmit={() => this.sendData("thumbnailElements", this.portfolioTitle, this.portfolioSubtitle, this.portfolioImage.files)} className="form">
                     <div className="row">
                         <div className="col-6 col-sm-6 col-md-6 col-lg-6">
                             <div className="form-group">
@@ -111,8 +111,8 @@ class Portfolio extends Component {
                         </div>
                         <div className="col-6 col-sm-6 col-md-6 col-lg-6">
                             <div className="form-group">
-                                <label htmlFor="description">Description</label>
-                                <input type="text" className="form-control" id="portfolioDescription" placeholder="Description" ref={portfolioDescription => (this.portfolioDescription = portfolioDescription)} /> 
+                                <label htmlFor="subtitle">Subtitle</label>
+                                <input type="text" className="form-control" id="portfolioSubtitle" placeholder="subtitle" ref={portfolioSubtitle => (this.portfolioSubtitle = portfolioSubtitle)} /> 
                             </div>
                         </div>
                         <div className="col-12 col-sm-12 col-md-12 col-lg-12">
@@ -125,7 +125,7 @@ class Portfolio extends Component {
                     </div>
                 </form>
                 <h2>Costumers</h2>
-                <form onSubmit={() => this.sendData("carouselElements", this.carouselTitle, this.carouselDescription)} className="form">
+                <form onSubmit={() => this.sendData("carouselElements", this.carouselTitle, this.carouselSubtitle)} className="form">
                     <div className="row">
                         <div className="col-6 col-sm-6 col-md-6 col-lg-6">
                             <div className="form-group">
@@ -135,8 +135,8 @@ class Portfolio extends Component {
                         </div>
                         <div className="col-6 col-sm-6 col-md-6 col-lg-6">
                             <div className="form-group">
-                                <label htmlFor="description">Description</label>
-                                <input type="text" className="form-control" id="carouselDescription" placeholder="Description" ref={carouselDescription => (this.carouselDescription = carouselDescription)} /> 
+                                <label htmlFor="subtitle">Subtitle</label>
+                                <input type="text" className="form-control" id="carouselSubtitle" placeholder="subtitle" ref={carouselSubtitle => (this.carouselSubtitle = carouselSubtitle)} /> 
                             </div>
                         </div>
                         <div className="col-12 col-sm-12 col-md-12 col-lg-12">
