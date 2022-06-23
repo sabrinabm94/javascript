@@ -10,16 +10,17 @@ const Carousel = (props) => {
         >
             <ol className="carousel-indicators">
                 <>
-                    {props.elements.map((data, id) => {
+                    {props.elements.map((data, key) => {
+                        console.log(key);
                         let target = null;
 
-                        if (data.number === 0) {
+                        if(key === 0) {
                             target = (
                                 <li
                                     data-target="#myCarousel"
                                     data-slide-to={data.number}
                                     className="active"
-                                    key={id}
+                                    key={key}
                                 ></li>
                             );
                         } else {
@@ -27,7 +28,7 @@ const Carousel = (props) => {
                                 <li
                                     data-target="#myCarousel"
                                     data-slide-to={data.number}
-                                    key={id}
+                                    key={key}
                                 ></li>
                             );
                         }
@@ -37,19 +38,19 @@ const Carousel = (props) => {
                 </>
             </ol>
             <div className="carousel-inner" role="listbox">
-                {props.elements.map((data, id) => {
+                {props.elements.map((data, key) => {
                     let item = null;
 
-                    if (data.number === 0) {
+                    if(key === 0) {
                         item = (
-                            <div className="item active" key={id}>
+                            <div className="item active" key={key}>
                                 <h4>{data.title}</h4>
                                 <span>{data.subtitle}</span>
                             </div>
                         );
                     } else {
                         item = (
-                            <div className="item" key={id}>
+                            <div className="item" key={key}>
                                 <h4>{data.title}</h4>
                                 <span>{data.subtitle}</span>
                             </div>

@@ -2,20 +2,21 @@ import { React, Component } from "react";
 import { db, databaseRef, get } from "../init-firebase";
 
 //components
-import Thumbnail from "../components/Thumbnail";
+import Carousel from "../components/Carousel";
 
 class Portfolio extends Component {
     constructor() {
         super();
 
-        this.state = {
+        this.state = { 
             render: <h1>Sem dados encontrados</h1>,
-            thumbnailElements: [],
+            carouselElements: [],
         };
+
     }
 
     componentDidMount() {
-        this.getData("thumbnailElements");
+        this.getData("carouselElements");
     }
 
     getData(collection) {
@@ -47,9 +48,9 @@ class Portfolio extends Component {
                     
                     console.log("Got data ");
 
-                    if(collection === "thumbnailElements") {
+                    if(collection === "carouselElements") {
                         this.setState({
-                            thumbnailElements: elementsArray
+                            carouselElements: elementsArray
                         });
                     }
                 } else {
@@ -64,26 +65,11 @@ class Portfolio extends Component {
 
     render() {
         return (
-            <section id="portfolio" className="container-fluid text-center bg-grey">
-                <h2>Portfolio</h2>
-                <br />
-                <h4>What we have created</h4>
+            <section id="costumers" className="container-fluid text-center bg-grey">
+                <h2>What our customers say</h2>
                 <div className="row text-center slideanim slide">
-                    <>
-                        {this.state.thumbnailElements.map((data, key) => {
-                            return (
-                                <div className="col-sm-4" key={key}>
-                                    <Thumbnail
-                                        imgSrc={data.image}
-                                        title={data.title}
-                                        subtitle={data.subtitle}
-                                    />
-                                </div>
-                            );
-                        })}
-                    </>
+                    <Carousel elements={this.state.carouselElements} />
                 </div>
-                <br />
             </section>
         );
     }

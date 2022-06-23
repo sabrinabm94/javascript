@@ -12,6 +12,7 @@ import Search from "../templates/Search";
 import About from "./About";
 import Service from "./Service";
 import Portfolio from "./Portfolio";
+import Costumers from "./Costumers";
 import Pricing from "./Pricing";
 import Contact from "./Contact";
 import Admin from "./admin/Admin";
@@ -25,6 +26,7 @@ const Pages = props => {
                 <Route path="/about" element={<About />} />
                 <Route path="/services" element={<Service />} />
                 <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/costumers" element={<Costumers />} />
                 <Route path="/pricing" element={<Pricing />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/admin/*" element={<Admin />} />

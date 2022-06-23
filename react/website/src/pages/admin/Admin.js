@@ -10,6 +10,7 @@ import Header from "../../templates/admin/Header";
 
 //pages
 import Portfolio from "../admin/Portfolio";
+import Costumers from "../admin/Costumers";
 
 class Admin extends Component {
     constructor(props) {
@@ -23,6 +24,9 @@ class Admin extends Component {
                 <Header />
                 <Routes>
                     <Route path="portfolio" element={<Portfolio />} />
+                </Routes>
+                <Routes>
+                    <Route path="costumers" element={<Costumers />} />
                 </Routes>
             </div>
         )

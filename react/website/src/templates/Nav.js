@@ -32,6 +32,9 @@ const Nav = props => {
                             <Link to="/portfolio">PORTFOLIO</Link>
                         </li>
                         <li>
+                            <Link to="/costumers">COSTUMERS</Link>
+                        </li>
+                        <li>
                             <Link to="/pricing">PRICING</Link>
                         </li>
                         <li>

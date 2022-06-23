@@ -13,7 +13,7 @@ const Nav = props => {
 
                     </li>
                     <li className="nav-item">
-                        <Link to="features">Features</Link>
+                        <Link to="costumers">Costumers</Link>
                     </li>
                 </ul>
             </div>
