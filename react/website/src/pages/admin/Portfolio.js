@@ -28,11 +28,7 @@ class Portfolio extends Component {
                 });
 
                 try {
-                    //enviar formulário somente após o upload da imagem no storage
-                    this.storageFile(files, collection).then(() => {
-                        this.getFileUrl(files, collection) //2
-                        this.sendForm(this.state.form, collection) //3
-                    })
+                    this.storageFile(files, collection);
                 } catch (error) {
                     console.log(error);
                 }
@@ -40,7 +36,7 @@ class Portfolio extends Component {
         }
     }
 
-    async storageFile(file, collection) {
+    storageFile(file, collection) {
         if(file) {
             if(file.length > 0) {
                   return new Promise(resolve => {
@@ -53,16 +49,18 @@ class Portfolio extends Component {
                 return new Promise(resolve => {
                     this.sendFile(file, collection);
                     resolve();
-                  });
+                });
             }
         }
     }
 
-    async sendFile(file, collection) {
+    sendFile(file, collection) {
         let fileRef = ref(storage, collection + "/" + file.name);
         
-        console.log('1 - File sent!');
-        return uploadBytes(fileRef, file)
+        uploadBytes(fileRef, file).then((response) => {
+            console.log('1 - File sent!', response);
+            return this.getFileUrl(file, collection);
+        });
     }
 
     getFileUrl(file, collection) {
@@ -80,28 +78,21 @@ class Portfolio extends Component {
     getStorageUrl(collection, file) {
         getDownloadURL(ref(storage, collection + "/" + file.name))
         .then((url) => {
-            console.log("2 - Got file url")
-
-            this.setState({
-                form: {
-                    ...this.state.form,
-                    image: url
-                },
-            });
+            console.log("2 - Got file url", url)
+            return this.sendForm(url, collection);
         })
         .catch((error) => {
             console.log(error);
         });
     }
 
-    async sendForm(form, collection) { //to do melhorar simplificar id gerado
-        console.log(form);
+    sendForm(url, collection) { //to do melhorar simplificar id gerado
         push(databaseRef(db, collection + "/"), {
-            title: form.title,
-            description: form.description,
-            image: form.image
+            title: this.state.form.title,
+            description: this.state.form.description,
+            image: url
         }).then((response) => {
-            console.log('3 - Form sent');
+            console.log('3 - Form sent', response);
             return response;
         });
     }
