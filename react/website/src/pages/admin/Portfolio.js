@@ -29,17 +29,10 @@ class Portfolio extends Component {
 
                 try {
                     //enviar formulário somente após o upload da imagem no storage
-                    let storageFilePromise = this.storageFile(files, collection); //1
-                    storageFilePromise.then(response => {
+                    this.storageFile(files, collection).then(() => {
                         this.getFileUrl(files, collection) //2
                         this.sendForm(this.state.form, collection) //3
                     })
-                    // storageFilePromise
-                    //     .then(response => {
-                    //         console.log(response)
-                    //         this.getFileUrl(files, collection) //2
-                    //         //this.sendForm(this.state.form, collection) //3
-                    //     })
                 } catch (error) {
                     console.log(error);
                 }
@@ -53,7 +46,7 @@ class Portfolio extends Component {
                   return new Promise(resolve => {
                     Object.values(file).map(file => {
                         this.sendFile(file, collection);
-                        //resolve();
+                        resolve();
                     });
                   });
             } else {
@@ -65,13 +58,11 @@ class Portfolio extends Component {
         }
     }
 
-    sendFile(file, collection) {
+    async sendFile(file, collection) {
         let fileRef = ref(storage, collection + "/" + file.name);
         
-        uploadBytes(fileRef, file).then((response) => {
-            console.log('1 - File sent!');
-            return response;
-        });
+        console.log('1 - File sent!');
+        return uploadBytes(fileRef, file)
     }
 
     getFileUrl(file, collection) {
