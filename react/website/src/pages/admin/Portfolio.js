@@ -16,19 +16,20 @@ class Portfolio extends Component {
 
     sendData(collection, title, subtitle, files) {
         event.preventDefault();
+        console.log(title.value);
 
         if(collection) {
             if(title && subtitle) {
-                this.setState({
-                    form: {
-                        ...this.state.form,
-                        title: title.value,
-                        subtitle: subtitle.value
-                    },
-                });
-
+                let form = {
+                    title: title.value,
+                    subtitle: subtitle.value
+                }
                 try {
-                    this.storageFile(files, collection);
+                    if(files) { //outro processo se precisar salvar arquivos no storage
+                        this.storageFile(files, collection, form);
+                    } else {
+                        return this.sendForm(null, collection, form);
+                    }
                 } catch (error) {
                     console.log(error);
                 }
@@ -36,65 +37,70 @@ class Portfolio extends Component {
         }
     }
 
-    storageFile(file, collection) {
+    storageFile(file, collection, form) {
         if(file) {
             if(file.length > 0) {
                   return new Promise(resolve => {
                     Object.values(file).map(file => {
-                        this.sendFile(file, collection);
+                        this.sendFile(file, collection, form);
                         resolve();
                     });
                   });
-            } else {
-                return new Promise(resolve => {
-                    this.sendFile(file, collection);
-                    resolve();
-                });
             }
         }
     }
 
-    sendFile(file, collection) {
+    sendFile(file, collection, form) {
         let fileRef = ref(storage, collection + "/" + file.name);
         
         uploadBytes(fileRef, file).then((response) => {
             console.log('1 - File sent!', response);
-            return this.getFileUrl(file, collection);
+            return this.getFileUrl(file, collection, form);
         });
     }
 
-    getFileUrl(file, collection) {
-        if(file) {
-            if(file.length > 0) {
-                return Object.values(file).map(file => {
-                    this.getStorageUrl(collection, file);
-                });
-            } else {
-                return this.getStorageUrl(collection, file);
-            }
+    getFileUrl(file, collection, form) {
+        if(file && file.length > 0) {
+            return Object.values(file).map(file => {
+                this.getStorageUrl(collection, file, form);
+            });
         }
     }
 
-    getStorageUrl(collection, file) {
-        getDownloadURL(ref(storage, collection + "/" + file.name))
-        .then((url) => {
-            console.log("2 - Got file url", url)
-            return this.sendForm(url, collection);
-        })
-        .catch((error) => {
-            console.log(error);
-        });
+    getStorageUrl(collection, file, form) {
+        if(collection && file) {
+            getDownloadURL(ref(storage, collection + "/" + file.name))
+            .then((url) => {
+                console.log("2 - Got file url", url)
+                return this.sendForm(url, collection, form);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        }
     }
 
-    sendForm(url, collection) { //to do melhorar simplificar id gerado
-        push(databaseRef(db, collection + "/"), {
-            title: this.state.form.title,
-            subtitle: this.state.form.subtitle,
-            image: url
-        }).then((response) => {
-            console.log('3 - Form sent', response);
-            return response;
-        });
+    sendForm(url, collection, form) { 
+        if(collection) {
+            if(url !== null) {
+                push(databaseRef(db, collection + "/"), {
+                    title: form.title,
+                    subtitle: form.subtitle,
+                    image: url
+                }).then((response) => {
+                    console.log('3 - Form sent', response);
+                    return response;
+                });
+            } else {
+                push(databaseRef(db, collection + "/"), {
+                    title: form.title,
+                    subtitle: form.subtitle,
+                }).then((response) => {
+                    console.log('3 - Form sent', response);
+                    return response;
+                });
+            }
+        }
     }
 
     render() {
