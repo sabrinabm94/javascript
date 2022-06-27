@@ -8,9 +8,12 @@ import {
 //templates
 import Header from "../../templates/admin/Header";
 
-//pages
+//page
+import About from "../admin/About";
+import Services from "../admin/Services";
 import Portfolio from "../admin/Portfolio";
 import Costumers from "../admin/Costumers";
+import Pricing from "../admin/Pricing";
 
 class Admin extends Component {
     constructor(props) {
@@ -23,10 +26,19 @@ class Admin extends Component {
                 <h1>Admin area</h1>
                 <Header />
                 <Routes>
+                    <Route path="about" element={<About />} />
+                </Routes>
+                <Routes>
+                    <Route path="services" element={<Services />} />
+                </Routes>
+                <Routes>
                     <Route path="portfolio" element={<Portfolio />} />
                 </Routes>
                 <Routes>
                     <Route path="costumers" element={<Costumers />} />
+                </Routes>
+                <Routes>
+                    <Route path="pricing" element={<Pricing />} />
                 </Routes>
             </div>
         )
