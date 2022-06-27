@@ -38,9 +38,8 @@ class Form extends Component {
     sendForm(collection, form) { 
         console.log(form);
         if(collection) {
-            push(databaseRef(db, collection + "/"), { //pensar em como deixar mais generico
-                title: form.title,
-                content: form.content
+            push(databaseRef(db, collection + "/"), {
+                form
             }).then((response) => {
                 console.log('Form sent', response);
                 return response;

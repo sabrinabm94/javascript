@@ -193,7 +193,7 @@ footer .glyphicon {
   margin-right: 20px;
 }
 
-.navbar li a, .form-group input, .form-group label, .thumbnail .image  {
+.navbar li a, .form-group input, .form-group label, .thumbnail .image, .form-group textarea {
   display: block;
 }
 
@@ -203,7 +203,7 @@ footer .glyphicon {
     height: 300px;
 }
 
-.thumbnail .image, .form-group input, .image-full, .thumbnail img {
+.thumbnail .image, .form-group input, .image-full, .thumbnail img, .form-group textarea {
     width: 100%;
 }
 
