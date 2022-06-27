@@ -3,6 +3,11 @@ import React from "react";
 const Painel = props => {
     return (
         <div className="panel panel-default text-center">
+            <div className="row">
+                <div className="col-sm-2">
+                    <span className="delete">x</span>
+                </div>
+            </div>
             <div className="panel-heading">
                 <h2>{props.title}</h2>
             </div>
