@@ -11,21 +11,6 @@ class About extends Component {
         super(props);
     }
 
-    addBlock() {
-        let button = querySelector(".addBlock");
-
-        if(button) {
-            button.addEventListener("click", function() {
-                addNewForm();
-            });
-        }
-        
-    }
-
-    addNewForm() {
-
-    }
-
     render() {
         return (
             <div id="admin-about" className="container-fluid text-center bg-grey">

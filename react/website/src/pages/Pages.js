@@ -10,7 +10,7 @@ import Search from "../templates/Search";
 
 //pages
 import About from "./About";
-import Service from "./Service";
+import Services from "./Services";
 import Portfolio from "./Portfolio";
 import Costumers from "./Costumers";
 import Pricing from "./Pricing";
@@ -24,7 +24,7 @@ const Pages = props => {
             <Routes>
                 <Route path="/" element={<About />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/services" element={<Service />} />
+                <Route path="/services" element={<Services />} />
                 <Route path="/portfolio" element={<Portfolio />} />
                 <Route path="/costumers" element={<Costumers />} />
                 <Route path="/pricing" element={<Pricing />} />
