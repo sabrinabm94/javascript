@@ -66,7 +66,7 @@ class Services extends Component {
     render() {
         return (
             <section id="services" className="container-fluid text-center">
-                <h2 className="title">SERVICES</h2>
+                <h1 className="title">SERVICES</h1>
                 <br />
                 <div className="row slideanim slide">
                     <>

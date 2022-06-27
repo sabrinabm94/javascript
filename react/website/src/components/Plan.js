@@ -5,10 +5,10 @@ const Plan = props => {
     return (
         <div className="panel panel-default text-center">
             <div className="panel-heading">
-                <h1>{props.title}</h1>
+                <h2>{props.title}</h2>
             </div>
             <div className="panel-body">
-                <p>{props.description}</p>
+                <p dangerouslySetInnerHTML={{ __html: props.description }}></p>
             </div>
             <div className="panel-footer">
                 <h3>{props.value}</h3>

@@ -11,7 +11,6 @@ const Carousel = (props) => {
             <ol className="carousel-indicators">
                 <>
                     {props.elements.map((data, key) => {
-                        console.log(key);
                         let target = null;
 
                         if(key === 0) {

@@ -62,8 +62,12 @@ h4 {
   margin-bottom: 10px;
 }
 
-h2, h4, .card {
+.title, .card {
     margin-bottom: 40px;
+}
+
+.subtitle {
+    margin-bottom: 20px;
 }
 
 .carousel-control.right,

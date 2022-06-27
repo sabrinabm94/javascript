@@ -71,6 +71,13 @@ class About extends Component {
     render() {
         return (
         <section className="container-fluid bg-grey">
+            <div className="row">
+                <div className="col-sm-4">
+                </div>
+                <div className="col-sm-8">
+                    <h1 className="title">ABOUT US</h1>
+                </div>
+            </div>
             <>
                 {this.state.aboutElements.map((data, key) => {
                     data = data.form;
@@ -81,7 +88,7 @@ class About extends Component {
                                 <Glyphicon name={`glyphicon-${data.icon} logo slideanim slide`}/>
                             </div>
                             <div className="col-sm-8">
-                                <h2 className="title">{data.title}</h2>
+                                <h2 className="subtitle">{data.title}</h2>
                                 <br />
                                 <h4 className="content" dangerouslySetInnerHTML={{ __html: data.content }}></h4>
                             </div>

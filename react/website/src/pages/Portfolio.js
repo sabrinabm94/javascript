@@ -65,9 +65,9 @@ class Portfolio extends Component {
     render() {
         return (
             <section id="portfolio" className="container-fluid text-center bg-grey">
-                <h2>Portfolio</h2>
+                <h1 className="title">PORTFOLIO</h1>
                 <br />
-                <h4>What we have created</h4>
+                <h4 className="subtitle">What we have created</h4>
                 <div className="row text-center slideanim slide">
                     <>
                         {this.state.thumbnailElements.map((data, key) => {

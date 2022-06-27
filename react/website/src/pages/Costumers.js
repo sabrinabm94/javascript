@@ -66,7 +66,8 @@ class Portfolio extends Component {
     render() {
         return (
             <section id="costumers" className="container-fluid text-center bg-grey">
-                <h2>What our customers say</h2>
+                <h1 className="title">COSTUMERS</h1>
+                <h2 className="subtitle">What our customers say</h2>
                 <div className="row text-center slideanim slide">
                     <Carousel elements={this.state.carouselElements} />
                 </div>
