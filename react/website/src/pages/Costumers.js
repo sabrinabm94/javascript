@@ -10,13 +10,13 @@ class Portfolio extends Component {
 
         this.state = { 
             render: <h1>Sem dados encontrados</h1>,
-            carouselElements: [],
+            costumersElements: [],
         };
 
     }
 
     componentDidMount() {
-        this.getData("carouselElements");
+        this.getData("costumersElements");
     }
 
     getData(collection) {
@@ -48,9 +48,9 @@ class Portfolio extends Component {
                     
                     console.log("Got data ");
 
-                    if(collection === "carouselElements") {
+                    if(collection === "costumersElements") {
                         this.setState({
-                            carouselElements: elementsArray
+                            costumersElements: elementsArray
                         });
                     }
                 } else {
@@ -69,7 +69,7 @@ class Portfolio extends Component {
                 <h1 className="title">COSTUMERS</h1>
                 <h2 className="subtitle">What our customers say</h2>
                 <div className="row text-center slideanim slide">
-                    <Carousel elements={this.state.carouselElements} />
+                    <Carousel elements={this.state.costumersElements} />
                 </div>
             </section>
         );

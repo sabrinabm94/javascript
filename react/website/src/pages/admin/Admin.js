@@ -14,6 +14,8 @@ import Services from "../admin/Services";
 import Portfolio from "../admin/Portfolio";
 import Costumers from "../admin/Costumers";
 import Pricing from "../admin/Pricing";
+import Contact from "../admin/Contact";
+import ClientsContact from "../admin/ClientsContact";
 
 class Admin extends Component {
     constructor(props) {
@@ -39,6 +41,12 @@ class Admin extends Component {
                 </Routes>
                 <Routes>
                     <Route path="pricing" element={<Pricing />} />
+                </Routes>
+                <Routes>
+                    <Route path="contact" element={<Contact />} />
+                </Routes>
+                <Routes>
+                    <Route path="clientsContact" element={<ClientsContact />} />
                 </Routes>
             </div>
         )

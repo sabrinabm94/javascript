@@ -1,39 +1,112 @@
-import { React } from "react";
+import { React, Component } from "react";
+import { db, databaseRef, get } from "../init-firebase";
 
-import Location from "./Location";
+//components
+import Picture from "../components/Picture";
 import Glyphicon from "../components/Glyphicon";
 import Button from "../components/Button";
+import Input from "../components/form/Input";
+import Textarea from "../components/form/Textarea";
+import Form from "../components/form/Form";
 
-const Contact = props => {
-    return (
-        <section id="contact" className="container-fluid bg-grey">
-            <h2 className="text-center">CONTACT</h2>
-            <div className="row">
-                <div className="col-sm-5">
-                    <p>Contact us and we"ll get back to you within 24 hours.</p>
-                    <p><Glyphicon name="glyphicon-map-marker" /> Chicago, US</p>
-                    <p><Glyphicon name="glyphicon-phone" /> +00 1515151515</p>
-                    <p><Glyphicon name="glyphicon-envelope" /> myemail@something.com</p>
-                </div>
-                <div className="col-sm-7 slideanim slide">
-                    <div className="row">
-                        <div className="col-sm-6 form-group">
-                            <input className="form-control" id="name" name="name" placeholder="Name" type="text" required="" />
-                        </div>
-                        <div className="col-sm-6 form-group">
-                            <input className="form-control" id="email" name="email" placeholder="Email" type="email" required="" />
-                        </div>
+class Contact extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            render: <h1>Sem dados encontrados</h1>,
+            contactElements: [],
+            pictureUrl: "",
+        };
+    }
+
+    componentDidMount() {
+        this.getData("contactElements");
+    }
+
+    getData(collection) {
+        const dbRef = databaseRef(db);
+
+        try {
+            get(dbRef, collection).then((response) => {
+                if (response.exists()) {
+                    let elements = response.val()[collection];
+                    let elementsArray = [];
+
+                    if (typeof (elements) === "object") { //loop para objeto
+                        elementsArray = Object.keys(elements).map((key, id) => elements[key])
+
+                    } else {
+                        elements.forEach((element) => { //loop para array
+                            if (
+                                elementsArray.some(
+                                    (item) => item.number === element.number
+                                ) === false ||
+                                elementsArray.some(
+                                    (item) => item.id === element.id
+                                ) === false
+                            ) {
+                                elementsArray.push(element);
+                            }
+                        });
+                    }
+
+                    console.log("Got data ");
+
+                    if (collection === "contactElements") {
+                        this.setState({
+                            contactElements: elementsArray[elementsArray.length-1].form, //só irá apresentar o ultimo registro
+                            pictureUrl: this.state.contactElements.file,
+                        });
+                    }
+                } else {
+                    console.log("No data available");
+                }
+            });
+        } catch (error) {
+            console.log(error);
+            return error;
+        }
+    }
+
+    fixBreaklines(text) {
+        if (text) {
+            return text.replace(/\n\r?/g, '<br />');
+        }
+    }
+
+    render() {
+        return (
+            <section id="contact" className="container-fluid bg-grey">
+                <h2 className="text-center">CONTACT</h2>
+                <div className="row">
+                    <div className="col-sm-5">
+                        <p>{this.state.contactElements.content}</p>
+                        <p><Glyphicon name="glyphicon-map-marker" /> {this.state.contactElements.address}</p>
+                        <p><Glyphicon name="glyphicon-phone" /> {this.state.contactElements.phone}</p>
+                        <p><Glyphicon name="glyphicon-envelope" /> {this.state.contactElements.email}</p>
                     </div>
-                    <textarea className="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br />
-                    <div className="row">
-                        <div className="col-sm-12 form-group">
-                            <Button text="Send" className="btn-default pull-right" type="submit" disabled={true} />
-                        </div>
+                    <div className="col-sm-7 slideanim slide">
+                        <Form collection="clientsContactElements" className="form">
+                            <div className="row">
+                                <div className="col-sm-6">
+                                    <Input type="text" className="input" name="name" placeholder="name" required={true} />
+                                </div>
+                                <div className="col-sm-6">
+                                    <Input type="text" className="email" name="email" placeholder="email" required={true} />
+                                </div>
+                                <div className="col-sm-12">
+                                    <Textarea className="input" name="comment" placeholder="comment" required={true} />
+                                    <Button type="submit" className="btn btn-primary" text="Enviar" disabled={false} />
+                                </div>
+                            </div>
+                        </Form>
                     </div>
                 </div>
-            </div>
-            <Location />
-        </section>
-    );
-};
+                <Picture url={this.state.pictureUrl} className="picture" alt="map" />
+            </section>
+        );
+    }
+}
+
 export default Contact;

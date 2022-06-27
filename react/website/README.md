@@ -7,6 +7,7 @@ npm install
 
 npm start
 http://localhost:3000
+http://localhost:3000/admin
 
 npm test
 npm run build

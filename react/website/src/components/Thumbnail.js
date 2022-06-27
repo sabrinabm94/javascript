@@ -2,7 +2,7 @@ import React from "react";
 
 const Thumbnail = props => {
     let style = {
-        backgroundImage: `url(${props.imgSrc})`
+        backgroundImage: `url(${props.url})`
     }
 
     return (

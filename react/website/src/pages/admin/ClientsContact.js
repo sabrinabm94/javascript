@@ -1,21 +1,21 @@
 import { React, Component } from "react";
-import { db, databaseRef, get } from "../init-firebase";
+import { db, databaseRef, get } from "../../init-firebase";
 
 //components
-import Plan from "../components/Plan";
+import Painel from "../../components/Painel";
 
-class Pricing extends Component {
+class ClientsContact extends Component {
     constructor() {
         super();
 
         this.state = {
             render: <h1>Sem dados encontrados</h1>,
-            pricingElements: [],
+            clientsContactElements: [],
         };
     }
 
     componentDidMount() {
-        this.getData("pricingElements");
+        this.getData("clientsContactElements");
     }
 
     getData(collection) {
@@ -23,16 +23,16 @@ class Pricing extends Component {
 
         try {
             get(dbRef, collection).then((response) => {
-                if(response.exists()) {
+                if (response.exists()) {
                     let elements = response.val()[collection];
                     let elementsArray = [];
 
-                    if(typeof(elements) === "object") { //loop para objeto
-                        elementsArray = Object.keys(elements).map((key, id) => elements[key])
+                    if (typeof (elements) === "object") { //loop para objeto
+                        elementsArray = Object.keys(elements).map((key) => elements[key].form)
 
                     } else {
                         elements.forEach((element) => { //loop para array
-                            if(
+                            if (
                                 elementsArray.some(
                                     (item) => item.number === element.number
                                 ) === false ||
@@ -40,16 +40,16 @@ class Pricing extends Component {
                                     (item) => item.id === element.id
                                 ) === false
                             ) {
-                                elementsArray.push(element);
+                                elementsArray.push(element.form);
                             }
                         });
                     }
-                    
+
                     console.log("Got data ");
 
-                    if(collection === "pricingElements") {
+                    if (collection === "clientsContactElements") {
                         this.setState({
-                            pricingElements: elementsArray
+                            clientsContactElements: elementsArray,
                         });
                     }
                 } else {
@@ -63,25 +63,21 @@ class Pricing extends Component {
     }
 
     fixBreaklines(text) {
-        if(text) {
+        if (text) {
             return text.replace(/\n\r?/g, '<br />');
         }
     }
 
     render() {
         return (
-            <section id="pricing" className="container-fluid">
-                <div className="text-center">
-                    <h1 className="title">Pricing</h1>
-                </div>
-                <div className="row slideanim slide">
+            <section id="contact" className="container-fluid bg-grey">
+                <h2 className="text-center">CLIENTS CONTACT</h2>
+                <div className="row">
                     <>
-                        {this.state.pricingElements.map((data, key) => {
-                            data = data.form;
-                            data.content = this.fixBreaklines(data.content);
+                        {this.state.clientsContactElements.map((data, key) => {
                             return (
-                                <div className="col-sm-4 col-xs-12" key={key}>
-                                    <Plan title={data.title} description={data.content} value={data.subtitle} link={data.link} />
+                                <div className="col-sm-4">
+                                    <Painel title={data.name} subtitle={data.email} content={data.comment} key={key} />
                                 </div>
                             );
                         })}
@@ -92,4 +88,4 @@ class Pricing extends Component {
     }
 }
 
-export default Pricing;
+export default ClientsContact;

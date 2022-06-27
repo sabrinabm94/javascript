@@ -23,6 +23,12 @@ const Nav = props => {
                     <li className="nav-item">
                         <Link to="pricing">Pricing</Link>
                     </li>
+                    <li className="nav-item">
+                        <Link to="contact">Contact</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="clientsContact">Clients Contact</Link>
+                    </li>
                 </ul>
             </div>
         </nav>

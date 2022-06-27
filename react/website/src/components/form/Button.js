@@ -7,7 +7,9 @@ class Button extends Component {
 
     render() {
         return (
-            <button type={this.props.type} className={this.props.className}>{this.props.text}</button>
+            <button type={this.props.type} className={this.props.className} required={this.props.required}>
+                {this.props.text}
+            </button>
         )
     }
 }

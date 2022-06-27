@@ -10,12 +10,12 @@ class Portfolio extends Component {
 
         this.state = {
             render: <h1>Sem dados encontrados</h1>,
-            thumbnailElements: [],
+            portfolioElements: [],
         };
     }
 
     componentDidMount() {
-        this.getData("thumbnailElements");
+        this.getData("portfolioElements");
     }
 
     getData(collection) {
@@ -28,7 +28,7 @@ class Portfolio extends Component {
                     let elementsArray = [];
 
                     if(typeof(elements) === "object") { //loop para objeto
-                        elementsArray = Object.keys(elements).map((key, id) => elements[key])
+                        elementsArray = Object.keys(elements).map((key) => elements[key].form)
 
                     } else {
                         elements.forEach((element) => { //loop para array
@@ -40,16 +40,16 @@ class Portfolio extends Component {
                                     (item) => item.id === element.id
                                 ) === false
                             ) {
-                                elementsArray.push(element);
+                                elementsArray.push(element.form);
                             }
                         });
                     }
                     
                     console.log("Got data ");
 
-                    if(collection === "thumbnailElements") {
+                    if(collection === "portfolioElements") {
                         this.setState({
-                            thumbnailElements: elementsArray
+                            portfolioElements: elementsArray
                         });
                     }
                 } else {
@@ -70,11 +70,11 @@ class Portfolio extends Component {
                 <h4 className="subtitle">What we have created</h4>
                 <div className="row text-center slideanim slide">
                     <>
-                        {this.state.thumbnailElements.map((data, key) => {
+                        {this.state.portfolioElements.map((data, key) => {
                             return (
                                 <div className="col-sm-4" key={key}>
                                     <Thumbnail
-                                        imgSrc={data.image}
+                                        url={data.file}
                                         title={data.title}
                                         subtitle={data.subtitle}
                                     />

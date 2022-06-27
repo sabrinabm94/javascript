@@ -47,9 +47,9 @@ class About extends Component {
                     
                     console.log("Got data ");
 
-                    if(collection === "aboutElements") {
+                    if (collection === "aboutElements") {
                         this.setState({
-                            aboutElements: elementsArray
+                            aboutElements: elementsArray[elementsArray.length-1].form, //só irá apresentar o ultimo registro
                         });
                     }
                 } else {
@@ -78,24 +78,16 @@ class About extends Component {
                     <h1 className="title">ABOUT US</h1>
                 </div>
             </div>
-            <>
-                {this.state.aboutElements.map((data, key) => {
-                    data = data.form;
-                    data.content = this.fixBreaklines(data.content);
-                    return (
-                        <div className="row" key={key}>
-                            <div className="col-sm-4">
-                                <Glyphicon name={`glyphicon-${data.icon} logo slideanim slide`}/>
-                            </div>
-                            <div className="col-sm-8">
-                                <h2 className="subtitle">{data.title}</h2>
-                                <br />
-                                <h4 className="content" dangerouslySetInnerHTML={{ __html: data.content }}></h4>
-                            </div>
-                        </div>
-                    );
-                })}
-            </>
+            <div className="row">
+                <div className="col-sm-4">
+                    <Glyphicon name={`glyphicon-${this.state.aboutElements.icon} logo slideanim slide`}/>
+                </div>
+                <div className="col-sm-8">
+                    <h2 className="subtitle">{this.state.aboutElements.title}</h2>
+                    <br />
+                    <h4 className="content" dangerouslySetInnerHTML={{ __html: this.fixBreaklines(this.state.aboutElements.content) }}></h4>
+                </div>
+            </div>
         </section>
      );
     }
