@@ -70,7 +70,7 @@ class Services extends Component {
         return (
             <section id="services" className="container-fluid text-center">
                 <h1 className="title">SERVICES</h1>
-                <br />
+                <h2 className="subtitle">What we offer</h2>
                 <div className="row slideanim slide">
                     <>
                         {this.state.servicesElements.map((data, key) => {

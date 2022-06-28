@@ -3,7 +3,7 @@ import { React } from "react";
 import { Routes, Route } from "react-router-dom";
 
 //templates
-import Search from "../templates/Search";
+import PageHeader from "../templates/PageHeader";
 
 //pages
 import About from "./About";
@@ -17,7 +17,7 @@ import Admin from "./admin/Admin";
 const Pages = (props) => {
     return (
         <div className="pages">
-            <Search />
+            <PageHeader />
             <Routes>
                 <Route path="/" element={<About />} />
                 <Route path="/about" element={<About />} />

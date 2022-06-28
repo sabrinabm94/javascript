@@ -72,8 +72,7 @@ class Portfolio extends Component {
                 className="container-fluid text-center bg-grey"
             >
                 <h1 className="title">PORTFOLIO</h1>
-                <br />
-                <h4 className="subtitle">What we have created</h4>
+                <h2 className="subtitle">What we have created</h2>
                 <div className="row text-center slideanim slide">
                     <>
                         {this.state.portfolioElements.map((data, key) => {

@@ -82,7 +82,8 @@ class Contact extends Component {
     render() {
         return (
             <section id="contact" className="container-fluid bg-grey">
-                <h2 className="title">CONTACT</h2>
+                <h1 className="title">CONTACT</h1>
+                <h2 className="subtitle">Send your message</h2>
                 <div className="row">
                     <div className="col-sm-5">
                         <p>{this.state.contactElements.content}</p>

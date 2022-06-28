@@ -7,8 +7,8 @@ body {
 h2 {
     font-size: 20px;
     text-transform: uppercase;
-    color: #303030;
     font-weight: 600;
+    color: #818181;
 }
 
 h3 {
@@ -18,8 +18,12 @@ h3 {
 h4 {
     font-size: 19px;
     line-height: 1.375em;
-    color: #303030;
     font-weight: 400;
+    color: #303030;
+}
+
+.page-header .subtitle {
+    color: #fff;
 }
 
 .jumbotron {
@@ -59,11 +63,11 @@ h4 {
 
 .title,
 .card, .form {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .subtitle {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .picture {
