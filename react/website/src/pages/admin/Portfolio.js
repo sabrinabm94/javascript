@@ -15,7 +15,7 @@ class Portfolio extends Component {
         return (
             <div
                 id="admin-portfolio"
-                className="container-fluid text-center bg-grey"
+                className="admin-portfolio container-fluid text-center bg-grey"
             >
                 <section className="section portfolio">
                     <h2 className="title">Portfolio</h2>

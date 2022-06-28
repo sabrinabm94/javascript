@@ -17,7 +17,7 @@ class About extends Component {
                 id="admin-about"
                 className="container-fluid text-center bg-grey"
             >
-                <section className="section about">
+                <section className="section admin-about">
                     <h2 className="title">About</h2>
                     <Form collection="aboutElements" className="form">
                         <div className="row">

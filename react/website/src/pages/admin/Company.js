@@ -1,27 +1,49 @@
 import React, { Component } from "react";
 
 //components
+import Input from "../../components/form/Input";
+import File from "../../components/form/File";
 import Textarea from "../../components/form/Textarea";
 import Button from "../../components/form/Button";
 import Form from "../../components/form/Form";
-import Input from "../../components/form/Input";
-import File from "../../components/form/File";
+import GetData from "../../components/utils/GetData";
 
-class About extends Component {
-    constructor(props) {
-        super(props);
+class Company extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            elements: [],
+        };
+    }
+  
+    handleCallback = (childData) =>{
+        this.setState(
+            {elements: childData}, 
+        )
     }
 
     render() {
+        const {elements} = this.state;
+
         return (
             <div
-                id="admin-contact"
+                id="admin-company"
                 className="container-fluid text-center bg-grey"
             >
-                <section className="section admin-contact">
-                    <h2 className="title">Contact</h2>
-                    <Form collection="contactElements" className="form">
+                <GetData collection="companyElements" justOne={true} parentCallback = {this.handleCallback}/>
+                <section className="section admin-company">
+                    <h2 className="title">Company</h2>
+                    <Form collection="companyElements" className="form">
                         <div className="row">
+                            <div className="col-6 col-sm-6">
+                                <Input
+                                    type="text"
+                                    className="input"
+                                    name="name"
+                                    placeholder="name"
+                                />
+                            </div>
                             <div className="col-6 col-sm-6">
                                 <Textarea
                                     className="input"
@@ -30,35 +52,11 @@ class About extends Component {
                                 />
                             </div>
                             <div className="col-6 col-sm-6">
-                                <Input
-                                    type="text"
-                                    className="input"
-                                    name="address"
-                                    placeholder="Address"
-                                />
-                            </div>
-                            <div className="col-6 col-sm-6">
-                                <Input
-                                    type="text"
-                                    className="input"
-                                    name="phone"
-                                    placeholder="Phone"
-                                />
-                            </div>
-                            <div className="col-6 col-sm-6">
-                                <Input
-                                    type="text"
-                                    className="input"
-                                    name="email"
-                                    placeholder="Email"
-                                />
-                            </div>
-                            <div className="col-6 col-sm-6">
                                 <File
                                     type="file"
                                     className="file"
                                     name="file"
-                                    placeholder="File"
+                                    placeholder="Logo"
                                 />
                             </div>
                             <div className="col-12 col-sm-12">
@@ -75,4 +73,4 @@ class About extends Component {
         );
     }
 }
-export default About;
+export default Company;

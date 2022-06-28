@@ -28,11 +28,11 @@ class Form extends Component {
 
                     if (
                         name !== null &&
-                        name != "" &&
-                        name != undefined &&
+                        name !== "" &&
+                        name !== undefined &&
                         value !== null &&
-                        value != "" &&
-                        value != undefined
+                        value !== "" &&
+                        value !== undefined
                     ) {
                         if (element.type === "file") {
                             form[name] = element.files;

@@ -1,68 +1,22 @@
 import { React, Component } from "react";
-import { db, databaseRef, get } from "../../init-firebase";
 
 //components
 import Painel from "../../components/Painel";
+import GetData from "../../components/utils/GetData";
 
 class ClientsContact extends Component {
     constructor() {
         super();
 
         this.state = {
-            render: <h1>Sem dados encontrados</h1>,
-            clientsContactElements: [],
+            elements: [],
         };
     }
 
-    componentDidMount() {
-        this.getData("clientsContactElements");
-    }
-
-    getData(collection) {
-        const dbRef = databaseRef(db);
-
-        try {
-            get(dbRef, collection).then((response) => {
-                if (response.exists()) {
-                    let elements = response.val()[collection];
-                    let elementsArray = [];
-
-                    if (typeof elements === "object") {
-                        //loop para objeto
-                        elementsArray = Object.keys(elements).map(
-                            (key) => elements[key].form
-                        );
-                    } else {
-                        elements.forEach((element) => {
-                            //loop para array
-                            if (
-                                elementsArray.some(
-                                    (item) => item.number === element.number
-                                ) === false ||
-                                elementsArray.some(
-                                    (item) => item.id === element.id
-                                ) === false
-                            ) {
-                                elementsArray.push(element.form);
-                            }
-                        });
-                    }
-
-                    console.log("Got data ");
-
-                    if (collection === "clientsContactElements") {
-                        this.setState({
-                            clientsContactElements: elementsArray,
-                        });
-                    }
-                } else {
-                    console.log("No data available");
-                }
-            });
-        } catch (error) {
-            console.log(error);
-            return error;
-        }
+    handleCallback = (childData) => {
+        this.setState(
+            { elements: childData },
+        )
     }
 
     fixBreaklines(text) {
@@ -72,14 +26,17 @@ class ClientsContact extends Component {
     }
 
     render() {
+        const { elements } = this.state;
+
         return (
-            <section id="contact" className="container-fluid bg-grey">
+            <section id="clients-contact" className="clients-contact container-fluid bg-grey">
+                <GetData collection="clientsContactElements" parentCallback={this.handleCallback} />
                 <h2 className="text-center">CLIENTS CONTACT</h2>
                 <div className="row">
                     <>
-                        {this.state.clientsContactElements.map((data, key) => {
+                        {this.state.elements.map((data, key) => {
                             return (
-                                <div className="col-sm-4">
+                                <div className="col-sm-4" key={key}>
                                     <Painel
                                         title={data.name}
                                         subtitle={data.email}

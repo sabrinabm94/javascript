@@ -14,22 +14,12 @@ class Service extends Component {
         return (
             <div
                 id="admin-service"
-                className="container-fluid text-center bg-grey"
+                className="admin-service container-fluid text-center bg-grey"
             >
                 <section className="section about">
                     <h2 className="title">Services</h2>
                     <Form collection="servicesElements" className="form">
                         <div className="row">
-                            <div className="col-6 col-sm-6">
-                                {" "}
-                                {/* todo melhorar seleção de icones */}
-                                <Input
-                                    type="text"
-                                    className="input"
-                                    name="icon"
-                                    placeholder="Icon"
-                                />
-                            </div>
                             <div className="col-6 col-sm-6">
                                 <Input
                                     type="text"
@@ -44,6 +34,15 @@ class Service extends Component {
                                     className="input"
                                     name="subtitle"
                                     placeholder="Subtitle"
+                                />
+                            </div>
+                            <div className="col-6 col-sm-6">
+                                {/* todo melhorar seleção de icones */}
+                                <Input
+                                    type="text"
+                                    className="input"
+                                    name="icon"
+                                    placeholder="Icon"
                                 />
                             </div>
                             <div className="col-12 col-sm-12">

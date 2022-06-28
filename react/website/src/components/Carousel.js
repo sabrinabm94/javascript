@@ -1,4 +1,6 @@
 import React from "react";
+
+//components
 import Glyphicon from "../components/Glyphicon";
 
 const Carousel = (props) => {

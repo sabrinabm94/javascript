@@ -1,80 +1,39 @@
 import { React, Component } from "react";
-import { db, databaseRef, get } from "../init-firebase";
 
 //components
 import Carousel from "../components/Carousel";
+import GetData from "../components/utils/GetData";
 
 class Portfolio extends Component {
     constructor() {
         super();
 
         this.state = {
-            render: <h1>Sem dados encontrados</h1>,
-            costumersElements: [],
+            elements: [],
         };
     }
 
-    componentDidMount() {
-        this.getData("costumersElements");
-    }
-
-    getData(collection) {
-        const dbRef = databaseRef(db);
-
-        try {
-            get(dbRef, collection).then((response) => {
-                if (response.exists()) {
-                    let elements = response.val()[collection];
-                    let elementsArray = [];
-
-                    if (typeof elements === "object") {
-                        //loop para objeto
-                        elementsArray = Object.keys(elements).map(
-                            (key, id) => elements[key]
-                        );
-                    } else {
-                        elements.forEach((element) => {
-                            //loop para array
-                            if (
-                                elementsArray.some(
-                                    (item) => item.number === element.number
-                                ) === false ||
-                                elementsArray.some(
-                                    (item) => item.id === element.id
-                                ) === false
-                            ) {
-                                elementsArray.push(element);
-                            }
-                        });
-                    }
-
-                    console.log("Got data ");
-
-                    if (collection === "costumersElements") {
-                        this.setState({
-                            costumersElements: elementsArray,
-                        });
-                    }
-                } else {
-                    console.log("No data available");
-                }
-            });
-        } catch (error) {
-            console.log(error);
-            return error;
-        }
+    handleCallback = (childData) => {
+        this.setState(
+            { elements: childData },
+        )
     }
 
     render() {
+        const { elements } = this.state;
+
         return (
             <section
                 id="costumers"
-                className="container-fluid text-center bg-grey"
+                className="constumers container-fluid bg-grey"
             >
-                <h1 className="title">COSTUMERS</h1>
-                <h2 className="subtitle">What our customers say</h2>
-                <div className="row text-center slideanim slide">
-                    <Carousel elements={this.state.costumersElements} />
+                <GetData collection="costumersElements" parentCallback={this.handleCallback} />
+                <div className="text-center">
+                    <h1 className="title">COSTUMERS</h1>
+                    <h2 className="subtitle">What our customers say</h2>
+                </div>
+                <div className="row slideanim slide">
+                    <Carousel elements={this.state.elements} />
                 </div>
             </section>
         );

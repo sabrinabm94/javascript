@@ -1,68 +1,22 @@
 import { React, Component } from "react";
-import { db, databaseRef, get } from "../init-firebase";
 
 //components
 import PainelSecondary from "../components/PainelSecondary";
+import GetData from "../components/utils/GetData";
 
 class Pricing extends Component {
     constructor() {
         super();
 
         this.state = {
-            render: <h1>Sem dados encontrados</h1>,
-            pricingElements: [],
+            elements: [],
         };
     }
 
-    componentDidMount() {
-        this.getData("pricingElements");
-    }
-
-    getData(collection) {
-        const dbRef = databaseRef(db);
-
-        try {
-            get(dbRef, collection).then((response) => {
-                if (response.exists()) {
-                    let elements = response.val()[collection];
-                    let elementsArray = [];
-
-                    if (typeof elements === "object") {
-                        //loop para objeto
-                        elementsArray = Object.keys(elements).map(
-                            (key, id) => elements[key]
-                        );
-                    } else {
-                        elements.forEach((element) => {
-                            //loop para array
-                            if (
-                                elementsArray.some(
-                                    (item) => item.number === element.number
-                                ) === false ||
-                                elementsArray.some(
-                                    (item) => item.id === element.id
-                                ) === false
-                            ) {
-                                elementsArray.push(element);
-                            }
-                        });
-                    }
-
-                    console.log("Got data ");
-
-                    if (collection === "pricingElements") {
-                        this.setState({
-                            pricingElements: elementsArray,
-                        });
-                    }
-                } else {
-                    console.log("No data available");
-                }
-            });
-        } catch (error) {
-            console.log(error);
-            return error;
-        }
+    handleCallback = (childData) => {
+        this.setState(
+            { elements: childData },
+        )
     }
 
     fixBreaklines(text) {
@@ -72,15 +26,17 @@ class Pricing extends Component {
     }
 
     render() {
+        const { elements } = this.state;
+
         return (
-            <section id="pricing" className="container-fluid">
+            <section id="pricing" className="pricing container-fluid">
+                <GetData collection="pricingElements" parentCallback={this.handleCallback} />
                 <div className="text-center">
                     <h1 className="title">Pricing</h1>
                 </div>
                 <div className="row slideanim slide">
                     <>
-                        {this.state.pricingElements.map((data, key) => {
-                            data = data.form;
+                        {this.state.elements.map((data, key) => {
                             data.content = this.fixBreaklines(data.content);
                             return (
                                 <div className="col-sm-4 col-xs-12" key={key}>

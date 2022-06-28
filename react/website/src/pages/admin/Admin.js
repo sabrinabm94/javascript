@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from "../../templates/admin/Header";
 
 //page
+import Company from "../admin/Company";
 import About from "../admin/About";
 import Services from "../admin/Services";
 import Portfolio from "../admin/Portfolio";
@@ -21,9 +22,12 @@ class Admin extends Component {
 
     render() {
         return (
-            <div className="admin" id="admin-area">
+            <div className="admin" id="admin">
                 <h1 className="title">Admin area</h1>
                 <Header />
+                <Routes>
+                    <Route path="company" element={<Company />} />
+                </Routes>
                 <Routes>
                     <Route path="about" element={<About />} />
                 </Routes>

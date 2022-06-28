@@ -14,8 +14,8 @@ class Pricing extends Component {
     render() {
         return (
             <div
-                id="admin-about"
-                className="container-fluid text-center bg-grey"
+                id="admin-pricing"
+                className="admin-pricing container-fluid text-center bg-grey"
             >
                 <section className="section about">
                     <h2 className="title">Pricing</h2>

@@ -7,10 +7,13 @@ const Nav = (props) => {
             <div className="navbar-collapse" id="navbarNavDropdown">
                 <ul className="navbar-nav">
                     <li className="nav-item active">
-                        <Link to="About">
-                            About
+                        <Link to="Company">
+                            Company
                             <span className="sr-only">(current)</span>
                         </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="about">About</Link>
                     </li>
                     <li className="nav-item">
                         <Link to="services">Services</Link>
