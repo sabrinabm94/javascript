@@ -1,6 +1,6 @@
 import React from "react";
 
-const Painel = props => {
+const Painel = (props) => {
     return (
         <div className="panel panel-default text-center">
             <div className="row">
@@ -9,13 +9,16 @@ const Painel = props => {
                 </div>
             </div>
             <div className="panel-heading">
-                <h2>{props.title}</h2>
+                <h2 className="title">{props.title}</h2>
             </div>
             <div className="panel-body">
-                <p dangerouslySetInnerHTML={{ __html: props.content }}></p>
+                <p
+                    className="content"
+                    dangerouslySetInnerHTML={{ __html: props.content }}
+                ></p>
             </div>
             <div className="panel-footer">
-                <h3>{props.subtitle}</h3>
+                <h3 className="subtitle">{props.subtitle}</h3>
             </div>
         </div>
     );

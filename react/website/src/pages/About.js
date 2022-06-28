@@ -23,16 +23,19 @@ class About extends Component {
 
         try {
             get(dbRef, collection).then((response) => {
-                if(response.exists()) {
+                if (response.exists()) {
                     let elements = response.val()[collection];
                     let elementsArray = [];
 
-                    if(typeof(elements) === "object") { //loop para objeto
-                        elementsArray = Object.keys(elements).map((key, id) => elements[key])
-
+                    if (typeof elements === "object") {
+                        //loop para objeto
+                        elementsArray = Object.keys(elements).map(
+                            (key, id) => elements[key]
+                        );
                     } else {
-                        elements.forEach((element) => { //loop para array
-                            if(
+                        elements.forEach((element) => {
+                            //loop para array
+                            if (
                                 elementsArray.some(
                                     (item) => item.number === element.number
                                 ) === false ||
@@ -44,12 +47,13 @@ class About extends Component {
                             }
                         });
                     }
-                    
+
                     console.log("Got data ");
 
                     if (collection === "aboutElements") {
                         this.setState({
-                            aboutElements: elementsArray[elementsArray.length-1].form, //só irá apresentar o ultimo registro
+                            aboutElements:
+                                elementsArray[elementsArray.length - 1].form, //só irá apresentar o ultimo registro
                         });
                     }
                 } else {
@@ -63,33 +67,43 @@ class About extends Component {
     }
 
     fixBreaklines(text) {
-        if(text) {
-            return text.replace(/\n\r?/g, '<br />');
+        if (text) {
+            return text.replace(/\n\r?/g, "<br />");
         }
     }
 
     render() {
         return (
-        <section className="container-fluid bg-grey">
-            <div className="row">
-                <div className="col-sm-4">
+            <section className="container-fluid bg-grey">
+                <div className="row">
+                    <div className="col-sm-4"></div>
+                    <div className="col-sm-8">
+                        <h1 className="title">ABOUT US</h1>
+                    </div>
                 </div>
-                <div className="col-sm-8">
-                    <h1 className="title">ABOUT US</h1>
+                <div className="row">
+                    <div className="col-sm-4">
+                        <Glyphicon
+                            name={`glyphicon-${this.state.aboutElements.icon} logo slideanim slide`}
+                        />
+                    </div>
+                    <div className="col-sm-8">
+                        <h2 className="subtitle">
+                            {this.state.aboutElements.title}
+                        </h2>
+                        <br />
+                        <h4
+                            className="content"
+                            dangerouslySetInnerHTML={{
+                                __html: this.fixBreaklines(
+                                    this.state.aboutElements.content
+                                ),
+                            }}
+                        ></h4>
+                    </div>
                 </div>
-            </div>
-            <div className="row">
-                <div className="col-sm-4">
-                    <Glyphicon name={`glyphicon-${this.state.aboutElements.icon} logo slideanim slide`}/>
-                </div>
-                <div className="col-sm-8">
-                    <h2 className="subtitle">{this.state.aboutElements.title}</h2>
-                    <br />
-                    <h4 className="content" dangerouslySetInnerHTML={{ __html: this.fixBreaklines(this.state.aboutElements.content) }}></h4>
-                </div>
-            </div>
-        </section>
-     );
+            </section>
+        );
     }
 }
 

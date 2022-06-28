@@ -8,11 +8,10 @@ class Portfolio extends Component {
     constructor() {
         super();
 
-        this.state = { 
+        this.state = {
             render: <h1>Sem dados encontrados</h1>,
             costumersElements: [],
         };
-
     }
 
     componentDidMount() {
@@ -24,16 +23,19 @@ class Portfolio extends Component {
 
         try {
             get(dbRef, collection).then((response) => {
-                if(response.exists()) {
+                if (response.exists()) {
                     let elements = response.val()[collection];
                     let elementsArray = [];
 
-                    if(typeof(elements) === "object") { //loop para objeto
-                        elementsArray = Object.keys(elements).map((key, id) => elements[key])
-
+                    if (typeof elements === "object") {
+                        //loop para objeto
+                        elementsArray = Object.keys(elements).map(
+                            (key, id) => elements[key]
+                        );
                     } else {
-                        elements.forEach((element) => { //loop para array
-                            if(
+                        elements.forEach((element) => {
+                            //loop para array
+                            if (
                                 elementsArray.some(
                                     (item) => item.number === element.number
                                 ) === false ||
@@ -45,12 +47,12 @@ class Portfolio extends Component {
                             }
                         });
                     }
-                    
+
                     console.log("Got data ");
 
-                    if(collection === "costumersElements") {
+                    if (collection === "costumersElements") {
                         this.setState({
-                            costumersElements: elementsArray
+                            costumersElements: elementsArray,
                         });
                     }
                 } else {
@@ -65,7 +67,10 @@ class Portfolio extends Component {
 
     render() {
         return (
-            <section id="costumers" className="container-fluid text-center bg-grey">
+            <section
+                id="costumers"
+                className="container-fluid text-center bg-grey"
+            >
                 <h1 className="title">COSTUMERS</h1>
                 <h2 className="subtitle">What our customers say</h2>
                 <div className="row text-center slideanim slide">

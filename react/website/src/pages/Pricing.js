@@ -2,7 +2,7 @@ import { React, Component } from "react";
 import { db, databaseRef, get } from "../init-firebase";
 
 //components
-import Plan from "../components/Plan";
+import PainelSecondary from "../components/PainelSecondary";
 
 class Pricing extends Component {
     constructor() {
@@ -23,16 +23,19 @@ class Pricing extends Component {
 
         try {
             get(dbRef, collection).then((response) => {
-                if(response.exists()) {
+                if (response.exists()) {
                     let elements = response.val()[collection];
                     let elementsArray = [];
 
-                    if(typeof(elements) === "object") { //loop para objeto
-                        elementsArray = Object.keys(elements).map((key, id) => elements[key])
-
+                    if (typeof elements === "object") {
+                        //loop para objeto
+                        elementsArray = Object.keys(elements).map(
+                            (key, id) => elements[key]
+                        );
                     } else {
-                        elements.forEach((element) => { //loop para array
-                            if(
+                        elements.forEach((element) => {
+                            //loop para array
+                            if (
                                 elementsArray.some(
                                     (item) => item.number === element.number
                                 ) === false ||
@@ -44,12 +47,12 @@ class Pricing extends Component {
                             }
                         });
                     }
-                    
+
                     console.log("Got data ");
 
-                    if(collection === "pricingElements") {
+                    if (collection === "pricingElements") {
                         this.setState({
-                            pricingElements: elementsArray
+                            pricingElements: elementsArray,
                         });
                     }
                 } else {
@@ -63,8 +66,8 @@ class Pricing extends Component {
     }
 
     fixBreaklines(text) {
-        if(text) {
-            return text.replace(/\n\r?/g, '<br />');
+        if (text) {
+            return text.replace(/\n\r?/g, "<br />");
         }
     }
 
@@ -81,7 +84,12 @@ class Pricing extends Component {
                             data.content = this.fixBreaklines(data.content);
                             return (
                                 <div className="col-sm-4 col-xs-12" key={key}>
-                                    <Plan title={data.title} description={data.content} value={data.subtitle} link={data.link} />
+                                    <PainelSecondary
+                                        title={data.title}
+                                        description={data.content}
+                                        value={data.subtitle}
+                                        link={data.link}
+                                    />
                                 </div>
                             );
                         })}

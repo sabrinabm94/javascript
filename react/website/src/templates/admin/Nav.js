@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Nav = props => {
+const Nav = (props) => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="navbar-collapse" id="navbarNavDropdown">
                 <ul className="navbar-nav">
                     <li className="nav-item active">
-                        <Link to="About">About
+                        <Link to="About">
+                            About
                             <span className="sr-only">(current)</span>
                         </Link>
                     </li>
@@ -35,4 +36,3 @@ const Nav = props => {
     );
 };
 export default Nav;
-

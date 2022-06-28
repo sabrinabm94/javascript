@@ -1,9 +1,6 @@
 import { React } from "react";
 
-import {
-    Routes,
-    Route,
-} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 //templates
 import Search from "../templates/Search";
@@ -17,9 +14,9 @@ import Pricing from "./Pricing";
 import Contact from "./Contact";
 import Admin from "./admin/Admin";
 
-const Pages = props => {
+const Pages = (props) => {
     return (
-        <div className="page">
+        <div className="pages">
             <Search />
             <Routes>
                 <Route path="/" element={<About />} />

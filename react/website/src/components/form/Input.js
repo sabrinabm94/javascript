@@ -6,12 +6,34 @@ class Input extends Component {
     }
 
     render() {
-        return (
-            <div className="form-group">
-                <label htmlFor={this.props.name}>{this.props.name}</label>
-                <input type={this.props.inputType} className={this.props.className} name={this.props.name} id={this.props.id} placeholder={this.props.placeholder} required={this.props.required} /> 
-            </div>
-        )
+        if (this.props.name) {
+            return (
+                <div className="form-group">
+                    <label htmlFor={this.props.name}>{this.props.name}</label>
+                    <input
+                        type={this.props.type}
+                        className={this.props.className}
+                        name={this.props.name}
+                        id={this.props.id}
+                        placeholder={this.props.placeholder}
+                        required={this.props.required}
+                    />
+                </div>
+            );
+        } else {
+            return (
+                <div className="form-group">
+                    <input
+                        type={this.props.type}
+                        className={this.props.className}
+                        name={this.props.name}
+                        id={this.props.id}
+                        placeholder={this.props.placeholder}
+                        required={this.props.required}
+                    />
+                </div>
+            );
+        }
     }
 }
 export default Input;

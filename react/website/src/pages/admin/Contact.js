@@ -14,34 +14,65 @@ class About extends Component {
 
     render() {
         return (
-            <div id="admin-contact" className="container-fluid text-center bg-grey">
+            <div
+                id="admin-contact"
+                className="container-fluid text-center bg-grey"
+            >
                 <section className="section about">
-                    <h2>Contact</h2>
+                    <h2 className="title">Contact</h2>
                     <Form collection="contactElements" className="form">
                         <div className="row">
                             <div className="col-6 col-sm-6">
-                                <Textarea className="input" name="content" placeholder="Content" />
+                                <Textarea
+                                    className="input"
+                                    name="content"
+                                    placeholder="Content"
+                                />
                             </div>
                             <div className="col-6 col-sm-6">
-                                <Input type="text" className="input" name="address" placeholder="Address" />
+                                <Input
+                                    type="text"
+                                    className="input"
+                                    name="address"
+                                    placeholder="Address"
+                                />
                             </div>
                             <div className="col-6 col-sm-6">
-                                <Input type="text" className="input" name="phone" placeholder="Phone" />
+                                <Input
+                                    type="text"
+                                    className="input"
+                                    name="phone"
+                                    placeholder="Phone"
+                                />
                             </div>
                             <div className="col-6 col-sm-6">
-                                <Input type="text" className="input" name="email" placeholder="Email" />
+                                <Input
+                                    type="text"
+                                    className="input"
+                                    name="email"
+                                    placeholder="Email"
+                                />
                             </div>
                             <div className="col-6 col-sm-6">
-                                <File type="file" className="file" name="file" placeholder="File" />
+                                <File
+                                    type="file"
+                                    className="file"
+                                    name="file"
+                                    placeholder="File"
+                                />
                             </div>
                             <div className="col-12 col-sm-12">
-                                <Button type="submit" className="btn btn-primary" text="Enviar"/>
+                                <Button
+                                    type="submit"
+                                    className="btn btn-primary"
+                                    text="Submit"
+                                />
                             </div>
                         </div>
                     </Form>
                 </section>
             </div>
-        )
+        );
     }
 }
 export default About;

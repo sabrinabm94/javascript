@@ -1,10 +1,10 @@
 import React from "react";
 import SearchForm from "../components/SearchForm";
 
-const Search = props => {
+const Search = (props) => {
     return (
-        <section id="search" className="jumbotron text-center">
-            <h1>Company</h1>
+        <section className="search jumbotron text-center">
+            <h1 className="title">Company</h1>
             <p>We specialize in blablabla</p>
             <SearchForm />
         </section>

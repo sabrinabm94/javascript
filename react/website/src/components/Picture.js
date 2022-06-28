@@ -6,14 +6,18 @@ class Picture extends Component {
     }
 
     render() {
-        if(this.props.url) {
+        if (this.props.url) {
             let style = {
-                backgroundImage: `url(${this.props.url})`
-            }
+                backgroundImage: `url(${this.props.url})`,
+            };
 
             return (
-                <picture className={this.props.className} alt={`Image of ${this.props.alt}`} style={style}></picture>
-            )
+                <picture
+                    className={this.props.className}
+                    alt={`Image of ${this.props.alt}`}
+                    style={style}
+                ></picture>
+            );
         }
     }
 }

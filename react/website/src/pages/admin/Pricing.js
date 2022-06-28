@@ -13,31 +13,57 @@ class Pricing extends Component {
 
     render() {
         return (
-            <div id="admin-about" className="container-fluid text-center bg-grey">
+            <div
+                id="admin-about"
+                className="container-fluid text-center bg-grey"
+            >
                 <section className="section about">
-                    <h2>Pricing</h2>
+                    <h2 className="title">Pricing</h2>
                     <Form collection="pricingElements" className="form">
                         <div className="row">
                             <div className="col-6 col-sm-6">
-                                <Input type="text" className="input" name="title" placeholder="Title" />
+                                <Input
+                                    type="text"
+                                    className="input"
+                                    name="title"
+                                    placeholder="Title"
+                                />
                             </div>
                             <div className="col-6 col-sm-6">
-                                <Textarea className="input" name="content" placeholder="Content" />
+                                <Textarea
+                                    className="input"
+                                    name="content"
+                                    placeholder="Content"
+                                />
                             </div>
                             <div className="col-6 col-sm-6">
-                                <Input type="text" className="input" name="subtitle" placeholder="Subtitle" />
+                                <Input
+                                    type="text"
+                                    className="input"
+                                    name="subtitle"
+                                    placeholder="Subtitle"
+                                />
                             </div>
                             <div className="col-6 col-sm-6">
-                                <Input type="text" className="input" name="link" placeholder="Link" />
+                                <Input
+                                    type="text"
+                                    className="input"
+                                    name="link"
+                                    placeholder="Link"
+                                />
                             </div>
                             <div className="col-12 col-sm-12">
-                                <Button type="submit" className="btn btn-primary" text="Enviar"/>
+                                <Button
+                                    type="submit"
+                                    className="btn btn-primary"
+                                    text="Submit"
+                                />
                             </div>
                         </div>
                     </Form>
                 </section>
             </div>
-        )
+        );
     }
 }
 export default Pricing;

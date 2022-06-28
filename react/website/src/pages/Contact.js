@@ -33,11 +33,14 @@ class Contact extends Component {
                     let elements = response.val()[collection];
                     let elementsArray = [];
 
-                    if (typeof (elements) === "object") { //loop para objeto
-                        elementsArray = Object.keys(elements).map((key, id) => elements[key])
-
+                    if (typeof elements === "object") {
+                        //loop para objeto
+                        elementsArray = Object.keys(elements).map(
+                            (key, id) => elements[key]
+                        );
                     } else {
-                        elements.forEach((element) => { //loop para array
+                        elements.forEach((element) => {
+                            //loop para array
                             if (
                                 elementsArray.some(
                                     (item) => item.number === element.number
@@ -55,7 +58,8 @@ class Contact extends Component {
 
                     if (collection === "contactElements") {
                         this.setState({
-                            contactElements: elementsArray[elementsArray.length-1].form, //só irá apresentar o ultimo registro
+                            contactElements:
+                                elementsArray[elementsArray.length - 1].form, //só irá apresentar o ultimo registro
                             pictureUrl: this.state.contactElements.file,
                         });
                     }
@@ -71,39 +75,77 @@ class Contact extends Component {
 
     fixBreaklines(text) {
         if (text) {
-            return text.replace(/\n\r?/g, '<br />');
+            return text.replace(/\n\r?/g, "<br />");
         }
     }
 
     render() {
         return (
             <section id="contact" className="container-fluid bg-grey">
-                <h2 className="text-center">CONTACT</h2>
+                <h2 className="title">CONTACT</h2>
                 <div className="row">
                     <div className="col-sm-5">
                         <p>{this.state.contactElements.content}</p>
-                        <p><Glyphicon name="glyphicon-map-marker" /> {this.state.contactElements.address}</p>
-                        <p><Glyphicon name="glyphicon-phone" /> {this.state.contactElements.phone}</p>
-                        <p><Glyphicon name="glyphicon-envelope" /> {this.state.contactElements.email}</p>
+                        <p>
+                            <Glyphicon name="glyphicon-map-marker" />{" "}
+                            {this.state.contactElements.address}
+                        </p>
+                        <p>
+                            <Glyphicon name="glyphicon-phone" />{" "}
+                            {this.state.contactElements.phone}
+                        </p>
+                        <p>
+                            <Glyphicon name="glyphicon-envelope" />{" "}
+                            {this.state.contactElements.email}
+                        </p>
                     </div>
                     <div className="col-sm-7 slideanim slide">
-                        <Form collection="clientsContactElements" className="form">
+                        <Form
+                            collection="clientsContactElements"
+                            className="form"
+                        >
                             <div className="row">
                                 <div className="col-sm-6">
-                                    <Input type="text" className="input" name="name" placeholder="name" required={true} />
+                                    <Input
+                                        type="text"
+                                        className="input"
+                                        name="name"
+                                        placeholder="name"
+                                        required={true}
+                                    />
                                 </div>
                                 <div className="col-sm-6">
-                                    <Input type="text" className="email" name="email" placeholder="email" required={true} />
+                                    <Input
+                                        type="text"
+                                        className="email"
+                                        name="email"
+                                        placeholder="email"
+                                        required={true}
+                                    />
                                 </div>
                                 <div className="col-sm-12">
-                                    <Textarea className="input" name="comment" placeholder="comment" required={true} />
-                                    <Button type="submit" className="btn btn-primary" text="Enviar" disabled={false} />
+                                    <Textarea
+                                        className="input"
+                                        name="comment"
+                                        placeholder="comment"
+                                        required={true}
+                                    />
+                                    <Button
+                                        type="submit"
+                                        className="btn btn-primary"
+                                        text="Submit"
+                                        disabled={false}
+                                    />
                                 </div>
                             </div>
                         </Form>
                     </div>
                 </div>
-                <Picture url={this.state.pictureUrl} className="picture" alt="map" />
+                <Picture
+                    url={this.state.pictureUrl}
+                    className="picture"
+                    alt="map"
+                />
             </section>
         );
     }

@@ -1,21 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Nav = props => {
+//components
+import Button from "../components/Button";
+
+const Nav = (props) => {
     return (
         <nav className="navbar navbar-default navbar-fixed-top">
             <div className="container">
                 <div className="navbar-header">
-                    <button
+                    <Button
                         type="button"
                         className="navbar-toggle"
-                        data-toggle="collapse"
-                        data-target="#myNavbar"
+                        dataToggle="collapse"
+                        dataTarget="#myNavbar"
                     >
                         <span className="icon-bar"></span>
                         <span className="icon-bar"></span>
                         <span className="icon-bar"></span>
-                    </button>
+                    </Button>
                     <a className="navbar-brand" href="/">
                         Logo
                     </a>

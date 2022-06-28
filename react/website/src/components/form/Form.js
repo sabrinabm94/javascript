@@ -1,5 +1,13 @@
 import React, { Component } from "react";
-import { db, ref, push, databaseRef, storage, uploadBytes, getDownloadURL } from "../../init-firebase";
+import {
+    db,
+    ref,
+    push,
+    databaseRef,
+    storage,
+    uploadBytes,
+    getDownloadURL,
+} from "../../init-firebase";
 
 class Form extends Component {
     constructor(props) {
@@ -18,9 +26,15 @@ class Form extends Component {
                     let name = element.name;
                     let value = element.value;
 
-                    if ((name !== null && name != "" && name != undefined)
-                        && (value !== null && value != "" && value != undefined)) {
-                        if(element.type === "file") {
+                    if (
+                        name !== null &&
+                        name != "" &&
+                        name != undefined &&
+                        value !== null &&
+                        value != "" &&
+                        value != undefined
+                    ) {
+                        if (element.type === "file") {
                             form[name] = element.files;
                         } else {
                             form[name] = value;
@@ -30,9 +44,11 @@ class Form extends Component {
             }
             if (form) {
                 try {
-                    if(form.file) { //formulario com arquivo
+                    if (form.file) {
+                        //formulario com arquivo
                         return this.storageFile(collection, form);
-                    } else { //formulario sem arquivo
+                    } else {
+                        //formulario sem arquivo
                         return this.sendForm(collection, form);
                     }
                 } catch (error) {
@@ -46,8 +62,9 @@ class Form extends Component {
     storageFile(collection, form) {
         console.log(form);
         if (collection && form && form.file.length > 0) {
-            return new Promise(resolve => {
-                Object.values(form.file).map(file => { //todo tratativa de erros para quando não for uma lista de arquivos
+            return new Promise((resolve) => {
+                Object.values(form.file).map((file) => {
+                    //todo tratativa de erros para quando não for uma lista de arquivos
                     form.file = file;
                     this.sendFile(collection, form);
                     resolve();
@@ -61,7 +78,7 @@ class Form extends Component {
             let fileRef = ref(storage, collection + "/" + form.file.name);
 
             uploadBytes(fileRef, form.file).then((response) => {
-                console.log('1 - File sent!', response);
+                console.log("1 - File sent!", response);
                 return this.getFileUrl(collection, form);
             });
         }
@@ -77,7 +94,7 @@ class Form extends Component {
         if (collection && form) {
             getDownloadURL(ref(storage, collection + "/" + form.file.name))
                 .then((url) => {
-                    console.log("2 - Got file url", url)
+                    console.log("2 - Got file url", url);
                     form.file = url;
                     return this.sendForm(collection, form);
                 })
@@ -91,9 +108,9 @@ class Form extends Component {
     sendForm(collection, form) {
         if (collection && form) {
             push(databaseRef(db, collection + "/"), {
-                form
+                form,
             }).then((response) => {
-                console.log('3 - Form sent', response);
+                console.log("3 - Form sent", response);
                 return response;
             });
         }
@@ -101,10 +118,13 @@ class Form extends Component {
 
     render() {
         return (
-            <form onSubmit={() => this.sendData(this.props.collection)} className={this.props.className}>
+            <form
+                onSubmit={() => this.sendData(this.props.collection)}
+                className={this.props.className}
+            >
                 {this.props.children}
             </form>
-        )
+        );
     }
 }
 export default Form;

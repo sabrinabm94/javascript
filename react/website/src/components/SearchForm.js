@@ -1,17 +1,32 @@
 import React from "react";
-import Button from "../components/Button";
 
-const SearchForm = props => {
+//components
+import Button from "../components/Button";
+import Form from "../components/form/Form";
+import Input from "../components/form/Input";
+
+const SearchForm = (props) => {
     return (
-        <form className="search-form">
-            <div className="input-group">
-                <input type="email" className="form-control" size="50" placeholder="Search" required />
-                <div className="input-group-btn">
-                    <Button text="Subscribe" className="btn-danger" type="button" disabled={false} />
+        <Form className="search-form">
+            <div className="row">
+                <div className="col-sm-10">
+                    <Input
+                        type="text"
+                        className="input"
+                        placeholder=""
+                        required={true}
+                    />
+                </div>
+                <div className="col-sm-2">
+                    <Button
+                        text="Search"
+                        className="btn-danger btn-full"
+                        type="button"
+                        disabled={false}
+                    />
                 </div>
             </div>
-        </form>
-
+        </Form>
     );
 };
 export default SearchForm;

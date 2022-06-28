@@ -1,9 +1,6 @@
 import { React, Component } from "react";
 
-import {
-    Routes,
-    Route,
-} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 //templates
 import Header from "../../templates/admin/Header";
@@ -19,13 +16,13 @@ import ClientsContact from "../admin/ClientsContact";
 
 class Admin extends Component {
     constructor(props) {
-        super(props)
+        super(props);
     }
-    
+
     render() {
         return (
-            <div className="admin">
-                <h1>Admin area</h1>
+            <div className="admin" id="admin-area">
+                <h1 className="title">Admin area</h1>
                 <Header />
                 <Routes>
                     <Route path="about" element={<About />} />
@@ -49,8 +46,8 @@ class Admin extends Component {
                     <Route path="clientsContact" element={<ClientsContact />} />
                 </Routes>
             </div>
-        )
-    };
+        );
+    }
 }
 
 export default Admin;

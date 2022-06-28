@@ -27,11 +27,14 @@ class ClientsContact extends Component {
                     let elements = response.val()[collection];
                     let elementsArray = [];
 
-                    if (typeof (elements) === "object") { //loop para objeto
-                        elementsArray = Object.keys(elements).map((key) => elements[key].form)
-
+                    if (typeof elements === "object") {
+                        //loop para objeto
+                        elementsArray = Object.keys(elements).map(
+                            (key) => elements[key].form
+                        );
                     } else {
-                        elements.forEach((element) => { //loop para array
+                        elements.forEach((element) => {
+                            //loop para array
                             if (
                                 elementsArray.some(
                                     (item) => item.number === element.number
@@ -64,7 +67,7 @@ class ClientsContact extends Component {
 
     fixBreaklines(text) {
         if (text) {
-            return text.replace(/\n\r?/g, '<br />');
+            return text.replace(/\n\r?/g, "<br />");
         }
     }
 
@@ -77,7 +80,12 @@ class ClientsContact extends Component {
                         {this.state.clientsContactElements.map((data, key) => {
                             return (
                                 <div className="col-sm-4">
-                                    <Painel title={data.name} subtitle={data.email} content={data.comment} key={key} />
+                                    <Painel
+                                        title={data.name}
+                                        subtitle={data.email}
+                                        content={data.comment}
+                                        key={key}
+                                    />
                                 </div>
                             );
                         })}

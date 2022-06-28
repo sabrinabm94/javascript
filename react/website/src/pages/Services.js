@@ -24,16 +24,19 @@ class Services extends Component {
 
         try {
             get(dbRef, collection).then((response) => {
-                if(response.exists()) {
+                if (response.exists()) {
                     let elements = response.val()[collection];
                     let elementsArray = [];
 
-                    if(typeof(elements) === "object") { //loop para objeto
-                        elementsArray = Object.keys(elements).map((key, id) => elements[key])
-
+                    if (typeof elements === "object") {
+                        //loop para objeto
+                        elementsArray = Object.keys(elements).map(
+                            (key, id) => elements[key]
+                        );
                     } else {
-                        elements.forEach((element) => { //loop para array
-                            if(
+                        elements.forEach((element) => {
+                            //loop para array
+                            if (
                                 elementsArray.some(
                                     (item) => item.number === element.number
                                 ) === false ||
@@ -45,12 +48,12 @@ class Services extends Component {
                             }
                         });
                     }
-                    
+
                     console.log("Got data ");
 
-                    if(collection === "servicesElements") {
+                    if (collection === "servicesElements") {
                         this.setState({
-                            servicesElements: elementsArray
+                            servicesElements: elementsArray,
                         });
                     }
                 } else {
@@ -74,7 +77,11 @@ class Services extends Component {
                             data = data.form;
                             return (
                                 <div className="col-sm-4" key={key}>
-                                    <Card iconName={`glyphicon-${data.icon} logo-small`} title={data.title} subtitle={data.subtitle}/>
+                                    <Card
+                                        iconName={`glyphicon-${data.icon} logo-small`}
+                                        title={data.title}
+                                        subtitle={data.subtitle}
+                                    />
                                 </div>
                             );
                         })}

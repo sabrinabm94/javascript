@@ -13,7 +13,7 @@ const Carousel = (props) => {
                     {props.elements.map((data, key) => {
                         let target = null;
 
-                        if(key === 0) {
+                        if (key === 0) {
                             target = (
                                 <li
                                     data-target="#myCarousel"
@@ -40,7 +40,7 @@ const Carousel = (props) => {
                 {props.elements.map((data, key) => {
                     let item = null;
 
-                    if(key === 0) {
+                    if (key === 0) {
                         item = (
                             <div className="item active" key={key}>
                                 <h4>{data.title}</h4>
