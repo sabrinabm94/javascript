@@ -63,12 +63,8 @@ h4 {
 
 .title,
 .card,
-.form {
+.form, .subtitle {
     margin-bottom: 30px;
-}
-
-.subtitle {
-    margin-bottom: 40px;
 }
 
 .picture {
@@ -94,7 +90,11 @@ h4 {
     line-height: 1.375em;
     font-weight: 400;
     font-style: italic;
-    margin: 70px 0;
+    margin: 30px 0;
+}
+
+.item .subtitle {
+    margin-bottom: 60px;
 }
 
 .item span {

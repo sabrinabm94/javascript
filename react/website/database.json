@@ -1,0 +1,153 @@
+{
+  "aboutElements": {
+    "-N6EXv29DgUQtJiBZytR": {
+      "form": {
+        "content": "Mission: our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n\nVision: our vision lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "icon": "globe",
+        "title": "OUR VALUES"
+      }
+    }
+  },
+  "clientsContactElements": {
+    "-N5bDlcF626BUrNrMFGW": {
+      "form": {
+        "comment": "Hey, I want to know more about your company, please send me a e-mail.",
+        "email": "teste@teste.com",
+        "name": "Test"
+      }
+    }
+  },
+  "companyElements": {
+    "-N5fT2yG9nOjgHS4j5fY": {
+      "form": {
+        "content": "We are specialized in the management, publishing,\n                        marketing and licensing of the franchises, which\n                        consists of electronic games, collectible card games,\n                        anime, manga, feature films, toys and other products.",
+        "file": "https://firebasestorage.googleapis.com/v0/b/website-sabrinabm94.appspot.com/o/companyElements%2Fkisspng-graphic-design-logo-luminary-global-logo-idea-5b3c9bf0d2cb47.6650604215306987368634-removebg-preview.png?alt=media&token=ebc0d3e2-f07f-4b42-bc80-257ef998af8d",
+        "name": "NexGen"
+      }
+    }
+  },
+  "contactElements": {
+    "-N5azfHLycxd_Td3jTT5": {
+      "form": {
+        "address": "Chicago, US",
+        "content": "Contact us and we\"ll get back to you within 24 hours.",
+        "email": "yemail@something.com",
+        "file": "https://firebasestorage.googleapis.com/v0/b/website-sabrinabm94.appspot.com/o/contactElements%2Fmap.jpg?alt=media&token=bfb3fcf2-e037-4f19-bc00-679237223f9c",
+        "phone": "+00 1515151515"
+      }
+    }
+  },
+  "costumersElements": {
+    "-N5gGo0T0rSTdbORmDMB": {
+      "form": {
+        "subtitle": "I see now that one's birth is irrelevant. It's what you do that determines who you are.",
+        "title": "Mewtwo"
+      }
+    },
+    "-N5gGvVRTOOxyUdUhFq4": {
+      "form": {
+        "subtitle": "Everybody makes a wrong turn once in a while",
+        "title": "Ash Ketchum"
+      }
+    },
+    "-N5gGzjPYT2lmdvc4UVL": {
+      "form": {
+        "subtitle": "Make your wonderful dream a reality, it will become your truth. If anyone can, it's you",
+        "title": "N"
+      }
+    }
+  },
+  "portfolioElements": {
+    "-N5b4FqbgC6qQ7gmodqG": {
+      "form": {
+        "file": "https://firebasestorage.googleapis.com/v0/b/website-sabrinabm94.appspot.com/o/portfolioElements%2F135.png?alt=media&token=9fae6b45-901a-4bcf-aac8-9c383a36bc27",
+        "subtitle": "The best pokemon in the world!",
+        "title": "JOLTEON"
+      }
+    },
+    "-N5b4JYjbhukHKOt9R5O": {
+      "form": {
+        "file": "https://firebasestorage.googleapis.com/v0/b/website-sabrinabm94.appspot.com/o/portfolioElements%2F197.png?alt=media&token=1b8ed4e1-e321-4c81-a019-d0b5d859d859",
+        "subtitle": "The Dark Pokemon",
+        "title": "UMBREON"
+      }
+    },
+    "-N5b4NVatWdDYwzuUJLg": {
+      "form": {
+        "file": "https://firebasestorage.googleapis.com/v0/b/website-sabrinabm94.appspot.com/o/portfolioElements%2F471.png?alt=media&token=d1481c93-8931-43f3-81a2-798756645808",
+        "subtitle": "Sooo icy",
+        "title": "GRACEON"
+      }
+    }
+  },
+  "pricingElements": {
+    "-N5aWnRMeNL2wLf4JwtN": {
+      "form": {
+        "content": "20 Lorem 15 Ipsum 5 Dolor 2 Sit Endless Ame",
+        "link": "/",
+        "subtitle": "$19 per month",
+        "title": "Basic"
+      }
+    },
+    "-N5aWxY5eJunnlCESqpv": {
+      "form": {
+        "content": "50 Lorem, 25 Ipsum, 10 Dolor, 5 Sit, Endless Amet",
+        "link": "/",
+        "subtitle": "$29 per month",
+        "title": "Pro"
+      }
+    },
+    "-N5aX2xEATTjmW9y0CcC": {
+      "form": {
+        "content": "100 Lorem 50 Ipsum 25 Dolor 10 Sit Endless Amet",
+        "link": "/",
+        "subtitle": "$49 per month",
+        "title": "Premium"
+      }
+    }
+  },
+  "servicesElements": {
+    "-N5aKJE3A3Hu29HmTqMQ": {
+      "form": {
+        "icon": "off",
+        "subtitle": "Lorem ipsum dolor sit amet..",
+        "title": "POWER"
+      }
+    },
+    "-N5aKQVKlTOyCJlcdkBY": {
+      "form": {
+        "icon": "heart",
+        "subtitle": "Lorem ipsum dolor sit amet..",
+        "title": "LOVE"
+      }
+    },
+    "-N5aKVZluHJDy-Q9fFF6": {
+      "form": {
+        "icon": "lock",
+        "subtitle": "Lorem ipsum dolor sit amet..",
+        "title": "JOB DONE"
+      }
+    },
+    "-N5aKazevjlzrHRekyAK": {
+      "form": {
+        "icon": "leaf",
+        "subtitle": "Lorem ipsum dolor sit amet..",
+        "title": "GREEN"
+      }
+    },
+    "-N5aKha8mkC-nnebbjSg": {
+      "form": {
+        "icon": "certificate",
+        "subtitle": "Lorem ipsum dolor sit amet..",
+        "title": "CERTIFIED"
+      }
+    },
+    "-N5aKmiSMXj8y5Zd9SBM": {
+      "form": {
+        "icon": "wrench",
+        "subtitle": "Lorem ipsum dolor sit amet..",
+        "title": "HARD WORK"
+      }
+    }
+  }
+}

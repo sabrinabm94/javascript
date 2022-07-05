@@ -10,24 +10,27 @@ class Pricing extends Component {
 
         this.state = {
             elements: [],
+            text: ""
         };
     }
 
-    handleCallback = (childData) => {
-        this.setState(
-            { elements: childData },
-        )
+    handleCallback = (data) => {
+        if(data && (data !== null && data !== undefined && data !== "")) {
+            this.setState(
+                { elements: data },
+            )
+        }
     }
 
-    fixBreaklines(text) {
-        if (text) {
-            return text.replace(/\n\r?/g, "<br />");
+    breaklinesCallback = (data) => {
+        if(data && (data !== null && data !== undefined && data !== "")) {
+            this.setState(
+                { text: data },
+            )
         }
     }
 
     render() {
-        const { elements } = this.state;
-
         return (
             <section id="pricing" className="pricing container-fluid">
                 <GetData collection="pricingElements" parentCallback={this.handleCallback} />
@@ -37,7 +40,6 @@ class Pricing extends Component {
                 <div className="row slideanim slide">
                     <>
                         {this.state.elements.map((data, key) => {
-                            data.content = this.fixBreaklines(data.content);
                             return (
                                 <div className="col-sm-4 col-xs-12" key={key}>
                                     <PainelSecondary

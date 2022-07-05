@@ -13,15 +13,15 @@ class Services extends Component {
         };
     }
 
-    handleCallback = (childData) => {
-        this.setState(
-            { elements: childData },
-        )
+    handleCallback = (data) => {
+        if(data && (data !== null && data !== undefined && data !== "")) {
+            this.setState(
+                { elements: data },
+            )
+        }
     }
 
     render() {
-        const { elements } = this.state;
-
         return (
             <section id="services" className="services container-fluid">
                 <GetData collection="servicesElements" parentCallback={this.handleCallback} />

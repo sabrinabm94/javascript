@@ -1,5 +1,4 @@
 import { React, Component } from "react";
-import { db, databaseRef, get } from "../init-firebase";
 
 //components
 import Picture from "../components/Picture";
@@ -9,6 +8,7 @@ import Input from "../components/form/Input";
 import Textarea from "../components/form/Textarea";
 import Form from "../components/form/Form";
 import GetData from "../components/utils/GetData";
+import Text from "../components/Text";
 
 class Contact extends Component {
     constructor() {
@@ -16,24 +16,27 @@ class Contact extends Component {
 
         this.state = {
             elements: [],
+            text: ""
         };
     }
 
-    handleCallback = (childData) => {
-        this.setState(
-            { elements: childData },
-        )
+    handleCallback = (data) => {
+        if(data && (data !== null && data !== undefined && data !== "")) {
+            this.setState(
+                { elements: data },
+            )
+        }
     }
 
-    fixBreaklines(text) {
-        if (text) {
-            return text.replace(/\n\r?/g, "<br />");
+    breaklinesCallback = (data) => {
+        if(data && (data !== null && data !== undefined && data !== "")) {
+            this.setState(
+                { text: data },
+            )
         }
     }
 
     render() {
-        const { elements } = this.state;
-
         return (
             <section id="contact" className="contact container-fluid bg-grey">
                 <GetData collection="contactElements" justOne={true} parentCallback={this.handleCallback} />
@@ -43,7 +46,7 @@ class Contact extends Component {
                 </div>
                 <div className="row">
                     <div className="col-sm-5">
-                        <p>{this.state.elements.content}</p>
+                        <Text className="content" text={this.state.elements.content} parentCallback={this.breaklinesCallback} />
                         <p>
                             <Glyphicon name="glyphicon-map-marker" />{" "}
                             {this.state.elements.address}

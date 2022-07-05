@@ -3,6 +3,7 @@ import { React, Component } from "react";
 //components
 import Glyphicon from "../components/Glyphicon";
 import GetData from "../components/utils/GetData";
+import Text from "../components/Text";
 
 class About extends Component {
     constructor() {
@@ -10,24 +11,27 @@ class About extends Component {
 
         this.state = {
             elements: [],
+            text: ""
         };
     }
 
-    handleCallback = (childData) => {
-        this.setState(
-            { elements: childData },
-        )
+    handleCallback = (data) => {
+        if(data && (data !== null && data !== undefined && data !== "")) {
+            this.setState(
+                { elements: data },
+            )
+        }
     }
 
-    fixBreaklines(text) {
-        if (text) {
-            return text.replace(/\n\r?/g, "<br />");
+    breaklinesCallback = (data) => {
+        if(data && (data !== null && data !== undefined && data !== "")) {
+            this.setState(
+                { text: data },
+            )
         }
     }
 
     render() {
-        const { elements } = this.state;
-
         return (
             <section id="about" className="about container-fluid bg-grey">
                 <GetData collection="aboutElements" justOne={true} parentCallback={this.handleCallback} />
@@ -41,18 +45,10 @@ class About extends Component {
                         />
                     </div>
                     <div className="col-sm-8">
-                        <h2 className="subtitle">
+                        <h2 className="title">
                             {this.state.elements.title}
                         </h2>
-                        <br />
-                        <h4
-                            className="content"
-                            dangerouslySetInnerHTML={{
-                                __html: this.fixBreaklines(
-                                    this.state.elements.content
-                                ),
-                            }}
-                        ></h4>
+                        <Text className="subtitle" text={this.state.elements.content} parentCallback={this.breaklinesCallback} />
                     </div>
                 </div>
             </section>

@@ -13,15 +13,15 @@ class Portfolio extends Component {
         };
     }
 
-    handleCallback = (childData) => {
-        this.setState(
-            { elements: childData },
-        )
+    handleCallback = (data) => {
+        if(data && (data !== null && data !== undefined && data !== "")) {
+            this.setState(
+                { elements: data },
+            )
+        }
     }
 
     render() {
-        
-
         return (
             <section
                 id="portfolio"
@@ -37,6 +37,7 @@ class Portfolio extends Component {
                         {this.state.elements.map((data, key) => {
                             return (
                                 <div className="col-sm-4" key={key}>
+                                    
                                     <Thumbnail
                                         url={data.file}
                                         title={data.title}

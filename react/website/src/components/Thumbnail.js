@@ -1,22 +1,45 @@
-import React from "react";
+import { React, Component } from "react";
 
-const Thumbnail = (props) => {
-    let style = {
-        backgroundImage: `url(${props.url})`,
-    };
+//components
+import Text from "../components/Text";
 
-    return (
-        <div className="thumbnail">
+class Thumbnail extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            text: ""
+        };
+        
+    }
+
+    breaklinesCallback = (data) => {
+        if (data && (data !== null && data !== undefined && data !== "")) {
+            this.setState(
+                { text: data },
+            )
+        }
+    }
+
+    render() {
+        let style = {
+            backgroundImage: `url(${this.props.url})`,
+        };
+
+        return (
+            <div className="thumbnail">
             <picture
                 className="picture"
-                alt={`Image of ${props.title}`}
+                alt={`Image of ${this.props.title}`}
                 style={style}
             ></picture>
             <h2 className="title">
-                <strong>{props.title}</strong>
+                <strong>{this.props.title}</strong>
             </h2>
-            <h3 className="subtitle">{props.subtitle}</h3>
+            <Text className="subtitle" text={this.props.subtitle} parentCallback={this.breaklinesCallback} />
         </div>
-    );
-};
+        );
+    }
+}
+
 export default Thumbnail;
