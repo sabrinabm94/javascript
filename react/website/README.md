@@ -42,8 +42,11 @@ firebase serve
 firebase deploy
 
 ### Access
-website-sabrinabm94.web.app
+https://website-sabrinabm94.web.app
 website-sabrinabm94.firebaseapp.com
+
+test@test.com
+Test@2022
 
 # Contact
 Sabrina B. 

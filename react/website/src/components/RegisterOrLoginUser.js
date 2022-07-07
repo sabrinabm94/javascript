@@ -26,15 +26,15 @@ class RegisterOrLoginUser extends Component {
             buttonElement.addEventListener("click", function () {
                 //console.log("submit authentication");
 
-                let loginFormElement = document.querySelector("#" + formClassname);
+                let formElement = document.querySelector("#" + formClassname);
 
-                if (loginFormElement) {
+                if (formElement) {
                     let authObject = {
                         email: null,
                         password: null
                     };
-                    let loginEmailElement = loginFormElement.querySelector("#" + emailClassname);
-                    let loginPasswordElement = loginFormElement.querySelector("#" + passwordClassname);
+                    let loginEmailElement = formElement.querySelector("#" + emailClassname);
+                    let loginPasswordElement = formElement.querySelector("#" + passwordClassname);
 
                     if (loginEmailElement && loginEmailElement !== undefined) {
                         authObject.email = loginEmailElement.value;
@@ -70,6 +70,7 @@ class RegisterOrLoginUser extends Component {
                         }
 
                         if (action == "register") {
+                            console.log("oi");
                             createUserWithEmailAndPassword(auth, authObject.email, authObject.password)
                                 .then((userCredential) => {
                                     // this.setState({ //todo verificar porque o erro no setState

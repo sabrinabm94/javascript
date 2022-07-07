@@ -60,6 +60,9 @@ class Nav extends Component {
                         <li className="nav-item">
                             <Link to="clientsContact">Clients Contact</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link to="/register/">Register User</Link>
+                        </li>
                         <li className="nav-item loggout" id="loggout">
                             <Link to="/login/">Loggout</Link>
                         </li>

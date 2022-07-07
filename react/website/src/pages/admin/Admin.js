@@ -26,7 +26,6 @@ class Admin extends Component {
     }
 
     componentDidMount() {
-        console.log("oi");
         this.verifyUserAuth("/login"); //se não está autenticado, será redirecionado para login
     }
 
