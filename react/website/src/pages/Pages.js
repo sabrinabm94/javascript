@@ -1,5 +1,4 @@
 import { React } from "react";
-
 import { Routes, Route } from "react-router-dom";
 
 //templates
@@ -13,6 +12,8 @@ import Costumers from "./Costumers";
 import Pricing from "./Pricing";
 import Contact from "./Contact";
 import Admin from "./admin/Admin";
+import RegisterUser from "./auth/RegisterUser";
+import LoginUser from "./auth/LoginUser";
 
 const Pages = (props) => {
     return (
@@ -20,6 +21,8 @@ const Pages = (props) => {
             <PageHeader />
             <Routes>
                 <Route path="/" element={<About />} />
+                <Route path="/register" element={<RegisterUser />} />
+                <Route path="/login" element={<LoginUser />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/portfolio" element={<Portfolio />} />

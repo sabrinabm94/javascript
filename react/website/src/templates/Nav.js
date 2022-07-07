@@ -52,22 +52,22 @@ class Nav extends Component {
                         <div className="collapse navbar-collapse" id="myNavbar">
                             <ul className="nav navbar-nav navbar-right">
                                 <li>
-                                    <Link to="/about">ABOUT</Link>
+                                    <Link to="/about/">ABOUT</Link>
                                 </li>
                                 <li>
-                                    <Link to="/services">SERVICES</Link>
+                                    <Link to="/services/">SERVICES</Link>
                                 </li>
                                 <li>
-                                    <Link to="/portfolio">PORTFOLIO</Link>
+                                    <Link to="/portfolio/">PORTFOLIO</Link>
                                 </li>
                                 <li>
-                                    <Link to="/costumers">COSTUMERS</Link>
+                                    <Link to="/costumers/">COSTUMERS</Link>
                                 </li>
                                 <li>
-                                    <Link to="/pricing">PRICING</Link>
+                                    <Link to="/pricing/">PRICING</Link>
                                 </li>
                                 <li>
-                                    <Link to="/contact">CONTACT</Link>
+                                    <Link to="/contact/">CONTACT</Link>
                                 </li>
                             </ul>
                         </div>

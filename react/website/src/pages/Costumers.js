@@ -4,7 +4,7 @@ import { React, Component } from "react";
 import Carousel from "../components/Carousel";
 import GetData from "../components/utils/GetData";
 
-class Portfolio extends Component {
+class Costumers extends Component {
     constructor() {
         super();
 
@@ -40,4 +40,4 @@ class Portfolio extends Component {
     }
 }
 
-export default Portfolio;
+export default Costumers;

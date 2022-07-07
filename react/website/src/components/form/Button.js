@@ -10,6 +10,7 @@ class Button extends Component {
             <button
                 type={this.props.type}
                 className={this.props.className}
+                id={this.props.id}
                 required={this.props.required}
             >
                 {this.props.text}
