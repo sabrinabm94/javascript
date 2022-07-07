@@ -1,6 +1,6 @@
 import { React, Component } from "react";
-
 import { Routes, Route } from "react-router-dom";
+import { auth, onAuthStateChanged } from "../../init-firebase";
 
 //templates
 import Header from "../../templates/admin/Header";
@@ -18,6 +18,33 @@ import ClientsContact from "../admin/ClientsContact";
 class Admin extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            isAuthenticated: false,
+            user: null
+        }
+    }
+
+    componentDidMount() {
+        console.log("oi");
+        this.verifyUserAuth("/login"); //se não está autenticado, será redirecionado para login
+    }
+
+    verifyUserAuth(link) {
+        onAuthStateChanged(auth, (user) => {
+            if (user && user !== null && user !== undefined) {
+                this.setState({
+                    isAuthenticated: true,
+                    user: user
+                })
+            } else {
+                this.setState({
+                    isAuthenticated: false,
+                    user: null
+                })
+                return window.location.href = link;
+            }
+        });
     }
 
     render() {

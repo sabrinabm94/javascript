@@ -19,7 +19,6 @@ class Nav extends Component {
                 //console.log("submit loggout");
                 signOut(auth)
                     .then(() => {
-                        console.log(auth);
                         return auth;
                     })
                     .catch((error) => {
@@ -62,7 +61,7 @@ class Nav extends Component {
                             <Link to="clientsContact">Clients Contact</Link>
                         </li>
                         <li className="nav-item loggout" id="loggout">
-                            <Link to="/about">Loggout</Link>
+                            <Link to="/login/">Loggout</Link>
                         </li>
                     </ul>
                 </div>

@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, child, set, push, get, ref as databaseRef, onValue } from "firebase/database";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage, getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { getAnalytics } from "firebase/analytics";
@@ -24,4 +24,4 @@ export const storage = getStorage(app);
 export const storageRef = ref(storage);
 export const auth = getAuth(app);
 export const analytics = getAnalytics(app);
-export { databaseRef, getDownloadURL, set, push, ref, child, get, uploadBytes, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut };
+export { databaseRef, getDownloadURL, set, push, ref, child, get, uploadBytes, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged };

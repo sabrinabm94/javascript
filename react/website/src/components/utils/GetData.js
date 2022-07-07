@@ -62,17 +62,15 @@ class GetData extends Component {
                         this.props.parentCallback(this.state.elements);
                     }
                 } else {
-                    console.log("No data available ", collection);
+                    //console.log("No data available ", collection);
                 }
             });
         } catch (error) {
-            console.log(error);
             return error;
         }
     }
 
-    render() {
-    }
+    render() {}
 }
 
 export default GetData;
