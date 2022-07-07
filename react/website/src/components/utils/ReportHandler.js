@@ -12,14 +12,4 @@ function getEventValueFromMetric(metric) {
     return Math.round(metric.value);
 }
 
-function gaTrigger(metric) {
-    ga("send", "event", {
-        eventCategory: "Web Vitals",
-        eventAction: metric.name,
-        eventValue: getEventValueFromMetric(metric),
-        eventLabel: metric.id,
-        nonInteraction: true,
-    });
-}
-
 export default ReportHandler;

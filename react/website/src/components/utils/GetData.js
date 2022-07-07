@@ -70,7 +70,9 @@ class GetData extends Component {
         }
     }
 
-    render() {}
+    render() {
+        return(<div></div>);
+    }
 }
 
 export default GetData;

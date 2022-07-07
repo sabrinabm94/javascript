@@ -39,6 +39,7 @@ firebase login
 firebase serve
 
 #### Deploy
+yarn build
 firebase deploy
 
 ### Access

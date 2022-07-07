@@ -14,7 +14,7 @@ class Form extends Component {
         super(props);
     }
 
-    sendData(collection) {
+    sendData(event, collection) {
         event.preventDefault();
 
         if (collection) {
