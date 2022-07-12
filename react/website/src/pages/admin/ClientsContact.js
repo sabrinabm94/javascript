@@ -19,15 +19,7 @@ class ClientsContact extends Component {
         )
     }
 
-    fixBreaklines(text) {
-        if (text) {
-            return text.replace(/\n\r?/g, "<br />");
-        }
-    }
-
     render() {
-        const { elements } = this.state;
-
         return (
             <section id="clients-contact" className="clients-contact container-fluid bg-grey">
                 <GetData collection="clientsContactElements" parentCallback={this.handleCallback} />
@@ -38,10 +30,13 @@ class ClientsContact extends Component {
                             return (
                                 <div className="col-sm-4" key={key}>
                                     <Painel
+                                        collection="clientsContactElements"
+                                        deleteButtonName="delete"
+                                        deleteClassname="delete"
+                                        dataId={data.id}
                                         title={data.name}
                                         subtitle={data.email}
                                         content={data.comment}
-                                        key={key}
                                     />
                                 </div>
                             );

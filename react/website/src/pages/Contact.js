@@ -103,7 +103,7 @@ class Contact extends Component {
                     </div>
                 </div>
                 <Picture
-                    url={this.state.pictureUrl}
+                    url={this.state.elements.file}
                     className="picture"
                     alt="map"
                 />

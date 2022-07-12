@@ -27,24 +27,9 @@ class GetData extends Component {
                         if (typeof elements === "object") {
                             //loop para objeto
                             elementsArray = Object.keys(elements).map(
-                                (key, id) => elements[key].form
+                                (key) => elements[key].form
                             );
-                        } else {
-                            elements.forEach((element) => {
-                                //loop para array
-                                if (
-                                    elementsArray.some(
-                                        (item) => item.number === element.number
-                                    ) === false ||
-                                    elementsArray.some(
-                                        (item) => item.id === element.id
-                                    ) === false
-                                ) {
-                                    elementsArray.push(element.form);
-                                }
-                            });
                         }
-
                         //console.log("Got data ", collection, elementsArray);
 
                         if(this.props.justOne === true) {
