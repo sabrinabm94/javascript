@@ -4,12 +4,24 @@ import React, { Component } from "react";
 import DeleteData from "../components/utils/DeleteData";
 
 class Painel extends Component {
+    constructor(props) {
+        super(props);
+
+        this.deleteDataComponent = React.createRef();
+    }
+
+    handleClick = () => {
+        this.deleteDataComponent.current.deleteData(this.props.collection, this.props.dataId);
+    }
+
     render() {
         return (
+            <>
             <div className="panel panel-default text-center" id={this.props.dataId}>
                 <div className="row">
                     <div className="col-sm-2">
-                        <DeleteData className={this.props.deleteClassname} button={this.props.deleteButtonName} collection={this.props.collection} />
+                        <DeleteData ref={this.deleteDataComponent} collection={this.props.collection} dataId={this.props.dataId} />
+                        <span className="remove" id="remove" onClick={this.handleClick}>x</span>
                     </div>
                 </div>
                 <div className="panel-heading">
@@ -19,12 +31,13 @@ class Painel extends Component {
                     <p
                         className="content"
                         dangerouslySetInnerHTML={{ __html: this.props.content }}
-                    ></p>
+                    />
                 </div>
                 <div className="panel-footer">
                     <h3 className="subtitle">{this.props.subtitle}</h3>
                 </div>
             </div>
+            </>
         )
     }
 }

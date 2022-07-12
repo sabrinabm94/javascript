@@ -31,8 +31,6 @@ class ClientsContact extends Component {
                                 <div className="col-sm-4" key={key}>
                                     <Painel
                                         collection="clientsContactElements"
-                                        deleteButtonName="delete"
-                                        deleteClassname="delete"
                                         dataId={data.id}
                                         title={data.name}
                                         subtitle={data.email}
