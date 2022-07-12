@@ -1,26 +1,24 @@
 import React, { Component } from "react";
 import {
-    db,
     ref,
-    push,
-    databaseRef,
     storage,
     uploadBytes,
     getDownloadURL,
 } from "../../init-firebase";
 
+
 //components
-import UpdateData from "../utils/UpdateData";
+import SetData from "../utils/SetData";
 
 class Form extends Component {
     constructor(props) {
         super(props);
 
-        this.updateDataComponent = React.createRef();
+        this.setDataComponent = React.createRef();
     }
 
-    handleClick = (collection, form) => {
-        this.updateDataComponent.current.updateData(collection, form);
+    handleCallback = (collection, form) => {
+        this.setDataComponent.current.setData(collection, form);
     }
 
     sendData(collection) {
@@ -117,20 +115,7 @@ class Form extends Component {
 
     sendForm(collection, form) {
         if (collection && form) {
-            //save form in database
-            push(databaseRef(db, collection + "/"), {
-                form,
-            }).then((response) => {
-                console.log("Form sent", response);
-
-                //update form id in database
-                let responseId = response.key;
-                if(responseId && responseId !== undefined && responseId != null) {
-                    form.id = responseId;
-
-                    this.handleClick(collection, form);
-                }
-            });
+            this.handleCallback(collection, form);
         }
     }
 
@@ -141,7 +126,7 @@ class Form extends Component {
                 className={this.props.className}
                 id={this.props.className}
             >
-                <UpdateData ref={this.updateDataComponent} />
+                <SetData ref={this.setDataComponent} />
                 {this.props.children}
             </form>
         );

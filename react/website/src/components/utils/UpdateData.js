@@ -3,7 +3,9 @@ import { db, databaseRef, set } from "../../init-firebase";
 
 class UpdateData extends Component {
     updateData(collection, form) {
-        if ((collection !== null && collection !== undefined && collection !== "") && (form !== null && form !== undefined && form !== "") && (form.id !== null && form.id !== undefined)) {
+        if ((collection !== null && collection !== undefined && collection !== "") 
+        && (form !== null && form !== undefined && form !== "") 
+        && (form.id !== null && form.id !== undefined)) {
             set(databaseRef(db, collection + "/" + form.id), {
                 form
             })
