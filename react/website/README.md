@@ -49,6 +49,16 @@ website-sabrinabm94.firebaseapp.com
 test@test.com
 Test@2022
 
+
+## To do
+### Admin
+- implementação da área de edição da registros
+- implementação da área de apresentação de registros
+- Implementação da área de remoção de registros
+- limpeza do formulário após envio
+- Notificações
+
+
 # Contact
 Sabrina B. 
 sabrinabm94@gmail.com
