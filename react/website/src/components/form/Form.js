@@ -3,14 +3,26 @@ import {
     db,
     ref,
     push,
-    set,
     databaseRef,
     storage,
     uploadBytes,
     getDownloadURL,
 } from "../../init-firebase";
 
+//components
+import UpdateData from "../utils/UpdateData";
+
 class Form extends Component {
+    constructor(props) {
+        super(props);
+
+        this.updateDataComponent = React.createRef();
+    }
+
+    handleClick = (collection, form) => {
+        this.updateDataComponent.current.updateData(collection, form);
+    }
+
     sendData(collection) {
         // eslint-disable-next-line no-restricted-globals
         let e = event;
@@ -76,7 +88,7 @@ class Form extends Component {
             let fileRef = ref(storage, collection + "/" + form.file.name);
 
             uploadBytes(fileRef, form.file).then((response) => {
-                console.log("1 - File sent!", response);
+                console.log("File sent! ", response);
                 return this.getFileUrl(collection, form);
             });
         }
@@ -92,7 +104,7 @@ class Form extends Component {
         if (collection && form) {
             getDownloadURL(ref(storage, collection + "/" + form.file.name))
                 .then((url) => {
-                    console.log("2 - Got file url", url);
+                    console.log("Got file url ", url);
                     form.file = url;
                     return this.sendForm(collection, form);
                 })
@@ -115,17 +127,8 @@ class Form extends Component {
                 let responseId = response.key;
                 if(responseId && responseId !== undefined && responseId != null) {
                     form.id = responseId;
-                    set(databaseRef(db, collection + "/" + responseId), {
-                        form
-                      })
-                      .then((response) => {
-                        console.log("Form updated ", response);
-                        return response;
-                      })
-                      .catch((error) => {
-                        console.log(error);
-                        return error;
-                      });
+
+                    this.handleClick(collection, form);
                 }
             });
         }
@@ -138,6 +141,7 @@ class Form extends Component {
                 className={this.props.className}
                 id={this.props.className}
             >
+                <UpdateData ref={this.updateDataComponent} />
                 {this.props.children}
             </form>
         );

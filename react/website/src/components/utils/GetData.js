@@ -56,7 +56,7 @@ class GetData extends Component {
     }
 
     render() {
-        return(<div></div>);
+        return(<div />);
     }
 }
 

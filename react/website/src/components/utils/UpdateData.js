@@ -2,24 +2,19 @@ import React, { Component } from "react";
 import { db, databaseRef, set } from "../../init-firebase";
 
 class UpdateData extends Component {
-    updateData(collection, dataId) {
-        if ((collection !== null && collection !== undefined && collection !== "") && (dataId !== null && dataId !== undefined && dataId !== "")) {
-            let form = {};
-
-            if (dataId !== null && dataId !== undefined) {
-                form.id = dataId;
-                set(databaseRef(db, collection + "/" + dataId), {
-                    form
+    updateData(collection, form) {
+        if ((collection !== null && collection !== undefined && collection !== "") && (form !== null && form !== undefined && form !== "") && (form.id !== null && form.id !== undefined)) {
+            set(databaseRef(db, collection + "/" + form.id), {
+                form
+            })
+                .then((response) => {
+                    console.log("Form updated ", response);
+                    return window.location.reload(false);
                 })
-                    .then((response) => {
-                        console.log("Form updated ", response);
-                        return window.location.reload(false);
-                    })
-                    .catch((error) => {
-                        console.log(error);
-                        return error;
-                    });
-            }
+                .catch((error) => {
+                    console.log(error);
+                    return error;
+                });
         }
     }
 
