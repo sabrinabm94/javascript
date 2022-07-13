@@ -6,10 +6,6 @@ import Button from "../../components/form/Button";
 import Form from "../../components/form/Form";
 
 class Service extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div

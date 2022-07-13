@@ -8,10 +8,6 @@ import Input from "../../components/form/Input";
 import File from "../../components/form/File";
 
 class About extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div

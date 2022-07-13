@@ -3,10 +3,6 @@ import { Link } from "react-router-dom";
 import { auth, signOut } from "../../init-firebase";
 
 class Nav extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {
         this.userLoggout("loggout");
     }

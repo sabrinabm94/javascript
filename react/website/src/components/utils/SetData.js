@@ -11,7 +11,7 @@ class SetData extends Component {
         this.updateDataComponent = React.createRef();
     }
 
-    handleCallback = (collection, form) => {
+    handleUpdateData = (collection, form) => {
         this.updateDataComponent.current.updateData(collection, form);
     }
 
@@ -27,7 +27,7 @@ class SetData extends Component {
                 let responseId = response.key;
                 if (responseId && responseId !== undefined && responseId != null) {
                     form.id = responseId;
-                    this.handleCallback(collection, form);
+                    this.handleUpdateData(collection, form);
                 }
             });
         }

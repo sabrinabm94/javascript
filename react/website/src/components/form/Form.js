@@ -6,7 +6,6 @@ import {
     getDownloadURL,
 } from "../../init-firebase";
 
-
 //components
 import SetData from "../utils/SetData";
 

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { db, push, databaseRef } from "../../init-firebase";
 
 //components
 import Button from "../../components/Button";
@@ -7,10 +6,6 @@ import Input from "../../components/form/Input";
 import Form from "../../components/form/Form";
 
 class Portfolio extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div

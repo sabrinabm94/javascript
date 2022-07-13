@@ -22,9 +22,7 @@ class Nav extends Component {
     }
 
     render() {
-        const { elements } = this.state;
-
-        if (this.state.elements && this.state.elements != null && this.state.elements != undefined) {
+        if (this.state.elements && this.state.elements !== null && this.state.elements !== undefined) {
             return (
                 <nav className="navbar navbar-default navbar-fixed-top">
                     <GetData collection="companyElements" justOne={true} parentCallback={this.handleCallback} />

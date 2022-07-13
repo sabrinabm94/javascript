@@ -6,10 +6,6 @@ import Button from "../../components/form/Button";
 import RegisterOrLoginUser from "../../components/RegisterOrLoginUser";
 
 class LoginUser extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div

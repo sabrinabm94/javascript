@@ -24,8 +24,6 @@ class Company extends Component {
     }
 
     render() {
-        const {elements} = this.state;
-
         return (
             <div
                 id="admin-company"

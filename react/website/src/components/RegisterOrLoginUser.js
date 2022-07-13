@@ -48,7 +48,7 @@ class RegisterOrLoginUser extends Component {
                         && (authObject.email !== null && authObject.email !== undefined && authObject.email !== "") 
                         && (authObject.password !== null && authObject.password !== undefined && authObject.password !== "")
                     ) {
-                        if (action == "login") {
+                        if (action === "login") {
                             signInWithEmailAndPassword(auth, authObject.email, authObject.password)
                                 .then((userCredential) => {
                                     // this.setState({ //todo verificar porque o erro no setState
@@ -69,7 +69,7 @@ class RegisterOrLoginUser extends Component {
                                 });
                         }
 
-                        if (action == "register") {
+                        if (action === "register") {
                             console.log("oi");
                             createUserWithEmailAndPassword(auth, authObject.email, authObject.password)
                                 .then((userCredential) => {
@@ -92,7 +92,7 @@ class RegisterOrLoginUser extends Component {
 
                         }
                     } else {
-                        let err = "Preencha todos os campos obrigatórios!";
+                        //let err = "Preencha todos os campos obrigatórios!";
                         // this.setState({ //todo verificar porque o erro no setState
                         //     error: err,
                         //     user: null,

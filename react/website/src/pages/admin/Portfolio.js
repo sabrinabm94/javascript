@@ -7,10 +7,6 @@ import File from "../../components/form/File";
 import Form from "../../components/form/Form";
 
 class Portfolio extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div

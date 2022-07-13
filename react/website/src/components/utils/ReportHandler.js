@@ -1,4 +1,4 @@
-import { Metric } from "web-vitals";
+//import { Metric } from "web-vitals";
 
 function ReportHandler(metric) {
     getEventValueFromMetric(metric);

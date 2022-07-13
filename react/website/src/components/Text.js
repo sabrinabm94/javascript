@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 
 class Text extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     fixBreaklines(text) {
         if (text && (text !== null && text !== undefined && text !== "")) {
             return text.replace(/\n\r?/g, "<br />");

@@ -270,6 +270,14 @@ label:first-letter {
     margin: 0 auto;
 }
 
+.dropdown-menu {
+    left: 47%;
+}
+
+.dropdown-menu li {
+    text-align: center;
+}
+
 @keyframes slide {
     0% {
         opacity: 0;

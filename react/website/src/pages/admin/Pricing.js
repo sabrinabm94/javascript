@@ -7,10 +7,6 @@ import Button from "../../components/form/Button";
 import Form from "../../components/form/Form";
 
 class Pricing extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div

@@ -1,8 +1,8 @@
 import { React, Component } from "react";
-import { db, databaseRef, get } from "../init-firebase";
 
 //components
 import GetData from "../components/utils/GetData";
+import Text from "../components/Text";
 
 class PageHeader extends Component {
     constructor() {
@@ -10,34 +10,30 @@ class PageHeader extends Component {
 
         this.state = {
             elements: [],
+            text: ""
         };
     }
 
-    handleCallback = (childData) => {
+    handleGetData = (childData) => {
         this.setState(
             { elements: childData },
         )
     }
 
-    fixBreaklines(text) {
-        if (text) {
-            return text.replace(/\n\r?/g, "<br />");
+    handleBreaklines = (data) => {
+        if(data && (data !== null && data !== undefined && data !== "")) {
+            this.setState(
+                { text: data },
+            )
         }
     }
 
     render() {
-        const { elements } = this.state;
-
         return (
             <section className="page-header jumbotron text-center">
-                <GetData collection="companyElements" justOne={true} parentCallback={this.handleCallback} />
+                <GetData collection="companyElements" justOne={true} parentCallback={this.handleGetData} />
                 <h1 className="title">{this.state.elements.name}</h1>
-                <h2 className="subtitle" dangerouslySetInnerHTML={{
-                    __html: this.fixBreaklines(
-                        this.state.elements.content
-                    ),
-                }}>
-                </h2>
+                <Text className="subtitle" text={this.state.elements.content} parentCallback={this.breaklinesCallback} />
             </section>
         );
     }

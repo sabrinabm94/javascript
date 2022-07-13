@@ -15,7 +15,7 @@ class About extends Component {
         };
     }
 
-    handleCallback = (data) => {
+    handleGetData = (data) => {
         if(data && (data !== null && data !== undefined && data !== "")) {
             this.setState(
                 { elements: data },
@@ -23,7 +23,7 @@ class About extends Component {
         }
     }
 
-    breaklinesCallback = (data) => {
+    handleBreaklines = (data) => {
         if(data && (data !== null && data !== undefined && data !== "")) {
             this.setState(
                 { text: data },
@@ -34,7 +34,7 @@ class About extends Component {
     render() {
         return (
             <section id="about" className="about container-fluid bg-grey">
-                <GetData collection="aboutElements" justOne={true} parentCallback={this.handleCallback} />
+                <GetData collection="aboutElements" justOne={true} parentCallback={this.handleGetData} />
                 <div className="text-center">
                     <h1 className="title">ABOUT US</h1>
                 </div>
@@ -48,7 +48,7 @@ class About extends Component {
                         <h2 className="title">
                             {this.state.elements.title}
                         </h2>
-                        <Text className="subtitle" text={this.state.elements.content} parentCallback={this.breaklinesCallback} />
+                        <Text className="subtitle" text={this.state.elements.content} parentCallback={this.handleBreaklines} />
                     </div>
                 </div>
             </section>

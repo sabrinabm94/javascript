@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 
 class Picture extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         if (this.props.url) {
             let style = {
