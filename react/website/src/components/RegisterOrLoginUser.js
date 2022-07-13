@@ -56,7 +56,7 @@ class RegisterOrLoginUser extends Component {
                                     //     user: userCredential.user,
                                     //     isAuthenticated: true,
                                     // })
-                                    
+                                    alert("loggin....");
                                     return  window.location.href = "/admin/";
                                 })
                                 .catch((err) => {
@@ -70,7 +70,6 @@ class RegisterOrLoginUser extends Component {
                         }
 
                         if (action === "register") {
-                            console.log("oi");
                             createUserWithEmailAndPassword(auth, authObject.email, authObject.password)
                                 .then((userCredential) => {
                                     // this.setState({ //todo verificar porque o erro no setState
@@ -78,7 +77,7 @@ class RegisterOrLoginUser extends Component {
                                     //     user: userCredential.user,
                                     //     isAuthenticated: true,
                                     // })
-                                    
+                                    alert("New user created, loggin....");
                                     return  window.location.href = "/admin/";
                                 })
                                 .catch((err) => {

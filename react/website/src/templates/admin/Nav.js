@@ -15,7 +15,8 @@ class Nav extends Component {
                 //console.log("submit loggout");
                 signOut(auth)
                     .then(() => {
-                        return auth;
+                        //console.log(auth);
+                        alert("Loggout...");
                     })
                     .catch((error) => {
                         return error;
