@@ -6,15 +6,20 @@ import Button from "../../components/form/Button";
 import File from "../../components/form/File";
 import Form from "../../components/form/Form";
 
+//templates
+import ShowData from "../../templates/admin/ShowData";
+
 class Portfolio extends Component {
     render() {
         return (
             <div
-                id="admin-portfolio"
-                className="admin-portfolio container-fluid text-center bg-grey"
-            >
-                <section className="section portfolio">
-                    <h2 className="title">Portfolio</h2>
+            id="admin-portfolio"
+            className="container-fluid text-center bg-grey"
+        >
+            <section className="section admin-portfolio">
+                <h2 className="title">Portfolio</h2>
+                <ShowData collection="portfolioElements" registerTitleInList="title" />
+                <h2 className="subtitle">New register</h2>
                     <Form collection="portfolioElements" className="form">
                         <div className="row">
                             <div className="col-4 col-sm-4 col-md-4 col-lg-4">

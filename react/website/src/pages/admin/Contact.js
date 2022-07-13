@@ -7,6 +7,9 @@ import Form from "../../components/form/Form";
 import Input from "../../components/form/Input";
 import File from "../../components/form/File";
 
+//templates
+import ShowData from "../../templates/admin/ShowData";
+
 class About extends Component {
     render() {
         return (
@@ -15,14 +18,16 @@ class About extends Component {
                 className="container-fluid text-center bg-grey"
             >
                 <section className="section admin-contact">
-                    <h2 className="title">Contact</h2>
+                    <h2 className="title">Company contact information</h2>
+                    <ShowData collection="contactElements" registerTitleInList="address" />
+                    <h2 className="subtitle">New register</h2>
                     <Form collection="contactElements" className="form">
                         <div className="row">
                             <div className="col-6 col-sm-6">
                                 <Textarea
                                     className="input"
                                     name="content"
-                                    placeholder="Content"
+                                    placeholder="Description"
                                 />
                             </div>
                             <div className="col-6 col-sm-6">

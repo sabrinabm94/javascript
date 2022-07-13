@@ -5,15 +5,20 @@ import Button from "../../components/Button";
 import Input from "../../components/form/Input";
 import Form from "../../components/form/Form";
 
+//templates
+import ShowData from "../../templates/admin/ShowData";
+
 class Portfolio extends Component {
     render() {
         return (
             <div
-                id="admin-costumers"
-                className="admin-costumers container-fluid text-center bg-grey"
-            >
-                <section className="section costumers">
-                    <h2 className="title">Costumers</h2>
+            id="admin-costumers"
+            className="container-fluid text-center bg-grey"
+        >
+            <section className="section admin-costumers">
+                <h2 className="title">Costumers</h2>
+                <ShowData collection="costumersElements" registerTitleInList="title" />
+                <h2 className="subtitle">New register</h2>
                     <Form collection="costumersElements" className="form">
                         <div className="row">
                             <div className="col-6 col-sm-6 col-md-6 col-lg-6">

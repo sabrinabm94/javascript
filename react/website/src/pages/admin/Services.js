@@ -5,15 +5,20 @@ import Input from "../../components/form/Input";
 import Button from "../../components/form/Button";
 import Form from "../../components/form/Form";
 
+//templates
+import ShowData from "../../templates/admin/ShowData";
+
 class Service extends Component {
     render() {
         return (
             <div
-                id="admin-service"
-                className="admin-service container-fluid text-center bg-grey"
-            >
-                <section className="section about">
-                    <h2 className="title">Services</h2>
+            id="admin-services"
+            className="container-fluid text-center bg-grey"
+        >
+            <section className="section admin-services">
+                <h2 className="title">Services</h2>
+                <ShowData collection="servicesElements" registerTitleInList="title" />
+                <h2 className="subtitle">New register</h2>
                     <Form collection="servicesElements" className="form">
                         <div className="row">
                             <div className="col-6 col-sm-6">

@@ -6,32 +6,21 @@ import File from "../../components/form/File";
 import Textarea from "../../components/form/Textarea";
 import Button from "../../components/form/Button";
 import Form from "../../components/form/Form";
-import GetData from "../../components/utils/GetData";
+
+//templates
+import ShowData from "../../templates/admin/ShowData";
 
 class Company extends Component {
-    constructor() {
-        super();
-
-        this.state = {
-            elements: [],
-        };
-    }
-  
-    handleCallback = (childData) =>{
-        this.setState(
-            {elements: childData}, 
-        )
-    }
-
     render() {
         return (
             <div
                 id="admin-company"
                 className="container-fluid text-center bg-grey"
             >
-                <GetData collection="companyElements" justOne={true} parentCallback = {this.handleCallback}/>
                 <section className="section admin-company">
                     <h2 className="title">Company</h2>
+                    <ShowData collection="companyElements" registerTitleInList="name" />
+                    <h2 className="subtitle">New register</h2>
                     <Form collection="companyElements" className="form">
                         <div className="row">
                             <div className="col-6 col-sm-6">

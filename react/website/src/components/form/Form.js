@@ -16,7 +16,7 @@ class Form extends Component {
         this.setDataComponent = React.createRef();
     }
 
-    handleCallback = (collection, form) => {
+    handleSetData = (collection, form) => {
         this.setDataComponent.current.setData(collection, form);
     }
 
@@ -113,8 +113,8 @@ class Form extends Component {
     }
 
     sendForm(collection, form) {
-        if (collection && form) {
-            this.handleCallback(collection, form);
+        if (collection !== null && collection !== undefined && form !== null && form !== undefined) {
+            this.handleSetData(collection, form);
         }
     }
 

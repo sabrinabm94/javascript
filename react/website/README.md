@@ -52,11 +52,7 @@ Test@2022
 
 ## To do
 ### Admin
-- implementação da área de edição da registros
-- implementação da área de apresentação de registros
-- Implementação da área de remoção de registros
-- limpeza do formulário após envio
-- Notificações
+- melhoria na seleção de icones: https://www.w3schools.com/bootstrap/bootstrap_ref_comp_glyphs.asp
 
 
 # Contact

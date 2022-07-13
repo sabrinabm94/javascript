@@ -7,8 +7,12 @@ body {
 h2 {
     font-size: 20px;
     text-transform: uppercase;
-    font-weight: 600;
     color: #818181;
+}
+
+.navbar li a,
+h3 {
+    font-weight: 600;
 }
 
 h3 {
@@ -22,16 +26,23 @@ h4 {
     color: #303030;
 }
 
-.page-header .subtitle {
+.page-header .subtitle,
+.jumbotron,
+.panel-heading .title,
+.navbar li a,
+.navbar .navbar-brand,
+.panel-heading,
+.panel-footer .btn,
+.navbar-default .navbar-toggle {
     color: #fff;
 }
 
 .jumbotron {
     background-color: #f4511e;
-    color: #fff;
     padding: 100px 25px;
     font-family: Montserrat, sans-serif;
 }
+
 .bg-grey {
     background-color: #f6f6f6;
 }
@@ -63,7 +74,8 @@ h4 {
 
 .title,
 .card,
-.form, .subtitle {
+.form,
+.subtitle {
     margin-bottom: 30px;
 }
 
@@ -113,12 +125,10 @@ h4 {
 
 .panel-footer .btn:hover {
     border: 1px solid #f4511e;
-    background-color: #fff !important;
     color: #f4511e;
 }
 
 .panel-heading {
-    color: #fff !important;
     background-color: #f4511e !important;
     padding: 25px;
     border-bottom: 1px solid transparent;
@@ -148,7 +158,6 @@ h4 {
 .panel-footer .btn {
     margin: 15px 0;
     background-color: #f4511e;
-    color: #fff;
 }
 
 .navbar {
@@ -163,26 +172,26 @@ h4 {
     font-family: Montserrat, sans-serif;
 }
 
-.navbar li a,
-.navbar .navbar-brand {
-    color: #fff !important;
-}
-
 .main-header .navbar-nav li a:hover,
 .main-header .navbar-nav li.active a {
     color: #f4511e !important;
-    background-color: #fff !important;
+}
+
+.panel-footer .btn:hover,
+.main-header .navbar-nav li a:hover,
+.main-header .navbar-nav li.active a {
+    background-color: #fff;
 }
 
 .navbar-default .navbar-toggle {
     border-color: transparent;
-    color: #fff !important;
 }
 
 footer .glyphicon {
     margin-bottom: 20px;
     color: #f4511e;
 }
+
 .glyphicon h3,
 footer .glyphicon {
     font-size: 20px;
@@ -253,7 +262,7 @@ label:first-letter {
 
 .btn-primary {
     width: 130px;
-    font-weight: 600;
+
 }
 
 .admin-header .navbar-collapse {
@@ -267,15 +276,28 @@ label:first-letter {
 .navbar-brand .logo {
     width: 50px;
     height: 50px;
+}
+
+.navbar-brand .logo,
+.dropdown {
     margin: 0 auto;
 }
 
-.dropdown-menu {
-    left: 47%;
+.dropdown {
+    max-width: 150px;
 }
 
 .dropdown-menu li {
     text-align: center;
+}
+
+.dropdown-item p {
+    display: inline-block;
+    margin-right: 10px
+}
+
+.dropdown .dropdown-toggle {
+    margin-left: -40px;
 }
 
 @keyframes slide {

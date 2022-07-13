@@ -8,6 +8,7 @@ const Button = (props) => {
                 type={props.type}
                 data-toggle={props.dataToggle}
                 data-target={props.dataTarget}
+                onClick={props.onClick}
             >
                 {props.text}
                 {props.children}
@@ -21,6 +22,7 @@ const Button = (props) => {
                 type={props.type}
                 data-toggle={props.dataToggle}
                 data-target={props.dataTarget}
+                onClick={props.onClick}
             >
                 {props.text}
                 {props.children}

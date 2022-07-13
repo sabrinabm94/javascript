@@ -1,6 +1,5 @@
-import { React, Component } from "react";
+import React, { Component } from "react";
 import { Routes, Route } from "react-router-dom";
-import { auth, onAuthStateChanged } from "../../init-firebase";
 
 //templates
 import Header from "../../templates/admin/Header";
@@ -14,6 +13,10 @@ import Costumers from "../admin/Costumers";
 import Pricing from "../admin/Pricing";
 import Contact from "../admin/Contact";
 import ClientsContact from "../admin/ClientsContact";
+import RegisterUser from "../auth/RegisterUser";
+
+//components
+import AuthProtector from "../../components/utils/AuthProtector";
 
 class Admin extends Component {
     constructor(props) {
@@ -23,33 +26,23 @@ class Admin extends Component {
             isAuthenticated: false,
             user: null
         }
+
+        this.authProtectorComponent = React.createRef();
+    }
+
+    handleAuthProtector = (link) => {
+        this.authProtectorComponent.current.justLoggedUsersRedirect(link);
     }
 
     componentDidMount() {
-        this.verifyUserAuth("/login"); //se não está autenticado, será redirecionado para login
-    }
-
-    verifyUserAuth(link) {
-        onAuthStateChanged(auth, (user) => {
-            if (user && user !== null && user !== undefined) {
-                this.setState({
-                    isAuthenticated: true,
-                    user: user
-                })
-            } else {
-                this.setState({
-                    isAuthenticated: false,
-                    user: null
-                })
-                return window.location.href = link;
-            }
-        });
+        this.handleAuthProtector("/login");
     }
 
     render() {
         return (
             <div className="admin" id="admin">
                 <h1 className="title">Admin area</h1>
+                <AuthProtector ref={this.authProtectorComponent} link="/login" />
                 <Header />
                 <Routes>
                     <Route path="company" element={<Company />} />
@@ -74,6 +67,9 @@ class Admin extends Component {
                 </Routes>
                 <Routes>
                     <Route path="clientsContact" element={<ClientsContact />} />
+                </Routes>
+                <Routes>
+                    <Route path="register" element={<RegisterUser />} />
                 </Routes>
             </div>
         );

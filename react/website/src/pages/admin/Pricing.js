@@ -6,15 +6,20 @@ import Textarea from "../../components/form/Textarea";
 import Button from "../../components/form/Button";
 import Form from "../../components/form/Form";
 
+//templates
+import ShowData from "../../templates/admin/ShowData";
+
 class Pricing extends Component {
     render() {
         return (
             <div
-                id="admin-pricing"
-                className="admin-pricing container-fluid text-center bg-grey"
-            >
-                <section className="section about">
-                    <h2 className="title">Pricing</h2>
+            id="admin-pricing"
+            className="container-fluid text-center bg-grey"
+        >
+            <section className="section admin-pricing">
+                <h2 className="title">Pricing</h2>
+                <ShowData collection="pricingElements" registerTitleInList="title" />
+                <h2 className="subtitle">New register</h2>
                     <Form collection="pricingElements" className="form">
                         <div className="row">
                             <div className="col-6 col-sm-6">

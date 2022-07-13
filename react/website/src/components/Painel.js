@@ -10,7 +10,7 @@ class Painel extends Component {
         this.deleteDataComponent = React.createRef();
     }
 
-    handleClick = () => {
+    handleDeleteData = () => {
         this.deleteDataComponent.current.deleteData(this.props.collection, this.props.dataId);
     }
 
@@ -21,7 +21,7 @@ class Painel extends Component {
                 <div className="row">
                     <div className="col-sm-2">
                         <DeleteData ref={this.deleteDataComponent} collection={this.props.collection} dataId={this.props.dataId} />
-                        <span className="remove" id="remove" onClick={this.handleClick}>x</span>
+                        <span className="remove" id="remove" onClick={this.handleDeleteData}>x</span>
                     </div>
                 </div>
                 <div className="panel-heading">

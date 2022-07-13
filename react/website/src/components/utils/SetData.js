@@ -29,6 +29,8 @@ class SetData extends Component {
                     form.id = responseId;
                     this.handleUpdateData(collection, form);
                 }
+
+                alert("Form sent!");
             });
         }
     }
