@@ -7,52 +7,45 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from '@app/app.component';
 
-//pages
-import { ChatComponent } from '@pages//chat/chat.component';
-import { LoginComponent } from '@pages//login/login.component';
-import { MatchSearchComponent } from '@pages//match-search/match-search.component';
-import { NotificationComponent } from '@pages//notification/notification.component';
-import { UserRegisterComponent } from '@pages//register/user-register/user-register.component';
-import { MatchRegisterComponent } from '@pages//register/match-register/match-register.component';
-import { UserProfileComponent } from '@pages//user-profile/user-profile.component';
-
-//templates
-import { HeaderComponent } from '@templates//header/header.component';
-import { FooterComponent } from '@templates//footer/footer.component';
-
-//core
-import { AuthComponent } from '@guard//auth/auth.component';
-import { ErrorInterceptor } from '@interceptor//error-interceptor/error-interceptor.component';
-import { JwtInterceptor } from '@interceptor//jwt-interceptor/jwt-interceptor.component';
-
-//services
-import { AccountService } from '@services//account.service';
-
 //packages
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+//pages
+import { RegisterComponent } from './view/pages/register/register.component';
+import { LoginComponent } from './view/pages/login/login.component';
+import { NotificationComponent } from './view/pages/notification/notification.component';
+import { InboxComponent } from './view/pages/inbox/inbox.component';
+import { DirectComponent } from './view/pages/direct/direct.component';
+import { ProfileComponent } from './view/pages/profile/profile.component';
+import { MatchesComponent } from './view/pages/matches/matches.component';
+
+//templates
+import { HeaderComponent } from './view/templates/header/header.component';
+import { FooterComponent } from './view/templates/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChatComponent,
-    LoginComponent,
-    MatchSearchComponent,
-    NotificationComponent,
-    UserRegisterComponent,
-    MatchRegisterComponent,
-    UserProfileComponent,
     HeaderComponent,
     FooterComponent,
+    RegisterComponent,
+    LoginComponent,
+    NotificationComponent,
+    InboxComponent,
+    DirectComponent,
+    ProfileComponent,
+    MatchesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
   ],
+  exports: [
+    HeaderComponent,
+    FooterComponent
+  ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
   ],
   bootstrap: [AppComponent]
 })

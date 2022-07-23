@@ -55,9 +55,6 @@ Test@2022
 - melhoria na seleção de icones: telas admin de about e service
 https://www.w3schools.com/bootstrap/bootstrap_ref_comp_glyphs.asp
 
-- implementação de métricas do web vitals
-- implementação de gtm4
-- testes unitários
 
 # Contact
 Sabrina B. 
