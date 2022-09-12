@@ -1,5 +1,5 @@
-let name = 'Sabrina Boing Moreira';
-let limit = 13;
+let name = 'Daenerys Targaryen';
+let limit = 10;
 
 print(abbreviateName(name, limit));
 
@@ -10,7 +10,7 @@ function abbreviateName(name, limit) {
 		}
 		return name;
 	} else {
-		print('Nome inválido, tente novamente!');
+		print('Invalid name, try again');
 	}
 }
 
@@ -27,7 +27,8 @@ function abbreviate(name) {
 }
 
 function removePrepositions(name) {
-    return name.replace(/\ dos|\ do|\ das|\ da|\ dos|\ das|\ de|\ d\'/gi, '');
+    const worldsOfconnection = /\ dos|\ do|\ das|\ da|\ dos|\ das|\ de|\ d\'/gi;
+    return name.replace(worldsOfconnection, '');
 }
 
 function print(string) {

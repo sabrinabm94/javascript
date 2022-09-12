@@ -1,4 +1,4 @@
-function sum(a, b) {
+export function sum(a, b) {
     const numberOne = parseInt(a);
     const numberTwo = parseInt(b);
 
