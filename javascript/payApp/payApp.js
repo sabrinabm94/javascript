@@ -1,127 +1,138 @@
 (function GetLooser() {
-	this.applicants = [];
-	
-	this.init = function() {
-		this.addAplicants();
-		this.getRandomUser();
-		this.runAgain();
-		this.startOver();
-	};
+  this.applicants = [];
 
-	this.showList = function showList() {
-		var parent = document.querySelector('.applicant-list');
-		var template = '';
+  this.init = function () {
+    this.addAplicants();
+    this.getRandomUser();
+    this.runAgain();
+    this.startOver();
+  };
 
-		for(var i = 0; i < applicants.length; i++) {
-			template += "<li class='applicant-list-item' data-id='"+ i +"'>" + applicants[i] + "</li>";
-		}
+  this.showList = function showList() {
+    var parent = document.querySelector(".applicant-list");
+    var template = "";
 
-		parent.innerHTML = '';
-		parent.insertAdjacentHTML('afterbegin', template);
-		deleteOne();
-	};
+    for (var i = 0; i < applicants.length; i++) {
+      template +=
+        "<li class='applicant-list-item' data-id='" +
+        i +
+        "'>" +
+        applicants[i] +
+        "</li>";
+    }
 
-	this.addAplicants = function() {
-		var $this = this;
+    parent.innerHTML = "";
+    parent.insertAdjacentHTML("afterbegin", template);
+    deleteOne();
+  };
 
-		function generateList(input) {
-			var value = input.value;
+  this.addAplicants = function () {
+    var $this = this;
 
-			if($this.checkValid(value.toLowerCase())) {
-				$this.applicants.push(value.toLowerCase());
-				input.value = '';
-				showList();
-			} else {
-				console.log("Something is wrong");
-			}
+    function generateList(input) {
+      var value = input.value;
 
-			showList();
-		};
+      if ($this.checkValid(value.toLowerCase())) {
+        $this.applicants.push(value.toLowerCase());
+        input.value = "";
+        showList();
+      } else {
+        alert("Something is wrong");
+      }
+      showList();
+    }
 
-		var addBtn = document.querySelector("#applicant-add");
-		addBtn.addEventListener('click', function() {
-			var input = document.querySelector("#applicant_value");
-			generateList(input);
-		});
-	};
+    var addBtn = document.querySelector("#applicant-add");
+    addBtn.addEventListener("click", function () {
+      var input = document.querySelector("#applicant_value");
+      generateList(input);
+    });
+  };
 
-	this.checkValid = function(value) {
-		if(applicants.indexOf(value) < 0 && value != '') {
-			return true;
-		}
-		return false;
-	};
+  this.checkValid = function (value) {
+    if (applicants.indexOf(value) < 0 && value != "") {
+      return true;
+    }
+    return false;
+  };
 
-	this.deleteOne = function() {
-		var item = document.querySelectorAll('.applicant-list-item');
+  this.deleteOne = function () {
+    var item = document.querySelectorAll(".applicant-list-item");
 
-		function removeIt(element) {
-			var attr = parseInt(element.getAttribute('data-id'));
+    function removeIt(element) {
+      var attr = parseInt(element.getAttribute("data-id"));
 
-			applicants.splice(attr, 1);
+      applicants.splice(attr, 1);
 
-			showList();
-		}
+      showList();
+    }
 
-		for(var i = 0; i < item.length; i++) {
-			item[i].addEventListener('click', function(e) {
-				removeIt(this)
-			});
-		}
-	};
+    for (var i = 0; i < item.length; i++) {
+      item[i].addEventListener("click", function (e) {
+        removeIt(this);
+      });
+    }
+  };
 
-	this.getRandomUser = function() {
-		var resultsButton = document.querySelector('.get-looser');
-		resultsButton.addEventListener('click', function(e) {
-			if(applicants.length > 1) {
-				showLooser();
-			}
-		});
+  this.getRandomUser = function () {
+    var resultsButton = document.querySelector(".get-looser");
+    resultsButton.addEventListener("click", function (e) {
+      if (applicants.length > 1) {
+        showLooser();
+      }
+    });
 
-		function showLooser() {
-			var resultsContainer = document.querySelector('.results-container');
-			var applicantContainer = document.querySelector('.applicant-container');
+    function showLooser() {
+      var resultsContainer = document.querySelector(".results-container");
+      var applicantContainer = document.querySelector(".applicant-container");
 
-			applicantContainer.className += ' hide';
-			resultsContainer.className = 'results-container'; 
+      applicantContainer.className += " hide";
+      resultsContainer.className = "results-container";
 
-			showRandomUser();
-		};
-	};
+      showRandomUser();
+    }
+  };
 
-	this.showRandomUser = function() {
-		var resultContainer = document.querySelector('.result');
-		var randomName = applicants[Math.floor(Math.random() * applicants.length)];
+  this.showRandomUser = function () {
+    var resultContainer = document.querySelector(".result");
+    var randomName = applicants[Math.floor(Math.random() * applicants.length)];
 
-		console.log(resultContainer);
-		resultContainer.innerHTML = '';
-		resultContainer.insertAdjacentHTML('afterbegin', "<h3 class='title'>" + randomName + "</h3>");
-	};
+    resultContainer.innerHTML = "";
+    resultContainer.insertAdjacentHTML(
+      "afterbegin",
+      "<h3 class='title'>" + randomName + "</h3>"
+    );
+  };
 
-	this.runAgain = function() {
-		var runAgainButton = document.querySelector('.run');
+  this.runAgain = function () {
+    var runAgainButton = document.querySelector(".run");
 
-		runAgainButton.addEventListener("click", function(e) {
-           showRandomUser();
-		});
-	};
+    runAgainButton.addEventListener("click", function (e) {
+      showRandomUser();
+    });
+  };
 
+  this.startOver = function () {
+    var startAgainButton = document.querySelector(".start");
 
-	this.startOver = function() {
-		var startAgainButton = document.querySelector('.start');
+    startAgainButton.addEventListener("click", function () {
+	const hideClass = "hide";
+      applicants = [];
 
-		startAgainButton.addEventListener('click', function() {
-			applicants = [];
-			
-			var resultsContainer = document.querySelector('.results-container');
-			var applicantContainer = document.querySelector('.applicant-container');
-			var applicantWrapper = document.querySelector('.applicant-list');
+      var resultsContainer = document.querySelector(".results-container");
+      var applicantContainer = document.querySelector(".applicant-container");
+      var applicantWrapper = document.querySelector(".applicant-list");
+	  var resultTitle = document.querySelector(".results-container .result .title");
 
-			applicantContainer.className = 'applicant-container';
-			resultsContainer.className += ' hide';
-			applicantWrapper.innerHTML = '';
-		}); 
-	};
+      applicantContainer.className = "applicant-container";
 
-	this.init();
-}) ();
+	  if(resultsContainer.classList.contains(hideClass) === false) {
+		resultsContainer.classList.add(hideClass);
+	  }
+      applicantWrapper.innerHTML = "";
+	  resultTitle.innerHTML = "";
+    });
+  };
+
+  this.init();
+})();
