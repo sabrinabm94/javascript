@@ -1,35 +1,54 @@
-# Skymatch
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# About
+A app made with angular
 
 
-ng generate component
+# Dependencies
+## Firebase
+For authentication, database, storage bucket and hosting control.
+
+### Auth
+[Users](https://console.firebase.google.com/u/0/project/sky-match-sabrinabm94/authentication/users)
+
+### Database
+[Database](https://console.firebase.google.com/u/0/project/sky-match-sabrinabm94/database/sky-match-sabrinabm94-default-rtdb/data)
+
+### Storage
+[Storage files](https://console.firebase.google.com/u/0/project/sky-match-sabrinabm94/storage/sky-match-sabrinabm94.appspot.com/files)
+
+### Configuration
+npm install
+firebase login
+
+### Development
+ng serve --configuration=dev
+
+[Localhost](http://localhost:4200)
 
 
-core: arquivos esseciais, configuração, guard, tokens, auth, services...
-shared: mini-bibliotecas e modulos compartilhados, reutilizados
-pages: diretório de paginas
+### Deploy
+ng serve --configuration=production
+
+ng test
+
+ng build
+
+firebase deploy
+
+
+### Access
+[sky-match-sabrinabm94.web.app](sky-match-sabrinabm94.web.app
+)
+[sky-match-sabrinabm94.firebaseapp.com](sky-match-sabrinabm94.firebaseapp.com
+)
+
+test@test.com
+Test@2022
+
+
+## To do
+
+
+# Contact
+Sabrina B. 
+sabrinabm94@gmail.com
+

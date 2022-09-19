@@ -1,0 +1,8 @@
+@import "./components/components.css";
+@import "./view/pages/pages.css";
+@import "./view/templates/templates.css";
+
+/* generic styles */
+img {
+  margin: 20px;
+}

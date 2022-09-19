@@ -22,6 +22,11 @@ import { MatchesComponent } from './view/pages/matches/matches.component';
 //templates
 import { HeaderComponent } from './view/templates/header/header.component';
 import { FooterComponent } from './view/templates/footer/footer.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+//components
+import { ImageComponent } from './components/image/image.component';
+import { LinkComponent } from './components/link/link.component';
 
 @NgModule({
   declarations: [
@@ -34,12 +39,15 @@ import { FooterComponent } from './view/templates/footer/footer.component';
     InboxComponent,
     DirectComponent,
     ProfileComponent,
-    MatchesComponent
+    MatchesComponent,
+    ImageComponent,
+    LinkComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
+    NgbModule,
   ],
   exports: [
     HeaderComponent,
