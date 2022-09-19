@@ -27,6 +27,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 //components
 import { ImageComponent } from './components/image/image.component';
 import { LinkComponent } from './components/link/link.component';
+import { TextComponent } from './components/text/text.component';
+import { InputComponent } from './components/input/input.component';
+import { TextareaComponent } from './components/textarea/textarea.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { FormComponent } from './components/form/form.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +46,12 @@ import { LinkComponent } from './components/link/link.component';
     ProfileComponent,
     MatchesComponent,
     ImageComponent,
-    LinkComponent
+    LinkComponent,
+    TextComponent,
+    InputComponent,
+    TextareaComponent,
+    DropdownComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
