@@ -26,7 +26,6 @@ import { PartnerIdealization } from '@app/models/partnerIdealization';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
 })
-
 export class ProfileComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
@@ -71,26 +70,37 @@ export class ProfileComponent implements OnInit {
   public interests: Interests[];
 
   public basicInfoForm = this.formBuilder.group({
-    profilePicture: "",
-    profileBio: "",
-    firstName: "",
-    lastName: "",
+    profilePicture: '',
+    profileBio: '',
+    firstName: '',
+    lastName: '',
     birthday: null,
-    address: "",
-    gender: "",
+    address: '',
+    gender: '',
   });
 
-  public user: User;
+  public user: User = null;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.userControl(this.user, this.basicInfoForm);
+  }
 
   onSubmit(): void {
     this.setUserInfo(this.user, this.basicInfoForm);
-    this.basicInfoForm.reset();
   }
 
-  getUserInfo(user: User) {
-    user = {
+  userControl(user: User, form: any): User {
+    if(this.validation.check(form) === true) {
+      user = this.getUserInfo();
+      if (this.validation.check(user) === false) {
+        return this.setUserInfo(user, form);
+      }
+    }
+    return user;
+  }
+
+  getUserInfo(): User {
+    return {
       profilePicture: '/',
       profileBio: 'Blablabla',
       firstName: 'Sabrina',
@@ -99,24 +109,22 @@ export class ProfileComponent implements OnInit {
       address: '',
       gender: Gender.woman,
       id: 1,
-      username: "sabrinabm94",
-      password: "123",
-      email: "sabrinabm94@gmail.com",
+      username: 'sabrinabm94',
+      password: '123',
+      email: 'sabrinabm94@gmail.com',
       age: 28,
       sexOrientation: SexOrientation.straight,
       height: 1.53,
       languages: null,
       astralMap: undefined,
-      token: "123",
+      token: '123',
       partnerIdealization: null,
       compatiblePartners: [],
-      matches: []
-    }
-
-    return user;
+      matches: [],
+    };
   }
 
-  setUserInfo(user: User, form: any) {
+  setUserInfo(user: User, form: any): User {
     if (this.validation.check(user) && this.validation.check(form) === true) {
       user.profilePicture = form.profilePicture;
       user.profileBio = form.profileBio;
@@ -151,6 +159,10 @@ export class ProfileComponent implements OnInit {
       user.tatto = form.tatto;
       user.musicalStyle = form.musicalStyle;
       user.interests = form.interests;
+
+      form.reset();
     }
+
+    return user;
   }
 }
