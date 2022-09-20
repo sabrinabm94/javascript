@@ -22,7 +22,7 @@ import { Frequency } from '@enums//Frequency';
 
 export class User {
   id: Number;
-  bio?: String;
+  profileBio?: String;
   profilePicture: String;
   username: String;
   password: String;
@@ -31,6 +31,7 @@ export class User {
   lastName: String;
   birthDate: Date;
   birthTime?: String;
+  address?: Object;
   birthAddress?: Object;
   residenceAddress?: Object;
   age: Number;

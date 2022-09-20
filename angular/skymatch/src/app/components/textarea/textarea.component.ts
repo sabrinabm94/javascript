@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ValidationService } from '@app/core/validation.service';
 
 @Component({
   selector: 'app-textarea',
@@ -12,6 +13,4 @@ export class TextareaComponent implements OnInit {
 
   @Input() class: string;
   @Input() wrap?: string;
-  @Input() maxlength?: number;
-  @Input() minlength?: number;
 }

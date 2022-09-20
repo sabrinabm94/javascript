@@ -22,4 +22,5 @@ export class InputComponent implements OnInit {
   @Input() value?: string;
   @Input() min?: number;
   @Input() max?: number;
+  @Input() text?: string;
 }

@@ -11,4 +11,7 @@ export class DropdownComponent implements OnInit {
   ngOnInit(): void {}
 
   @Input() content: Object;
+  @Input() class: string;
+  @Input() id: string;
+  @Input() name: string;
 }
