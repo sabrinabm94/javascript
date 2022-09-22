@@ -3,11 +3,9 @@ export default class Cart {
 
     add(item) {
         const itemToFind = { product: item.product };
-
         if(find(this.items, itemToFind)) {
             removeEventListener(this.items, itemToFind);
         }
-
         this.items.push(item);
     }
 
@@ -17,7 +15,15 @@ export default class Cart {
 
     getTotal() {
         return this.items.reduce((acc, item) => {
-            return acc + item.quantity * item.product.price;
+            const amount = item.quantity * item.product.price;
+            let discount = {
+                amount: 0
+            };
+            if(item.condition && item.condition.percentage && item.quantity > item.condition.minimum) {
+                discount = amount.percentage(item.condition.percentage);
+            }
+            
+            return acc + (amount - discount);
         }, 0);
     }
 
