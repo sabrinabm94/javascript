@@ -2,7 +2,7 @@ import { React, Component } from "react";
 import { auth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "../init-firebase";
 
 //components
-import Alert from "../components/Alert";
+import Alert from "../components/Alert/Alert";
 
 class RegisterOrLoginUser extends Component {
     constructor(props) {
@@ -56,8 +56,10 @@ class RegisterOrLoginUser extends Component {
                                     //     user: userCredential.user,
                                     //     isAuthenticated: true,
                                     // })
-                                    alert("loggin....");
-                                    return  window.location.href = "/admin/";
+                                    if(window !== undefined) {
+                                        alert("loggin....");
+                                        return  window.location.href = "/admin/company";
+                                    }
                                 })
                                 .catch((err) => {
                                     // this.setState({ //todo verificar porque o erro no setState
@@ -65,6 +67,7 @@ class RegisterOrLoginUser extends Component {
                                     //     user: null,
                                     //     isAuthenticated: false
                                     // })
+                                    alert(err);
                                     return err;
                                 });
                         }
@@ -77,8 +80,10 @@ class RegisterOrLoginUser extends Component {
                                     //     user: userCredential.user,
                                     //     isAuthenticated: true,
                                     // })
-                                    alert("New user created, loggin....");
-                                    return  window.location.href = "/admin/";
+                                    if(window !== undefined) {
+                                        alert("New user created, loggin....");
+                                        return  window.location.href = "/admin/company";
+                                    }
                                 })
                                 .catch((err) => {
                                     // this.setState({ //todo verificar porque o erro no setState

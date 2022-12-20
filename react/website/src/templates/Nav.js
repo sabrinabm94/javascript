@@ -7,25 +7,40 @@ import Picture from "../components/Picture";
 import GetData from "../components/utils/GetData";
 
 class Nav extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             elements: [],
         };
     }
 
-    handleCallback = (childData) => {
-        this.setState(
-            { elements: childData },
-        )
-    }
+    handleGetData = (childData) => {
+        if (
+            childData &&
+            childData !== null &&
+            childData !== undefined &&
+            childData !== ""
+        ) {
+            this.setState({ elements: childData });
+        }
+    };
 
     render() {
-        if (this.state.elements && this.state.elements !== null && this.state.elements !== undefined) {
+        if (
+            this.state.elements &&
+            this.state.elements !== null &&
+            this.state.elements !== undefined
+        ) {
             return (
                 <nav className="navbar navbar-default navbar-fixed-top">
-                    <GetData collection="companyElements" justOne={true} parentCallback={this.handleCallback} />
+                    <GetData
+                        collection="companyElements"
+                        justOne={true}
+                        parentCallback={(data) => {
+                            this.handleGetData(data);
+                        }}
+                    />
                     <div className="container">
                         <div className="navbar-header">
                             <Button
@@ -71,7 +86,7 @@ class Nav extends Component {
                         </div>
                     </div>
                 </nav>
-            )
+            );
         }
     }
 }

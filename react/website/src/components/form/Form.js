@@ -60,7 +60,6 @@ class Form extends Component {
                         return this.sendForm(collection, form);
                     }
                 } catch (error) {
-                    console.log(error);
                     return error;
                 }
             }
@@ -85,7 +84,6 @@ class Form extends Component {
             let fileRef = ref(storage, collection + "/" + form.file.name);
 
             uploadBytes(fileRef, form.file).then((response) => {
-                console.log("File sent! ", response);
                 return this.getFileUrl(collection, form);
             });
         }
@@ -101,12 +99,10 @@ class Form extends Component {
         if (collection && form) {
             getDownloadURL(ref(storage, collection + "/" + form.file.name))
                 .then((url) => {
-                    console.log("Got file url ", url);
                     form.file = url;
                     return this.sendForm(collection, form);
                 })
                 .catch((error) => {
-                    console.log(error);
                     return error;
                 });
         }

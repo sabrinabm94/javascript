@@ -5,26 +5,29 @@ import Card from "../components/Card";
 import GetData from "../components/utils/GetData";
 
 class Services extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             elements: [],
         };
     }
 
-    handleCallback = (data) => {
-        if(data && (data !== null && data !== undefined && data !== "")) {
-            this.setState(
-                { elements: data },
-            )
+    handleGetData = (data) => {
+        if (data && data !== null && data !== undefined && data !== "") {
+            this.setState({ elements: data });
         }
-    }
+    };
 
     render() {
         return (
             <section id="services" className="services container-fluid">
-                <GetData collection="servicesElements" parentCallback={this.handleCallback} />
+                <GetData
+                    collection="servicesElements"
+                    parentCallback={(data) => {
+                        this.handleGetData(data);
+                    }}
+                />
                 <div className="text-center">
                     <h1 className="title">SERVICES</h1>
                     <h2 className="subtitle">What we offer</h2>

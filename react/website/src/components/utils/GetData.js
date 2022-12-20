@@ -2,11 +2,12 @@ import { React, Component } from "react";
 import { db, databaseRef, get } from "../../init-firebase";
 
 class GetData extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             elements: [],
+            text: "",
         };
     }
 
@@ -14,7 +15,7 @@ class GetData extends Component {
         this.getData(this.props.collection);
     }
 
-    getData(collection) {
+    getData = (collection) => {
         const dbRef = databaseRef(db);
 
         try {
@@ -23,7 +24,11 @@ class GetData extends Component {
                     let elements = response.val()[collection];
                     let elementsArray = [];
 
-                    if (elements && elements !== undefined && elements !== null) {
+                    if (
+                        elements &&
+                        elements !== undefined &&
+                        elements !== null
+                    ) {
                         if (typeof elements === "object") {
                             //loop para objeto
                             elementsArray = Object.keys(elements).map(
@@ -32,19 +37,19 @@ class GetData extends Component {
                         }
                         //console.log("Got data ", collection, elementsArray);
 
-                        if(this.props.justOne === true) {
+                        if (this.props.justOne === true) {
+                            elementsArray = elementsArray[elementsArray.length-1];
                             this.setState({
-                                elements:
-                                    elementsArray[elementsArray.length - 1], //só irá apresentar o ultimo registro
+                                elements: elementsArray, //só irá apresentar o ultimo registro
                             });
                         } else {
                             this.setState({
-                                elements:
-                                    elementsArray
+                                elements: elementsArray,
                             });
                         }
 
-                        this.props.parentCallback(this.state.elements);
+                        //devolve a informação para o componente que renderizou o getData pelo parentCallback
+                        this.props.parentCallback(elementsArray);
                     }
                 } else {
                     //console.log("No data available ", collection);
@@ -53,10 +58,10 @@ class GetData extends Component {
         } catch (error) {
             return error;
         }
-    }
+    };
 
     render() {
-        return(<div />);
+        return <div />;
     }
 }
 

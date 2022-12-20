@@ -7,11 +7,11 @@ import GetData from "../../components/utils/GetData";
 import DeleteData from "../../components/utils/DeleteData";
 
 class About extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
-            elements: []
+            elements: [],
         };
 
         this.deleteDataComponent = React.createRef();
@@ -24,9 +24,8 @@ class About extends Component {
     };
 
     handleDeleteData = () => {
-        console.log("oop");
         this.deleteDataComponent.current.deleteData(null, null);
-    }
+    };
 
     render() {
         return (
@@ -38,7 +37,9 @@ class About extends Component {
                     <h2 className="subtitle">Delete</h2>
                     <GetData
                         collection={this.props.collection}
-                        parentCallback={this.handleGetData}
+                        parentCallback={(data) => {
+                            this.handleGetData(data);
+                        }}
                     />
                     <Dropdown
                         className="show-data-dropdown"
@@ -46,22 +47,43 @@ class About extends Component {
                         buttonText="Register list"
                     >
                         <>
-                            {
-                                this.state.elements !== null &&
+                            {this.state.elements !== null &&
                                 this.state.elements !== undefined &&
                                 this.state.elements.length > 0 &&
                                 this.state.elements.map((data, key) => {
                                     return (
-                                        <li className="dropdown-item" key={key} id={data.id}>
-                                            <p>{data[this.props.registerTitleInList]}</p>
-                                            <Button className="btn-danger" id="remove" onClick={this.handleDeleteData}>
+                                        <li
+                                            className="dropdown-item"
+                                            key={key}
+                                            id={data.id}
+                                        >
+                                            <p>
+                                                {
+                                                    data[
+                                                        this.props
+                                                            .registerTitleInList
+                                                    ]
+                                                }
+                                            </p>
+                                            <Button
+                                                className="btn-danger"
+                                                id="remove"
+                                                onClick={this.handleDeleteData}
+                                            >
                                                 x
-                                                <DeleteData ref={this.deleteDataComponent} collection={this.props.collection} dataId={data.id} />
+                                                <DeleteData
+                                                    ref={
+                                                        this.deleteDataComponent
+                                                    }
+                                                    collection={
+                                                        this.props.collection
+                                                    }
+                                                    dataId={data.id}
+                                                />
                                             </Button>
                                         </li>
                                     );
-                                })
-                            }
+                                })}
                         </>
                     </Dropdown>
                 </section>

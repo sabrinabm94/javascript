@@ -9,17 +9,15 @@ class Carousel extends Component {
         super(props);
 
         this.state = {
-            text: ""
+            text: "",
         };
     }
 
-    breaklinesCallback = (data) => {
-        if (data && (data !== null && data !== undefined && data !== "")) {
-            this.setState(
-                { text: data },
-            )
+    handleBreaklines = (data) => {
+        if (data && data !== null && data !== undefined && data !== "") {
+            this.setState({ text: data });
         }
-    }
+    };
 
     render() {
         return (
@@ -32,7 +30,7 @@ class Carousel extends Component {
                     <>
                         {this.props.elements.map((data, key) => {
                             let target = null;
-    
+
                             if (key === 0) {
                                 target = (
                                     <li
@@ -51,7 +49,7 @@ class Carousel extends Component {
                                     ></li>
                                 );
                             }
-    
+
                             return target;
                         })}
                     </>
@@ -59,19 +57,27 @@ class Carousel extends Component {
                 <div className="carousel-inner" role="listbox">
                     {this.props.elements.map((data, key) => {
                         let item = null;
-    
+
                         if (key === 0) {
                             item = (
                                 <div className="item active" key={key}>
                                     <h4>{data.title}</h4>
-                                    <Text className="subtitle" text={data.subtitle} parentCallback={this.breaklinesCallback} />
+                                    <Text
+                                        className="subtitle"
+                                        text={data.subtitle}
+                                        parentCallback={this.handleBreaklines}
+                                    />
                                 </div>
                             );
                         } else {
                             item = (
                                 <div className="item" key={key}>
                                     <h4>{data.title}</h4>
-                                    <Text className="subtitle" text={data.subtitle} parentCallback={this.breaklinesCallback} />
+                                    <Text
+                                        className="subtitle"
+                                        text={data.subtitle}
+                                        parentCallback={this.handleBreaklines}
+                                    />
                                 </div>
                             );
                         }

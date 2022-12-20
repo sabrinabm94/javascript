@@ -13,11 +13,9 @@ class PainelSecondary extends Component {
         };
     }
 
-    breaklinesCallback = (data) => {
-        if (data && (data !== null && data !== undefined && data !== "")) {
-            this.setState(
-                { text: data },
-            )
+    handleBreaklines = (data) => {
+        if (data && data !== null && data !== undefined && data !== "") {
+            this.setState({ text: data })
         }
     }
 
@@ -28,7 +26,7 @@ class PainelSecondary extends Component {
                     <h2 className="title">{this.props.title}</h2>
                 </div>
                 <div className="panel-body">
-                    <Text className="content" text={this.props.description} parentCallback={this.breaklinesCallback} />
+                    <Text className="content" text={this.props.description} parentCallback={this.handleBreaklines} />
                 </div>
                 <div className="panel-footer">
                     <h3 className="subtitle">{this.props.value}</h3>

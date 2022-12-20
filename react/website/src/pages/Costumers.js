@@ -5,21 +5,19 @@ import Carousel from "../components/Carousel";
 import GetData from "../components/utils/GetData";
 
 class Costumers extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             elements: [],
         };
     }
 
-    handleCallback = (data) => {
-        if(data && (data !== null && data !== undefined && data !== "")) {
-            this.setState(
-                { elements: data },
-            )
+    handleGetData = (data) => {
+        if (data && data !== null && data !== undefined && data !== "") {
+            this.setState({ elements: data });
         }
-    }
+    };
 
     render() {
         return (
@@ -27,7 +25,12 @@ class Costumers extends Component {
                 id="costumers"
                 className="constumers container-fluid bg-grey"
             >
-                <GetData collection="costumersElements" parentCallback={this.handleCallback} />
+                <GetData
+                    collection="costumersElements"
+                    parentCallback={(data) => {
+                        this.handleGetData(data);
+                    }}
+                />
                 <div className="text-center">
                     <h1 className="title">COSTUMERS</h1>
                     <h2 className="subtitle">What our customers say</h2>

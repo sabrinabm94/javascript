@@ -10,10 +10,9 @@ class Thumbnail extends Component {
         this.state = {
             text: ""
         };
-        
     }
 
-    breaklinesCallback = (data) => {
+    handleBreaklines = (data) => {
         if (data && (data !== null && data !== undefined && data !== "")) {
             this.setState(
                 { text: data },
@@ -36,7 +35,7 @@ class Thumbnail extends Component {
             <h2 className="title">
                 <strong>{this.props.title}</strong>
             </h2>
-            <Text className="subtitle" text={this.props.subtitle} parentCallback={this.breaklinesCallback} />
+            <Text className="subtitle" text={this.props.subtitle} parentCallback={this.handleBreaklines} />
         </div>
         );
     }

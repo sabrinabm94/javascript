@@ -5,24 +5,37 @@ import Painel from "../../components/Painel";
 import GetData from "../../components/utils/GetData";
 
 class ClientsContact extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             elements: [],
         };
     }
 
-    handleCallback = (childData) => {
-        this.setState(
-            { elements: childData },
-        )
-    }
+    handleGetData = (childData) => {
+        if (
+            childData &&
+            childData !== null &&
+            childData !== undefined &&
+            childData !== ""
+        ) {
+            this.setState({ elements: childData });
+        }
+    };
 
     render() {
         return (
-            <section id="clients-contact" className="clients-contact container-fluid bg-grey">
-                <GetData collection="clientsContactElements" parentCallback={this.handleCallback} />
+            <section
+                id="clients-contact"
+                className="clients-contact container-fluid bg-grey"
+            >
+                <GetData
+                    collection="clientsContactElements"
+                    parentCallback={(data) => {
+                        this.handleGetData(data);
+                    }}
+                />
                 <h2 className="text-center">CLIENTS CONTACT</h2>
                 <div className="row">
                     <>

@@ -13,11 +13,9 @@ class Card extends Component {
         };
     }
 
-    breaklinesCallback = (data) => {
-        if (data && (data !== null && data !== undefined && data !== "")) {
-            this.setState(
-                { text: data },
-            )
+    handleBreaklines = (data) => {
+        if (data && data !== null && data !== undefined && data !== "") {
+            this.setState({ text: data })
         }
     }
 
@@ -25,7 +23,7 @@ class Card extends Component {
         return (<div className="card">
             <Glyphicon name={this.props.iconName} />
             <h2 className="title">{this.props.title}</h2>
-            <Text className="subtitle" text={this.props.subtitle} parentCallback={this.breaklinesCallback} />
+            <Text className="subtitle" text={this.props.subtitle} parentCallback={this.handleBreaklines} />
         </div>)
     }
 }

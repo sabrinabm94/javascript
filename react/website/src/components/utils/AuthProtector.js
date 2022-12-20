@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { auth, onAuthStateChanged } from "../../init-firebase";
 
 class AuthProtector extends Component {
@@ -11,7 +11,7 @@ class AuthProtector extends Component {
         };
     }
 
-    justLoggedUsersRedirect(link) {
+    justLoggedUsersRedirect = (link) => {
         //se não está autenticado será redirecionado para outro componente
         if (this.props.link !== null && this.props.link !== undefined) {
             link = this.props.link;
@@ -29,11 +29,13 @@ class AuthProtector extends Component {
                         isAuthenticated: false,
                         user: null,
                     });
-                    return (window.location.href = link);
+                    if (window !== undefined) {
+                        return (window.location.href = link);
+                    }
                 }
             });
         }
-    }
+    };
 
     render() {
         return;

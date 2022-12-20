@@ -5,35 +5,36 @@ import PainelSecondary from "../components/PainelSecondary";
 import GetData from "../components/utils/GetData";
 
 class Pricing extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             elements: [],
-            text: ""
+            text: "",
         };
     }
 
-    handleCallback = (data) => {
-        if(data && (data !== null && data !== undefined && data !== "")) {
-            this.setState(
-                { elements: data },
-            )
+    handleGetData = (data) => {
+        if (data && data !== null && data !== undefined && data !== "") {
+            this.setState({ elements: data });
         }
-    }
+    };
 
-    breaklinesCallback = (data) => {
-        if(data && (data !== null && data !== undefined && data !== "")) {
-            this.setState(
-                { text: data },
-            )
+    handleBreaklines = (data) => {
+        if (data && data !== null && data !== undefined && data !== "") {
+            this.setState({ text: data });
         }
-    }
+    };
 
     render() {
         return (
             <section id="pricing" className="pricing container-fluid">
-                <GetData collection="pricingElements" parentCallback={this.handleCallback} />
+                <GetData
+                    collection="pricingElements"
+                    parentCallback={(data) => {
+                        this.handleGetData(data);
+                    }}
+                />
                 <div className="text-center">
                     <h1 className="title">Pricing</h1>
                 </div>

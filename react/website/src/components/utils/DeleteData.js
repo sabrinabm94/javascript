@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { db, databaseRef, remove } from "../../init-firebase";
 
 class DeleteData extends Component {
@@ -40,12 +40,12 @@ class DeleteData extends Component {
                 form,
             })
                 .then((response) => {
-                    console.log("Form deleted ", response);
-                    alert("Form deleted!");
-                    return window.location.reload(false);
+                    if(window !== undefined) {
+                        alert("Form deleted!");
+                        return window.location.reload(false);
+                    }
                 })
                 .catch((error) => {
-                    console.log(error);
                     return error;
                 });
         }

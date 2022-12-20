@@ -21,8 +21,6 @@ class SetData extends Component {
             push(databaseRef(db, collection + "/"), {
                 form,
             }).then((response) => {
-                console.log("Form sent", response);
-
                 //update form id in database
                 let responseId = response.key;
                 if (responseId && responseId !== undefined && responseId != null) {

@@ -11,42 +11,48 @@ import GetData from "../components/utils/GetData";
 import Text from "../components/Text";
 
 class Contact extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             elements: [],
-            text: ""
+            text: "",
         };
     }
 
-    handleCallback = (data) => {
-        if(data && (data !== null && data !== undefined && data !== "")) {
-            this.setState(
-                { elements: data },
-            )
+    handleGetData = (data) => {
+        if (data && data !== null && data !== undefined && data !== "") {
+            this.setState({ elements: data });
         }
-    }
+    };
 
-    breaklinesCallback = (data) => {
-        if(data && (data !== null && data !== undefined && data !== "")) {
-            this.setState(
-                { text: data },
-            )
+    handleBreaklines = (data) => {
+        if (data && data !== null && data !== undefined && data !== "") {
+            this.setState({ text: data });
         }
-    }
+    };
 
     render() {
         return (
             <section id="contact" className="contact container-fluid bg-grey">
-                <GetData collection="contactElements" justOne={true} parentCallback={this.handleCallback} />
+                <GetData
+                    collection="contactElements"
+                    justOne={true}
+                    parentCallback={(data) => {
+                        this.handleGetData(data);
+                    }}
+                />
                 <div className="text-center">
                     <h1 className="title">CONTACT</h1>
                     <h2 className="subtitle">Send your message</h2>
                 </div>
                 <div className="row">
                     <div className="col-sm-5">
-                        <Text className="content" text={this.state.elements.content} parentCallback={this.breaklinesCallback} />
+                        <Text
+                            className="content"
+                            text={this.state.elements.content}
+                            parentCallback={this.handleBreaklines}
+                        />
                         <p>
                             <Glyphicon name="glyphicon-map-marker" />{" "}
                             {this.state.elements.address}

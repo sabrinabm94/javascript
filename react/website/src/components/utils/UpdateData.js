@@ -10,11 +10,11 @@ class UpdateData extends Component {
                 form
             })
                 .then((response) => {
-                    console.log("Form updated ", response);
-                    return window.location.reload(false);
+                    if(window !== undefined) {
+                        return window.location.reload(false);
+                    }
                 })
                 .catch((error) => {
-                    console.log(error);
                     return error;
                 });
         }

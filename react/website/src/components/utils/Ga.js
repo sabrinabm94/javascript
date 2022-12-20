@@ -1,22 +1,19 @@
-import React, { Component } from "react";
+import { Component } from "react";
 
 class Ga extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        if (typeof window == 'undefined') {
-            return;
-        }
+    if(window) {
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
             window.dataLayer.push(arguments);
         }
-        
+
         gtag('js', new Date());
         gtag('config', 'YOUR_TRACKING_ID');
+
+        return gtag;
     }
+
+    
 }
 export default Ga;
