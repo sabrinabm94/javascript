@@ -2,7 +2,7 @@ import { React, Component } from "react";
 
 //components
 import Painel from "../../components/Painel";
-import GetData from "../../components/utils/GetData";
+import GetData from "../../components/utils/GetData/GetData";
 
 class ClientsContact extends Component {
     constructor(props) {

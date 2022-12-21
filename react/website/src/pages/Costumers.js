@@ -2,7 +2,7 @@ import { React, Component } from "react";
 
 //components
 import Carousel from "../components/Carousel";
-import GetData from "../components/utils/GetData";
+import GetData from "../components/utils/GetData/GetData";
 
 class Costumers extends Component {
     constructor(props) {

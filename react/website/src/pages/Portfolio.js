@@ -2,7 +2,7 @@ import { React, Component } from "react";
 
 //components
 import Thumbnail from "../components/Thumbnail";
-import GetData from "../components/utils/GetData";
+import GetData from "../components/utils/GetData/GetData";
 
 class Portfolio extends Component {
     constructor(props) {

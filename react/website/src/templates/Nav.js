@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 //components
 import Button from "../components/Button";
 import Picture from "../components/Picture";
-import GetData from "../components/utils/GetData";
+import GetData from "../components/utils/GetData/GetData";
 
 class Nav extends Component {
     constructor(props) {

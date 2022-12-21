@@ -3,7 +3,7 @@ import React, { Component } from "react";
 //components
 import Dropdown from "../../components/Dropdown";
 import Button from "../../components/Button";
-import GetData from "../../components/utils/GetData";
+import GetData from "../../components/utils/GetData/GetData";
 import DeleteData from "../../components/utils/DeleteData";
 
 class About extends Component {

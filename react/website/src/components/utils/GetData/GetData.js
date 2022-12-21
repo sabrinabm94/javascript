@@ -1,5 +1,5 @@
 import { React, Component } from "react";
-import { db, databaseRef, get } from "../../init-firebase";
+import { db, databaseRef, get } from "../../../init-firebase";
 
 class GetData extends Component {
     constructor(props) {

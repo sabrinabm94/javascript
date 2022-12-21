@@ -7,7 +7,7 @@ import Button from "../components/Button";
 import Input from "../components/form/Input";
 import Textarea from "../components/form/Textarea";
 import Form from "../components/form/Form";
-import GetData from "../components/utils/GetData";
+import GetData from "../components/utils/GetData/GetData";
 import Text from "../components/Text";
 
 class Contact extends Component {

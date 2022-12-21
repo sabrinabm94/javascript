@@ -1,7 +1,7 @@
 import { React, Component } from "react";
 
 //components
-import GetData from "../components/utils/GetData";
+import GetData from "../components/utils/GetData/GetData";
 import Text from "../components/Text";
 
 class PageHeader extends Component {
