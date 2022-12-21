@@ -34,10 +34,13 @@ kill -9 $(lsof -ti:3000)
 ### npm
 npm test
 
+npm test --coverage
 
 ### yarn
 yarn test
 yarn test:watch path
+
+yarn test --coverage
 
 ## build
 ### npm
