@@ -16,7 +16,7 @@ import ClientsContact from "../admin/ClientsContact";
 import RegisterUser from "../auth/RegisterUser";
 
 //components
-import AuthProtector from "../../components/utils/AuthProtector";
+import AuthProtector from "../../components/utils/AuthProtector/AuthProtector";
 
 class Admin extends Component {
     constructor(props) {

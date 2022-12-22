@@ -1,9 +1,9 @@
 import React from "react";
 
 //components
-import Button from "../Button";
-import Form from "../form/Form";
-import Input from "../form/Input";
+import Button from "../Button/Button";
+import Form from "../Form/Form/Form";
+import Input from "../Form/Input/Input";
 
 const SearchForm = (props) => {
     return (
@@ -20,7 +20,7 @@ const SearchForm = (props) => {
                 <div className="col-sm-2">
                     <Button
                         text="Search"
-                        className="button btn-danger btn-full"
+                        className="btn-danger btn-full"
                         type="button"
                         disabled={false}
                     />

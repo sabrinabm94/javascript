@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { auth, onAuthStateChanged } from "../../init-firebase";
+import { auth, onAuthStateChanged } from "../../../init-firebase";
 
 class AuthProtector extends Component {
     constructor(props) {

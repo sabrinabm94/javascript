@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { db, databaseRef, set } from "../../init-firebase";
+import { db, databaseRef, set } from "../../../init-firebase";
 
 class UpdateData extends Component {
     updateData(collection, form) {

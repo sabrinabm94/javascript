@@ -2,8 +2,8 @@ import { React, Component } from "react";
 import { Link } from "react-router-dom";
 
 //components
-import Button from "../components/Button";
-import Picture from "../components/Picture";
+import Button from "../components/Button/Button";
+import Picture from "../components/Picture/Picture";
 import GetData from "../components/utils/GetData/GetData";
 
 class Nav extends Component {

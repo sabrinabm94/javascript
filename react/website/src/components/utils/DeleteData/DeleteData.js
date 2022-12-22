@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { db, databaseRef, remove } from "../../init-firebase";
+import { db, databaseRef, remove } from "../../../init-firebase";
 
 class DeleteData extends Component {
     deleteData(collection, dataId) {

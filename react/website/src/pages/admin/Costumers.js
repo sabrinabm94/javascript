@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
 //components
-import Button from "../../components/Button";
-import Input from "../../components/form/Input";
-import Form from "../../components/form/Form";
+import Button from "../../components/Button/Button";
+import Input from "../../components/Form/Input/Input";
+import Form from "../../components/Form/Form/Form";
 
 //templates
 import ShowData from "../../templates/admin/ShowData";
@@ -40,7 +40,7 @@ class Portfolio extends Component {
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12">
                                 <Button
                                     type="submit"
-                                    className="btn btn-primary"
+                                    className="btn-primary"
                                     text="Submit"
                                 />
                             </div>

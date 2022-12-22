@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
 //components
-import Dropdown from "../../components/Dropdown";
-import Button from "../../components/Button";
+import Dropdown from "../../components/Dropdown/Dropdown";
+import Button from "../../components/Button/Button";
 import GetData from "../../components/utils/GetData/GetData";
-import DeleteData from "../../components/utils/DeleteData";
+import DeleteData from "../../components/utils/DeleteData/DeleteData";
 
 class About extends Component {
     constructor(props) {

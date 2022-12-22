@@ -2,7 +2,7 @@ import { React, Component } from "react";
 
 //components
 import GetData from "../components/utils/GetData/GetData";
-import Text from "../components/Text";
+import Text from "../components/Text/Text";
 
 class PageHeader extends Component {
     constructor(props) {

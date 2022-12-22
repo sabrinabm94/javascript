@@ -1,9 +1,9 @@
 import { React, Component } from "react";
 
 //components
-import Glyphicon from "../components/Glyphicon";
+import Glyphicon from "../components/Glyphicon/Glyphicon";
 import GetData from "../components/utils/GetData/GetData";
-import Text from "../components/Text";
+import Text from "../components/Text/Text";
 
 class About extends Component {
     constructor(props) {

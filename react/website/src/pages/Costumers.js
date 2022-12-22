@@ -1,7 +1,7 @@
 import { React, Component } from "react";
 
 //components
-import Carousel from "../components/Carousel";
+import Carousel from "../components/Carousel/Carousel";
 import GetData from "../components/utils/GetData/GetData";
 
 class Costumers extends Component {

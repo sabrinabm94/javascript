@@ -1,14 +1,14 @@
 import { React, Component } from "react";
 
 //components
-import Picture from "../components/Picture";
-import Glyphicon from "../components/Glyphicon";
-import Button from "../components/Button";
-import Input from "../components/form/Input";
-import Textarea from "../components/form/Textarea";
-import Form from "../components/form/Form";
+import Picture from "../components/Picture/Picture";
+import Glyphicon from "../components/Glyphicon/Glyphicon";
+import Button from "../components/Button/Button";
+import Input from "../components/Form/Input/Input";
+import Textarea from "../components/Form/Textarea/Textarea";
+import Form from "../components/Form/Form/Form";
 import GetData from "../components/utils/GetData/GetData";
-import Text from "../components/Text";
+import Text from "../components/Text/Text";
 
 class Contact extends Component {
     constructor(props) {
@@ -99,7 +99,7 @@ class Contact extends Component {
                                     />
                                     <Button
                                         type="submit"
-                                        className="btn btn-primary"
+                                        className="btn-primary"
                                         text="Submit"
                                         disabled={false}
                                     />

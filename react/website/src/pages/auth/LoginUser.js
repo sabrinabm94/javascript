@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
 //components
-import Input from "../../components/form/Input";
-import Button from "../../components/form/Button";
-import RegisterOrLoginUser from "../../components/RegisterOrLoginUser";
+import Input from "../../components/Form/Input/Input";
+import Button from "../../components/Button/Button";
+import RegisterOrLoginUser from "../../components/RegisterOrLoginUser/RegisterOrLoginUser";
 
 class LoginUser extends Component {
     render() {
@@ -33,7 +33,7 @@ class LoginUser extends Component {
                                 />
                                 <Button
                                     type="button"
-                                    className="btn btn-primary loginButton"
+                                    className="btn-primary loginButton"
                                     id="loginButton"
                                     text="Login"
                                 />

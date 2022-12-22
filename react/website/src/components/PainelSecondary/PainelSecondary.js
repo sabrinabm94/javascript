@@ -1,8 +1,8 @@
 import { React, Component } from "react";
 
 //components
-import Button from "./Button";
-import Text from "../components/Text";
+import Button from "../Button/Button";
+import Text from "../Text/Text";
 
 class PainelSecondary extends Component {
     constructor(props) {
@@ -33,7 +33,6 @@ class PainelSecondary extends Component {
                     <a className="link" href={this.props.link}>
                         <Button
                             text="Sign Up"
-                            className="btn"
                             type="submit"
                             disabled={true}
                         />

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
 //components
-import Input from "../../components/form/Input";
-import Button from "../../components/form/Button";
-import RegisterOrLoginUser from "../../components/RegisterOrLoginUser";
-import AuthProtector from "../../components/utils/AuthProtector";
+import Input from "../../components/Form/Input/Input";
+import Button from "../../components/Button/Button";
+import RegisterOrLoginUser from "../../components/RegisterOrLoginUser/RegisterOrLoginUser";
+import AuthProtector from "../../components/utils/AuthProtector/AuthProtector";
 
 class RegisterUser extends Component {
     constructor(props) {
@@ -50,7 +50,7 @@ class RegisterUser extends Component {
                                 />
                                 <Button
                                     type="button"
-                                    className="btn btn-primary registerButton"
+                                    className="btn-primary registerButton"
                                     id="registerButton"
                                     text="Register"
                                 />

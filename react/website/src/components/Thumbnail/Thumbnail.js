@@ -1,7 +1,7 @@
 import { React, Component } from "react";
 
 //components
-import Text from "../components/Text";
+import Text from "../Text/Text";
 
 class Thumbnail extends Component {
     constructor(props) {

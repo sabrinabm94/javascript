@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
 //components
-import Glyphicon from "../components/Glyphicon";
-import Text from "../components/Text";
+import Glyphicon from "../Glyphicon/Glyphicon";
+import Text from "../Text/Text";
 
 class Card extends Component {
     constructor(props) {

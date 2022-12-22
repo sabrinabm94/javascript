@@ -4,6 +4,7 @@ import Alert from "./Alert";
 
 describe("Alert", () => {
     const message = "Be careful!";
+    //fit("Shoud render the component", () => {
     it("Shoud render the component", () => {
         render(<Alert />);
 

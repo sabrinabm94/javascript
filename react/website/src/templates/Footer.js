@@ -1,5 +1,5 @@
 import React from "react";
-import Glyphicon from "../components/Glyphicon";
+import Glyphicon from "../components/Glyphicon/Glyphicon";
 
 const Footer = (props) => {
     return (

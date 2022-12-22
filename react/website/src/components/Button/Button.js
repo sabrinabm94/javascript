@@ -4,11 +4,13 @@ const Button = (props) => {
     if (!props.disabled || props.disabled === false) {
         return (
             <button
-                className={`btn ${props.className}`}
+                className={`button btn ${props.className}`}
+                id={props.id}
                 type={props.type}
                 data-toggle={props.dataToggle}
                 data-target={props.dataTarget}
                 onClick={props.onClick}
+                required={props.required}
             >
                 {props.text}
                 {props.children}
@@ -17,7 +19,8 @@ const Button = (props) => {
     } else {
         return (
             <button
-                className={`btn ${props.className}`}
+                className={`button btn ${props.className}`}
+                id={props.id}
                 disabled
                 type={props.type}
                 data-toggle={props.dataToggle}
