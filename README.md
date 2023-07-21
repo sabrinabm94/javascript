@@ -1,20 +1,16 @@
 # Repository structure
 
-## Assets
-
-The assets folder has images and other files that will be reused by the projects, some files come from front-end-environment repository.
-
 ## Javascript
 
 Scripts for testing javascript features and sintax, and apps.
 
-## Node
-
-Scripts to test Node features.
-
 ## Jquery
 
 Scripts for testing jQuery features and sintax, and apps.
+
+## Node
+
+Scripts to test Node features.
 
 ---
 
