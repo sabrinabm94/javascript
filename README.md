@@ -4,6 +4,8 @@
 
 Scripts for testing javascript features and sintax, and apps.
 
+[Documentations](https://github.com/sabrinabm94/javascript/wiki)
+
 ## Jquery
 
 Scripts for testing jQuery features and sintax, and apps.
